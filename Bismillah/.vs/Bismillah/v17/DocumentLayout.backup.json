@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Hardware-Store-Management-System\\Bismillah\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0FA6769-2010-42F1-8A06-15732613B2AF}|Bismillah\\Bismillah.csproj|c:\\users\\user\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0FA6769-2010-42F1-8A06-15732613B2AF}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Form1.cs",
+              "RelativeDocumentMoniker": "Bismillah\\Form1.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Form1.cs [Design]",
+              "RelativeToolTip": "Bismillah\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T11:21:21.573Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
