@@ -14,7 +14,7 @@ namespace Bismillah.DL
 {
     internal class LoginDL
     {
-        public Login Authenticate(string cnic, string password)
+        public Models.Login Authenticate(string cnic, string password)
         {
             string query = $"SELECT * FROM staff WHERE cnic = '{cnic}' AND password = '{password}'";
             DataTable dt = DatabaseHelper.Instance.GetDataTable(query);
@@ -22,7 +22,7 @@ namespace Bismillah.DL
             if (dt.Rows.Count == 1)
             {
                 var row = dt.Rows[0];
-                return new Login
+                return new Models.Login
                 {
                     StaffId = Convert.ToInt32(row["staff_id"]),
                     Name = row["name"].ToString(),

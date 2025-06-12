@@ -11,14 +11,14 @@ namespace Bismillah.BL
     internal class LoginBL
     {
         LoginDL loginDL = new LoginDL();
-        public (bool IsSuccess, string Message, Login Staff) Login(string cnic, string password)
+        public (bool IsSuccess, string Message, Models.Login Staff) Login(string cnic, string password)
         {
             if (string.IsNullOrWhiteSpace(cnic) || string.IsNullOrWhiteSpace(password))
             {
                 return (false, "Please enter CNIC and Password.", null);
             }
 
-            Login staff = loginDL.Authenticate(cnic, password);
+            Models.Login staff = loginDL.Authenticate(cnic, password);
             if (staff != null)
             {
                 return (true, $"Welcome, {staff.Name}!", staff);
