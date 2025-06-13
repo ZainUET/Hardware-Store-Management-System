@@ -77,7 +77,7 @@
             nametextBox.Font = new Font("Microsoft JhengHei UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nametextBox.Location = new Point(62, 141);
             nametextBox.Name = "nametextBox";
-            nametextBox.PlaceholderText = "Username:";
+            nametextBox.PlaceholderText = "CNIC:";
             nametextBox.Size = new Size(320, 24);
             nametextBox.TabIndex = 1;
             // 
@@ -93,6 +93,7 @@
             button1.TabIndex = 3;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -154,6 +155,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

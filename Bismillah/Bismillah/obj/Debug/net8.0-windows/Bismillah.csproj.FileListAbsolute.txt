@@ -34,3 +34,4 @@ C:\Users\hp\Desktop\Hardware-Store-Management-System\Bismillah\Bismillah\bin\Deb
 C:\Users\hp\Desktop\Hardware-Store-Management-System\Bismillah\Bismillah\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\hp\Desktop\Hardware-Store-Management-System\Bismillah\Bismillah\obj\Debug\net8.0-windows\Bismillah.csproj.AssemblyReference.cache
 C:\Users\hp\Desktop\Hardware-Store-Management-System\Bismillah\Bismillah\obj\Debug\net8.0-windows\Bismillah.csproj.Up2Date
+C:\Users\hp\Desktop\Hardware-Store-Management-System\Bismillah\Bismillah\obj\Debug\net8.0-windows\Bismillah.UI.Dashboard.resources
