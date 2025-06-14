@@ -15,7 +15,7 @@ namespace Bismillah.DL
             private string port = "3306";
             private string databaseName = "bismillah";
             private string databaseUser = "root";
-            private string databasePassword = "-----";
+            private string databasePassword = "zain8773";
 
             private DatabaseHelper() { }
 
@@ -31,7 +31,49 @@ namespace Bismillah.DL
                 }
             }
 
-            public MySqlConnection getConnection()
+
+        public int Update(string query, params MySqlParameter[] parameters)
+        {
+            using (var connection = getConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddRange(parameters);
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+        public object ExecuteScalar(string query)
+        {
+            using (var connection = getConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    return command.ExecuteScalar();
+                }
+            }
+        }
+
+        // Add this overload for parameterized queries
+        public object ExecuteScalar(string query, params MySqlParameter[] parameters)
+        {
+            using (var connection = getConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddRange(parameters);
+                    return command.ExecuteScalar();
+                }
+            }
+        }
+        public static string FormatAsPKR(decimal amount)
+        {
+            return string.Format("Rs. {0:#,##0.00}", amount);
+        }
+        public MySqlConnection getConnection()
             {
                 string connectionString = $"server={serverName};port={port};user={databaseUser};database={databaseName};password={databasePassword};SslMode=Required;";
                 return new MySqlConnection(connectionString);
@@ -45,7 +87,9 @@ namespace Bismillah.DL
                 return command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
             }
 
-            public System.Data.DataTable GetDataTable(string query)
+        // Add this method to your DatabaseHelper class
+       
+        public System.Data.DataTable GetDataTable(string query)
             {
                 using (var connection = getConnection())
                 {
