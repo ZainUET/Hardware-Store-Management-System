@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bismillah.Models;
 using Bismillah.DL;
 
 namespace Bismillah.BL
@@ -11,14 +10,14 @@ namespace Bismillah.BL
     internal class LoginBL
     {
         LoginDL loginDL = new LoginDL();
-        public (bool IsSuccess, string Message, Models.Login Staff) Login(string cnic, string password)
+        public (bool IsSuccess, string Message, Entities.Login Staff) Login(string cnic, string password)
         {
             if (string.IsNullOrWhiteSpace(cnic) || string.IsNullOrWhiteSpace(password))
             {
                 return (false, "Please enter CNIC and Password.", null);
             }
 
-            Models.Login staff = loginDL.Authenticate(cnic, password);
+            Entities.Login staff = loginDL.Authenticate(cnic, password);
             if (staff != null)
             {
                 return (true, $"Welcome, {staff.Name}!", staff);

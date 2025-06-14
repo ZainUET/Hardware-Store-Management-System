@@ -1,6 +1,6 @@
 ﻿namespace Bismillah.UI
 {
-    partial class AddSatff
+    partial class AddSupplierUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSatff));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSupplierUI));
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new LinkLabel();
-            txtCNIC = new TextBox();
-            txtSalary = new TextBox();
-            txtPassword = new TextBox();
+            txtcomapny = new TextBox();
+            txtaddress = new TextBox();
+            cnictxt = new TextBox();
             txtContact = new TextBox();
             label1 = new Label();
             txtName = new TextBox();
-            cmbRole = new ComboBox();
+            button1 = new LinkLabel();
             btnBack = new LinkLabel();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -60,15 +59,16 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1329, 125);
+            tableLayoutPanel2.Size = new Size(1371, 125);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
+            pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 119);
+            pictureBox1.Size = new Size(181, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -79,7 +79,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(185, 37);
+            label2.Location = new Point(190, 37);
             label2.Name = "label2";
             label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
@@ -92,14 +92,13 @@
             tableLayoutPanel1.BackColor = Color.FromArgb(10, 35, 66);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 7);
-            tableLayoutPanel1.Controls.Add(txtCNIC, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtSalary, 0, 4);
-            tableLayoutPanel1.Controls.Add(txtPassword, 0, 3);
+            tableLayoutPanel1.Controls.Add(txtcomapny, 0, 5);
+            tableLayoutPanel1.Controls.Add(txtaddress, 0, 4);
+            tableLayoutPanel1.Controls.Add(cnictxt, 0, 3);
             tableLayoutPanel1.Controls.Add(txtContact, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(txtName, 0, 1);
-            tableLayoutPanel1.Controls.Add(cmbRole, 0, 6);
+            tableLayoutPanel1.Controls.Add(button1, 0, 6);
             tableLayoutPanel1.Location = new Point(509, 160);
             tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,53 +114,32 @@
             tableLayoutPanel1.Size = new Size(375, 486);
             tableLayoutPanel1.TabIndex = 4;
             // 
-            // button1
+            // txtcomapny
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(10, 35, 66);
-            button1.BorderStyle = BorderStyle.FixedSingle;
-            button1.CausesValidation = false;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.LinkBehavior = LinkBehavior.NeverUnderline;
-            button1.LinkColor = Color.White;
-            button1.Location = new Point(2, 410);
-            button1.Margin = new Padding(2, 0, 2, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(371, 76);
-            button1.TabIndex = 13;
-            button1.TabStop = true;
-            button1.Text = "Save";
-            button1.TextAlign = ContentAlignment.MiddleCenter;
+            txtcomapny.Location = new Point(70, 298);
+            txtcomapny.Margin = new Padding(70, 15, 18, 15);
+            txtcomapny.Name = "txtcomapny";
+            txtcomapny.PlaceholderText = "Company";
+            txtcomapny.Size = new Size(241, 23);
+            txtcomapny.TabIndex = 12;
             // 
-            // txtCNIC
+            // txtaddress
             // 
-            txtCNIC.Location = new Point(70, 298);
-            txtCNIC.Margin = new Padding(70, 15, 18, 15);
-            txtCNIC.Name = "txtCNIC";
-            txtCNIC.PlaceholderText = "CNIC";
-            txtCNIC.Size = new Size(241, 23);
-            txtCNIC.TabIndex = 12;
+            txtaddress.Location = new Point(70, 236);
+            txtaddress.Margin = new Padding(70, 15, 18, 15);
+            txtaddress.Name = "txtaddress";
+            txtaddress.PlaceholderText = "Address";
+            txtaddress.Size = new Size(241, 23);
+            txtaddress.TabIndex = 11;
             // 
-            // txtSalary
+            // cnictxt
             // 
-            txtSalary.Location = new Point(70, 236);
-            txtSalary.Margin = new Padding(70, 15, 18, 15);
-            txtSalary.Name = "txtSalary";
-            txtSalary.PlaceholderText = "Salary";
-            txtSalary.Size = new Size(241, 23);
-            txtSalary.TabIndex = 11;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(70, 180);
-            txtPassword.Margin = new Padding(70, 15, 18, 15);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(241, 23);
-            txtPassword.TabIndex = 10;
+            cnictxt.Location = new Point(70, 180);
+            cnictxt.Margin = new Padding(70, 15, 18, 15);
+            cnictxt.Name = "cnictxt";
+            cnictxt.PlaceholderText = "CNIC";
+            cnictxt.Size = new Size(241, 23);
+            cnictxt.TabIndex = 10;
             // 
             // txtContact
             // 
@@ -181,7 +159,7 @@
             label1.Name = "label1";
             label1.Size = new Size(370, 52);
             label1.TabIndex = 0;
-            label1.Text = "Add Staff";
+            label1.Text = "Add Supplier";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtName
@@ -193,14 +171,27 @@
             txtName.Size = new Size(241, 23);
             txtName.TabIndex = 2;
             // 
-            // cmbRole
+            // button1
             // 
-            cmbRole.FormattingEnabled = true;
-            cmbRole.Location = new Point(70, 354);
-            cmbRole.Margin = new Padding(70, 15, 18, 15);
-            cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(241, 23);
-            cmbRole.TabIndex = 9;
+            button1.ActiveLinkColor = Color.FromArgb(10, 35, 66);
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(10, 35, 66);
+            button1.BorderStyle = BorderStyle.FixedSingle;
+            button1.CausesValidation = false;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.LinkBehavior = LinkBehavior.NeverUnderline;
+            button1.LinkColor = Color.White;
+            button1.Location = new Point(2, 339);
+            button1.Margin = new Padding(2, 0, 2, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(371, 71);
+            button1.TabIndex = 13;
+            button1.TabStop = true;
+            button1.Text = "Save";
+            button1.TextAlign = ContentAlignment.MiddleCenter;
+            button1.LinkClicked += button1_LinkClicked;
             // 
             // btnBack
             // 
@@ -213,7 +204,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1109, 622);
+            btnBack.Location = new Point(1151, 760);
             btnBack.Margin = new Padding(2, 0, 2, 0);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(95, 36);
@@ -222,18 +213,19 @@
             btnBack.Text = "Back";
             btnBack.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // AddSatff
+            // AddSupplierUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 470);
+            ClientSize = new Size(1001, 608);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Margin = new Padding(2);
-            Name = "AddSatff";
+            Name = "AddSupplierUI";
             Text = "AddSatff";
+            Load += AddSupplierUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -256,11 +248,11 @@
         private TextBox textBox3;
         private TextBox txtContact;
         private TextBox txtName;
-        private ComboBox cmbRole;
+        private ComboBox cmbregular;
         private LinkLabel btnBack;
-        private TextBox txtCNIC;
-        private TextBox txtSalary;
-        private TextBox txtPassword;
+        private TextBox txtcomapny;
+        private TextBox txtaddress;
+        private TextBox cnictxt;
         private LinkLabel button1;
     }
 }

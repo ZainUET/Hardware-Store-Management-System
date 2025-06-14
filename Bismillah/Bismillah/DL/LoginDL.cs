@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-using Bismillah.Models;
 using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace Bismillah.DL
 {
     internal class LoginDL
     {
-        public Models.Login Authenticate(string cnic, string password)
+        public Entities.Login Authenticate(string cnic, string password)
         {
             string query = $"SELECT * FROM staff WHERE cnic = '{cnic}' AND password = '{password}'";
             DataTable dt = DatabaseHelper.Instance.GetDataTable(query);
@@ -22,7 +21,7 @@ namespace Bismillah.DL
             if (dt.Rows.Count == 1)
             {
                 var row = dt.Rows[0];
-                return new Models.Login
+                return new Entities.Login
                 {
                     StaffId = Convert.ToInt32(row["staff_id"]),
                     Name = row["name"].ToString(),

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bismillah.Models
+namespace Bismillah.Entities
 {
     internal class Login
     {

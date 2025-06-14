@@ -9,5 +9,6 @@
         public string Address { get; set; }
         public int LoyaltyPoints { get; set; }
         public bool IsRegular { get; set; }
+
     }
 }
