@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bismillah.BL;
-using Bismillah.Models;
 namespace Bismillah
 {
     public partial class Login : Form
@@ -30,7 +29,7 @@ namespace Bismillah
 
             if (result.IsSuccess)
             {
-                Models.Login staff = result.Staff;
+                Entities.Login staff = result.Staff;
 
                 MessageBox.Show(result.Message, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();

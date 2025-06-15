@@ -1,6 +1,6 @@
 ﻿namespace Bismillah.UI
 {
-    partial class AddSatff
+    partial class AddCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSatff));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomer));
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new LinkLabel();
-            txtCNIC = new TextBox();
-            txtSalary = new TextBox();
-            txtPassword = new TextBox();
+            txtpoints = new TextBox();
+            txtaddress = new TextBox();
+            cnictxt = new TextBox();
             txtContact = new TextBox();
             label1 = new Label();
             txtName = new TextBox();
-            cmbRole = new ComboBox();
+            cmbregular = new ComboBox();
             btnBack = new LinkLabel();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -60,26 +60,27 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1329, 125);
+            tableLayoutPanel2.Size = new Size(1371, 125);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
+            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 119);
+            pictureBox1.Size = new Size(181, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
+            label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(333, 37);
+            label2.Location = new Point(190, 37);
             label2.Name = "label2";
             label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
@@ -93,13 +94,13 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(button1, 0, 7);
-            tableLayoutPanel1.Controls.Add(txtCNIC, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtSalary, 0, 4);
-            tableLayoutPanel1.Controls.Add(txtPassword, 0, 3);
+            tableLayoutPanel1.Controls.Add(txtpoints, 0, 5);
+            tableLayoutPanel1.Controls.Add(txtaddress, 0, 4);
+            tableLayoutPanel1.Controls.Add(cnictxt, 0, 3);
             tableLayoutPanel1.Controls.Add(txtContact, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(txtName, 0, 1);
-            tableLayoutPanel1.Controls.Add(cmbRole, 0, 6);
+            tableLayoutPanel1.Controls.Add(cmbregular, 0, 6);
             tableLayoutPanel1.Location = new Point(509, 160);
             tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -117,6 +118,7 @@
             // 
             // button1
             // 
+            button1.ActiveLinkColor = Color.FromArgb(10, 35, 66);
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.BackColor = Color.FromArgb(10, 35, 66);
             button1.BorderStyle = BorderStyle.FixedSingle;
@@ -134,34 +136,34 @@
             button1.TabStop = true;
             button1.Text = "Save";
             button1.TextAlign = ContentAlignment.MiddleCenter;
+            button1.LinkClicked += button1_LinkClicked;
             // 
-            // txtCNIC
+            // txtpoints
             // 
-            txtCNIC.Location = new Point(70, 298);
-            txtCNIC.Margin = new Padding(70, 15, 18, 15);
-            txtCNIC.Name = "txtCNIC";
-            txtCNIC.PlaceholderText = "CNIC";
-            txtCNIC.Size = new Size(241, 23);
-            txtCNIC.TabIndex = 12;
+            txtpoints.Location = new Point(70, 298);
+            txtpoints.Margin = new Padding(70, 15, 18, 15);
+            txtpoints.Name = "txtpoints";
+            txtpoints.PlaceholderText = "Loyalty Points";
+            txtpoints.Size = new Size(241, 23);
+            txtpoints.TabIndex = 12;
             // 
-            // txtSalary
+            // txtaddress
             // 
-            txtSalary.Location = new Point(70, 236);
-            txtSalary.Margin = new Padding(70, 15, 18, 15);
-            txtSalary.Name = "txtSalary";
-            txtSalary.PlaceholderText = "Salary";
-            txtSalary.Size = new Size(241, 23);
-            txtSalary.TabIndex = 11;
+            txtaddress.Location = new Point(70, 236);
+            txtaddress.Margin = new Padding(70, 15, 18, 15);
+            txtaddress.Name = "txtaddress";
+            txtaddress.PlaceholderText = "Address";
+            txtaddress.Size = new Size(241, 23);
+            txtaddress.TabIndex = 11;
             // 
-            // txtPassword
+            // cnictxt
             // 
-            txtPassword.Location = new Point(70, 180);
-            txtPassword.Margin = new Padding(70, 15, 18, 15);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(241, 23);
-            txtPassword.TabIndex = 10;
+            cnictxt.Location = new Point(70, 180);
+            cnictxt.Margin = new Padding(70, 15, 18, 15);
+            cnictxt.Name = "cnictxt";
+            cnictxt.PlaceholderText = "CNIC";
+            cnictxt.Size = new Size(241, 23);
+            cnictxt.TabIndex = 10;
             // 
             // txtContact
             // 
@@ -181,7 +183,7 @@
             label1.Name = "label1";
             label1.Size = new Size(370, 52);
             label1.TabIndex = 0;
-            label1.Text = "Add Staff";
+            label1.Text = "Add Customer";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtName
@@ -193,14 +195,15 @@
             txtName.Size = new Size(241, 23);
             txtName.TabIndex = 2;
             // 
-            // cmbRole
+            // cmbregular
             // 
-            cmbRole.FormattingEnabled = true;
-            cmbRole.Location = new Point(70, 354);
-            cmbRole.Margin = new Padding(70, 15, 18, 15);
-            cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(241, 23);
-            cmbRole.TabIndex = 9;
+            cmbregular.FormattingEnabled = true;
+            cmbregular.Items.AddRange(new object[] { "Yes", "No" });
+            cmbregular.Location = new Point(70, 354);
+            cmbregular.Margin = new Padding(70, 15, 18, 15);
+            cmbregular.Name = "cmbregular";
+            cmbregular.Size = new Size(241, 23);
+            cmbregular.TabIndex = 9;
             // 
             // btnBack
             // 
@@ -213,7 +216,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1109, 593);
+            btnBack.Location = new Point(1151, 760);
             btnBack.Margin = new Padding(2, 0, 2, 0);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(95, 36);
@@ -222,18 +225,19 @@
             btnBack.Text = "Back";
             btnBack.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // AddSatff
+            // AddCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 441);
+            ClientSize = new Size(1001, 608);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Margin = new Padding(2);
-            Name = "AddSatff";
+            Name = "AddCustomer";
             Text = "AddSatff";
+            Load += AddCustomer_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -256,11 +260,11 @@
         private TextBox textBox3;
         private TextBox txtContact;
         private TextBox txtName;
-        private ComboBox cmbRole;
+        private ComboBox cmbregular;
         private LinkLabel btnBack;
-        private TextBox txtCNIC;
-        private TextBox txtSalary;
-        private TextBox txtPassword;
+        private TextBox txtpoints;
+        private TextBox txtaddress;
+        private TextBox cnictxt;
         private LinkLabel button1;
     }
 }
