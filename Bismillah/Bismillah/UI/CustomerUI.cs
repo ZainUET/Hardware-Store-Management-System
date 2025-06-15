@@ -25,6 +25,7 @@ namespace Bismillah.UI
         private void CustomerUI_Load(object sender, EventArgs e)
         {
             LoadAllCustomers();
+            dataview();
         }
         private void LoadAllCustomers()
         {
@@ -104,6 +105,16 @@ namespace Bismillah.UI
         private string Prompt(string title, string defaultValue)
         {
             return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Customer", defaultValue);
+        }
+        public void dataview()
+        {
+            DataTable dataTable = new DataTable();
+            string query1 = $"Select * from customer";
+            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
+            dgvcustomer.DataSource = dataTable;
+            dgvcustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvcustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvcustomer.Refresh();
         }
     }
 }

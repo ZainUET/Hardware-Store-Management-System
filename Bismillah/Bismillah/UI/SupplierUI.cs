@@ -109,6 +109,7 @@ namespace Bismillah.UI
         private void SupplierUI_Load(object sender, EventArgs e)
         {
             LoadAllSuppliers();
+            dataview();
         }
         private void LoadAllSuppliers()
         {
@@ -132,6 +133,16 @@ namespace Bismillah.UI
             this.Hide();
             addSupplierUI.ShowDialog();
 
+        }
+        public void dataview()
+        {
+            DataTable dataTable = new DataTable();
+            string query1 = $"Select * from supplier";
+            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
+            dgvsupplier.DataSource = dataTable;
+            dgvsupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvsupplier.Refresh();
         }
     }
 }

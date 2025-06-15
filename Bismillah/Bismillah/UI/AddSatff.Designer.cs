@@ -75,11 +75,11 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
+            label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(333, 37);
+            label2.Location = new Point(185, 37);
             label2.Name = "label2";
             label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
@@ -213,7 +213,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1109, 593);
+            btnBack.Location = new Point(1109, 622);
             btnBack.Margin = new Padding(2, 0, 2, 0);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(95, 36);
@@ -227,7 +227,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 441);
+            ClientSize = new Size(959, 470);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);

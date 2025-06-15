@@ -1,4 +1,6 @@
-﻿namespace Bismillah.BL
+﻿using Bismillah.Entities;
+
+namespace Bismillah.BL
 {
     public class StaffBL
     {
@@ -8,5 +10,9 @@
         public string CNIC { get; set; }
         public string Password { get; set; }
         public int RoleID { get; set; }
+
+    
+
+      
     }
 }

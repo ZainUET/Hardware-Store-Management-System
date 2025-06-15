@@ -1,0 +1,124 @@
+﻿using Bismillah.BL;
+using Bismillah.DL;
+using Bismillah.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Bismillah.UI
+{
+    public partial class StaffUI : Form
+    {
+        public StaffUI()
+        {
+            InitializeComponent();
+            this.Load += StaffUI_Load;
+        }
+
+        private void StaffUI_Load(object sender, EventArgs e)
+        {
+            LoadAllStaff();
+        }
+        private void LoadAllStaff()
+        {
+            DataTable dt = StaffDL.GetAllStaff();
+            dgvsupplier.DataSource = dt;
+        }
+
+        private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (dgvsupplier.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Select a staff member to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int staffId = Convert.ToInt32(dgvsupplier.SelectedRows[0].Cells["staff_id"].Value);
+            Staff staff = StaffDL.GetStaffById(staffId);
+
+            string newName = Prompt("Name:", staff.Name);
+            string newContact = Prompt("Contact:", staff.Contact);
+            string newCNIC = Prompt("CNIC:", staff.CNIC);
+            string newSalary = Prompt("Salary:", staff.Salary.ToString());
+            string newPassword = Prompt("Password:", staff.Password);
+
+            staff.Name = newName;
+            staff.Contact = newContact;
+            staff.CNIC = newCNIC;
+            staff.Password = newPassword;
+            staff.Salary = decimal.TryParse(newSalary, out decimal sal) ? sal : 0;
+
+            string validation = StaffEditBL.ValidateForEdit(staff);
+            if (!string.IsNullOrEmpty(validation))
+            {
+                MessageBox.Show(validation, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool updated = StaffDL.UpdateStaff(staff);
+            if (updated)
+            {
+                MessageBox.Show("Staff updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllStaff();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update staff.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (dgvsupplier.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Select a staff member to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int staffId = Convert.ToInt32(dgvsupplier.SelectedRows[0].Cells["staff_id"].Value);
+            Staff staff = StaffDL.GetStaffById(staffId);
+
+            string validation = StaffEditBL.ValidateForDelete(staff);
+            if (!string.IsNullOrEmpty(validation))
+            {
+                MessageBox.Show(validation, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure to delete this staff?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                bool deleted = StaffDL.DeleteStaff(staffId);
+                if (deleted)
+                {
+                    MessageBox.Show("Staff deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAllStaff();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete staff.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private string Prompt(string title, string defaultValue)
+        {
+            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Staff", defaultValue);
+        }
+        public void dataview()
+        {
+            DataTable dataTable = new DataTable();
+            string query1 = $"Select * from staff";
+            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
+            dgvsupplier.DataSource = dataTable;
+            dgvsupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvsupplier.Refresh();
+        }
+    }
+}
