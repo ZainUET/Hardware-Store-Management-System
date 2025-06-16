@@ -1,4 +1,5 @@
-﻿namespace Bismillah.Entities
+﻿
+namespace Bismillah.Entities
 {
     public class Product
     {
@@ -11,6 +12,6 @@
         public int Quantity { get; set; }
         public decimal PurchasePrice { get; set; }
         public decimal SellingPrice { get; set; }
-        public DateTime LastUpdated { get; set; }
+        public DateTime LastUpdated { get; internal set; }
     }
 }

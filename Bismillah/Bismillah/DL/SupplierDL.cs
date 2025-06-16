@@ -15,7 +15,11 @@ namespace Bismillah.DL
             string query = "SELECT * FROM supplier";
             return DatabaseHelper.Instance.GetDataTable(query);
         }
-
+        public static DataTable GetSuppliers()
+        {
+            string query = "SELECT supplier_id, name FROM supplier";
+            return DatabaseHelper.Instance.GetDataTable(query);
+        }
 
         public static Supplier GetSupplierById(int supplierId)
         {
