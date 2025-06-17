@@ -39,8 +39,7 @@ namespace Bismillah.UI
             cmbSelectProducts.ValueMember = "product_id";
 
             // Load payment statuses
-            var paymentStatuses = _billBL.LoadPaymentStatuses();
-            cmbPaymentStatus.DataSource = paymentStatuses;
+            cmbPaymentStatus.DataSource = _billBL.LoadPaymentStatuses();
             cmbPaymentStatus.DisplayMember = "value";
             cmbPaymentStatus.ValueMember = "lookup_id";
 
@@ -59,9 +58,10 @@ namespace Bismillah.UI
             dvgProductsinBill.DataSource = _billItems;
 
             // Set default values
-            ClearBillForm(); // Use this instead of individual initializations
+            ClearBillForm();
             BillDate.Value = DateTime.Now;
         }
+
 
         private void SetDefaultPaymentStatus()
         {
@@ -88,7 +88,7 @@ namespace Bismillah.UI
             dvgProductsinBill.AutoGenerateColumns = false;
             dvgProductsinBill.Columns.Clear();
 
-            // Add columns in the desired order
+            // Add columns
             dvgProductsinBill.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "sr_no",
@@ -106,7 +106,7 @@ namespace Bismillah.UI
             dvgProductsinBill.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 DataPropertyName = "quantity",
-                HeaderText = "Quantity",
+                HeaderText = "Qty",
                 Width = 80
             });
 
@@ -124,17 +124,11 @@ namespace Bismillah.UI
                 Width = 100
             });
 
-            // Hide the raw value columns
-            foreach (DataGridViewColumn column in dvgProductsinBill.Columns)
-            {
-                if (column.DataPropertyName == "product_id" ||
-                    column.DataPropertyName == "unit_price" ||
-                    column.DataPropertyName == "total" ||
-                    column.DataPropertyName == "batch_id")
-                {
-                    column.Visible = false;
-                }
-            }
+            // Hide technical columns
+            dvgProductsinBill.Columns["product_id"].Visible = false;
+            dvgProductsinBill.Columns["unit_price"].Visible = false;
+            dvgProductsinBill.Columns["total"].Visible = false;
+            dvgProductsinBill.Columns["batch_id"].Visible = false;
         }
 
         private int GetNextBillNumber()
@@ -174,46 +168,49 @@ namespace Bismillah.UI
         {
             if (cmbSelectProducts.SelectedValue == null || numQuantity.Value <= 0) return;
 
+            int productId = Convert.ToInt32(cmbSelectProducts.SelectedValue);
+            int quantity = (int)numQuantity.Value;
+
+            if (!_billBL.HasSufficientStock(productId, quantity))
+            {
+                MessageBox.Show("Insufficient stock for this product");
+                return;
+            }
+
             DataRowView selectedProduct = (DataRowView)cmbSelectProducts.SelectedItem;
-            decimal unitPrice = Convert.ToDecimal(selectedProduct["selling_price"]);
-            decimal total = numQuantity.Value * unitPrice;
+            decimal unitPrice = Convert.ToDecimal(selectedProduct["unit_price"]);
+            decimal total = quantity * unitPrice;
 
             _billItems.Rows.Add(
                 _rowNumber++,
-                selectedProduct["product_id"],
+                productId,
                 selectedProduct["name"],
-                numQuantity.Value,
+                quantity,
                 unitPrice,
                 DatabaseHelper.FormatAsPKR(unitPrice),
                 total,
                 DatabaseHelper.FormatAsPKR(total),
-                DBNull.Value
+                DBNull.Value // Batch ID will be set when saving
             );
 
             CalculateSubtotal();
             numQuantity.Value = 1;
         }
-
         private void CalculateSubtotal()
         {
             _subtotal = _billItems.AsEnumerable()
                 .Sum(row => Convert.ToDecimal(row["total"]));
 
-            lblSubtotal.Text = _billBL.GetFormattedPrice(_subtotal);
+            lblSubtotal.Text = DatabaseHelper.FormatAsPKR(_subtotal);
             CalculateTotal();
         }
 
         private void CalculateTotal()
         {
-            // Calculate discount amount (percentage of subtotal)
             decimal discountAmount = _subtotal * (_discountPercentage / 100);
-
-            // Calculate total (subtotal - discount)
             decimal total = _subtotal - discountAmount;
-
-            lblTotal.Text = _billBL.GetFormattedPrice(total);
+            lblTotal.Text = DatabaseHelper.FormatAsPKR(total);
         }
-
         private void btnApplyDiscount_Click(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtdiscount.Text, out decimal discountPercent))
@@ -257,42 +254,50 @@ namespace Bismillah.UI
                 CalculateSubtotal();
             }
         }
+        private void LoadCustomers()
+        {
+            var customers = _billBL.LoadCustomers();
+            cmbCustomer.DataSource = customers;
+            cmbCustomer.DisplayMember = "name";        // Must match column name exactly
+            cmbCustomer.ValueMember = "customer_id";   // Must match column name exactly
+        }
+        private void LoadProducts()
+        {
+            var products = _billBL.LoadProducts();
+            cmbSelectProducts.DataSource = products;
+            cmbSelectProducts.DisplayMember = "name";  // Must match column name
+            cmbSelectProducts.ValueMember = "product_id"; // Must match column name
+        }
+        private void LoadPaymentStatuses()
+        {
+            var statuses = _billBL.LoadPaymentStatuses();
+            cmbPaymentStatus.DataSource = statuses;
+            cmbPaymentStatus.DisplayMember = "value";      // As returned by your query
+            cmbPaymentStatus.ValueMember = "lookup_id";    // Must match column name exactly
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (_billItems.Rows.Count == 0)
             {
-                MessageBox.Show("Please add at least one product to the bill");
+                MessageBox.Show("Please add products to the bill");
                 return;
             }
-
-            if (cmbPaymentStatus.SelectedValue == null)
-            {
-                MessageBox.Show("Please select a payment status");
-                return;
-            }
-
-            int paymentStatusId = Convert.ToInt32(cmbPaymentStatus.SelectedValue);
-            string paymentStatus = ((DataRowView)cmbPaymentStatus.SelectedItem)["value"].ToString();
 
             try
             {
-                // Process the bill (this creates the bill but doesn't affect stock yet)
+                int paymentStatusId = Convert.ToInt32(cmbPaymentStatus.SelectedValue);
+                int? customerId = rdregular.Checked ? (int?)cmbCustomer.SelectedValue : null;
+
                 int billId = _billBL.ProcessBill(
-                    rdregular.Checked ? (int?)cmbCustomer.SelectedValue : null,
+                    customerId,
                     _currentStaffId,
                     _subtotal * (_discountPercentage / 100),
                     _billItems,
                     paymentStatusId,
-                    out string formattedTotalAmount
+                    out string formattedTotal
                 );
 
-                // Only decrease stock if payment is Completed
-                if (paymentStatus == "Completed")
-                {
-                    _billBL.FinalizePayment(billId, paymentStatusId);
-                }
-
-                MessageBox.Show($"Bill #{billId} saved successfully!\nTotal: {formattedTotalAmount}");
+                MessageBox.Show($"Bill #{billId} saved successfully!\nTotal: {formattedTotal}");
                 ClearBillForm();
             }
             catch (Exception ex)
@@ -300,6 +305,7 @@ namespace Bismillah.UI
                 MessageBox.Show($"Error saving bill: {ex.Message}");
             }
         }
+
         private void ClearBillForm()
         {
             // Clear bill items
