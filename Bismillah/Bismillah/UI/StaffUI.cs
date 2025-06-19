@@ -120,5 +120,19 @@ namespace Bismillah.UI
             dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvsupplier.Refresh();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            StaffManagement addStaff = new StaffManagement();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+        }
     }
 }

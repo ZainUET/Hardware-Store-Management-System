@@ -14,7 +14,7 @@ namespace Bismillah.DL
         private string port = "3306";
         private string databaseName = "bismillah";
         private string databaseUser = "root";
-        private string databasePassword = "zain8773";
+        private string databasePassword = "";
 
         private DatabaseHelper() { }
 
@@ -63,7 +63,7 @@ namespace Bismillah.DL
                 using (var adapter = new MySqlDataAdapter(query, connection))
                 {
                     DataTable dt = new DataTable();
-                    //adapter.Fill(dt);
+                    adapter.Fill(dt);
                     return dt;
                 }
             }

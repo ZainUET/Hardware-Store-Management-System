@@ -181,10 +181,7 @@ namespace Bismillah.UI
             txtName.Focus();
         }
 
-        private void btnBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void txtCNIC_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -208,6 +205,14 @@ namespace Bismillah.UI
             {
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StaffManagement addStaff = new StaffManagement();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
         }
     }
 }

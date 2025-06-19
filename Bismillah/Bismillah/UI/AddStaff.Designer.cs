@@ -42,6 +42,7 @@
             cmbRole = new ComboBox();
             btnsave = new Button();
             btnBack = new LinkLabel();
+            button1 = new Button();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -135,7 +136,7 @@
             txtSalary.PlaceholderText = "Salary";
             txtSalary.Size = new Size(343, 31);
             txtSalary.TabIndex = 11;
-            txtSalary.KeyPress += this.txtSalary_KeyPress_1;
+            txtSalary.KeyPress += txtSalary_KeyPress_1;
             // 
             // txtPassword
             // 
@@ -219,12 +220,28 @@
             btnBack.Text = "Back";
             btnBack.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(10, 35, 66);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1529, 873);
+            button1.Name = "button1";
+            button1.Size = new Size(186, 63);
+            button1.TabIndex = 14;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // AddStaff
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1878, 1024);
+            Controls.Add(button1);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
@@ -259,5 +276,6 @@
         private TextBox txtSalary;
         private TextBox txtPassword;
         private Button btnsave;
+        private Button button1;
     }
 }

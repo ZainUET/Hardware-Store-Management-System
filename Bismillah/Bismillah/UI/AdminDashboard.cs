@@ -16,5 +16,14 @@ namespace Bismillah.UI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            StaffManagement addStaff = new StaffManagement();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+        }
     }
 }
