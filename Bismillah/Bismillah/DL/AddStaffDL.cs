@@ -1,51 +1,64 @@
-﻿using Bismillah.BL;
+﻿using Bismillah.DL;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using Bismillah.Entities;
 
-namespace Bismillah.DL
+namespace Bismillah.DAL
 {
-    public static class AddStaffDL
+    public class AddStaffDL
     {
-        public static DataTable GetRolesFromLookup()
+        private readonly DatabaseHelper dbHelper;
+
+        public AddStaffDL()
         {
-            string query = "SELECT lookup_id, value FROM lookup WHERE category = 'User Role'";
-            return DatabaseHelper.Instance.GetDataTable(query);
+            dbHelper = DatabaseHelper.Instance;
         }
 
-        public static bool SaveStaff(StaffBL staff)
+        public bool AddStaff(StaffDTO staff)
         {
-            string query = @"
-                INSERT INTO staff (name, contact, salary, cnic, password, role_id)
-                VALUES (@name, @contact, @salary, @cnic, @password, @role_id)";
+            string query = @"INSERT INTO staff 
+                            (name, contact, salary, cnic, password, role_id) 
+                            VALUES 
+                            (@Name, @Contact, @Salary, @CNIC, @Password, @RoleID)";
 
-            try
-            {
-                using (var connection = DatabaseHelper.Instance.getConnection())
-                {
-                    connection.Open();
-                    using (var cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@name", staff.Name);
-                        cmd.Parameters.AddWithValue("@contact", staff.Contact);
-                        cmd.Parameters.AddWithValue("@salary", staff.Salary);
-                        cmd.Parameters.AddWithValue("@cnic", staff.CNIC);
-                        cmd.Parameters.AddWithValue("@password", staff.Password);
-                        cmd.Parameters.AddWithValue("@role_id", staff.RoleID);
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@Name", staff.Name),
+                new MySqlParameter("@Contact", staff.Contact),
+                new MySqlParameter("@Salary", staff.Salary),
+                new MySqlParameter("@CNIC", staff.CNIC),
+                new MySqlParameter("@Password", staff.Password),
+                new MySqlParameter("@RoleID", staff.RoleID)
+            };
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
-                    }
-                }
-            }
-            catch (MySqlException ex)
+            int rowsAffected = dbHelper.Update(query, parameters);
+            return rowsAffected > 0;
+        }
+
+        public DataTable GetRoles()
+        {
+            string query = @"SELECT lookup_id, value 
+                    FROM lookup 
+                    WHERE category = 'User Role'";
+
+            DataTable roles = dbHelper.GetDataTable(query);
+
+            // Debug output to verify data
+            Console.WriteLine($"Retrieved {roles.Rows.Count} roles");
+            foreach (DataRow row in roles.Rows)
             {
-                if (ex.Number == 1062) // Duplicate CNIC
-                {
-                    throw new Exception("CNIC already exists in the system.");
-                }
-                throw;
+                Console.WriteLine($"ID: {row["lookup_id"]}, Value: {row["value"]}");
             }
+
+            return roles;
+        }
+
+        public bool IsCNICAlreadyExists(string cnic)
+        {
+            string query = "SELECT COUNT(*) FROM staff WHERE cnic = @CNIC";
+            MySqlParameter parameter = new MySqlParameter("@CNIC", cnic);
+            object result = dbHelper.ExecuteScalar(query, parameter);
+            return Convert.ToInt32(result) > 0;
         }
     }
 }

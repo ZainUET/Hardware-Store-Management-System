@@ -81,6 +81,37 @@ namespace Bismillah
             }
 
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(30, 65, 106);
+            btn.ForeColor = Color.White;
+
+            // Add a subtle border on hover
+            btn.FlatAppearance.BorderColor = Color.FromArgb(70, 105, 146);
+            btn.FlatAppearance.BorderSize = 1;
+
+            // Slight size increase effect
+            btn.Size = new Size(btn.Width + 2, btn.Height + 2);
+            btn.Location = new Point(btn.Location.X - 1, btn.Location.Y - 1);
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(10, 35, 66);
+            btn.ForeColor = Color.White;
+
+            // Remove border
+            btn.FlatAppearance.BorderSize = 0;
+
+            // Return to original size
+            btn.Size = new Size(btn.Width - 2, btn.Height - 2);
+            btn.Location = new Point(btn.Location.X + 1, btn.Location.Y + 1);
+        }
     }
 }
 

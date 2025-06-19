@@ -1,6 +1,6 @@
 ﻿namespace Bismillah.UI
 {
-    partial class AddSatff
+    partial class AddStaff
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSatff));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStaff));
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new LinkLabel();
             txtCNIC = new TextBox();
             txtSalary = new TextBox();
             txtPassword = new TextBox();
@@ -41,6 +40,7 @@
             label1 = new Label();
             txtName = new TextBox();
             cmbRole = new ComboBox();
+            btnsave = new Button();
             btnBack = new LinkLabel();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -57,18 +57,20 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(-1, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1329, 125);
+            tableLayoutPanel2.Size = new Size(2407, 208);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 119);
+            pictureBox1.Size = new Size(221, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -79,9 +81,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(185, 37);
+            label2.Location = new Point(333, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -89,10 +92,9 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSize = true;
-            tableLayoutPanel1.BackColor = Color.FromArgb(10, 35, 66);
+            tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
             tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 7);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.Controls.Add(txtCNIC, 0, 5);
             tableLayoutPanel1.Controls.Add(txtSalary, 0, 4);
             tableLayoutPanel1.Controls.Add(txtPassword, 0, 3);
@@ -100,107 +102,103 @@
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(txtName, 0, 1);
             tableLayoutPanel1.Controls.Add(cmbRole, 0, 6);
-            tableLayoutPanel1.Location = new Point(509, 160);
-            tableLayoutPanel1.Margin = new Padding(2);
+            tableLayoutPanel1.Controls.Add(btnsave, 0, 7);
+            tableLayoutPanel1.Location = new Point(766, 299);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.7607346F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 47.2392654F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 71F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel1.Size = new Size(375, 486);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(536, 663);
             tableLayoutPanel1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(10, 35, 66);
-            button1.BorderStyle = BorderStyle.FixedSingle;
-            button1.CausesValidation = false;
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.LinkBehavior = LinkBehavior.NeverUnderline;
-            button1.LinkColor = Color.White;
-            button1.Location = new Point(2, 410);
-            button1.Margin = new Padding(2, 0, 2, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(371, 76);
-            button1.TabIndex = 13;
-            button1.TabStop = true;
-            button1.Text = "Save";
-            button1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtCNIC
             // 
-            txtCNIC.Location = new Point(70, 298);
-            txtCNIC.Margin = new Padding(70, 15, 18, 15);
+            txtCNIC.Location = new Point(100, 436);
+            txtCNIC.Margin = new Padding(100, 25, 26, 25);
             txtCNIC.Name = "txtCNIC";
             txtCNIC.PlaceholderText = "CNIC";
-            txtCNIC.Size = new Size(241, 23);
+            txtCNIC.Size = new Size(343, 31);
             txtCNIC.TabIndex = 12;
+            txtCNIC.KeyPress += txtCNIC_KeyPress_1;
             // 
             // txtSalary
             // 
-            txtSalary.Location = new Point(70, 236);
-            txtSalary.Margin = new Padding(70, 15, 18, 15);
+            txtSalary.Location = new Point(100, 355);
+            txtSalary.Margin = new Padding(100, 25, 26, 25);
             txtSalary.Name = "txtSalary";
             txtSalary.PlaceholderText = "Salary";
-            txtSalary.Size = new Size(241, 23);
+            txtSalary.Size = new Size(343, 31);
             txtSalary.TabIndex = 11;
+            txtSalary.KeyPress += this.txtSalary_KeyPress_1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(70, 180);
-            txtPassword.Margin = new Padding(70, 15, 18, 15);
+            txtPassword.Location = new Point(100, 274);
+            txtPassword.Margin = new Padding(100, 25, 26, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(241, 23);
+            txtPassword.Size = new Size(343, 31);
             txtPassword.TabIndex = 10;
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(70, 126);
-            txtContact.Margin = new Padding(70, 15, 18, 15);
+            txtContact.Location = new Point(100, 193);
+            txtContact.Margin = new Padding(100, 25, 26, 25);
             txtContact.Name = "txtContact";
             txtContact.PlaceholderText = "Contact";
-            txtContact.Size = new Size(241, 23);
+            txtContact.Size = new Size(343, 31);
             txtContact.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.ForeColor = Color.FromArgb(10, 35, 66);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(370, 52);
+            label1.Size = new Size(529, 87);
             label1.TabIndex = 0;
             label1.Text = "Add Staff";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtName
             // 
-            txtName.Location = new Point(70, 74);
-            txtName.Margin = new Padding(70, 15, 18, 15);
+            txtName.Location = new Point(100, 112);
+            txtName.Margin = new Padding(100, 25, 26, 25);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
-            txtName.Size = new Size(241, 23);
+            txtName.Size = new Size(343, 31);
             txtName.TabIndex = 2;
             // 
             // cmbRole
             // 
             cmbRole.FormattingEnabled = true;
-            cmbRole.Location = new Point(70, 354);
-            cmbRole.Margin = new Padding(70, 15, 18, 15);
+            cmbRole.Location = new Point(100, 517);
+            cmbRole.Margin = new Padding(100, 25, 26, 25);
             cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(241, 23);
+            cmbRole.Size = new Size(343, 33);
             cmbRole.TabIndex = 9;
+            // 
+            // btnsave
+            // 
+            btnsave.Anchor = AnchorStyles.None;
+            btnsave.BackColor = Color.FromArgb(10, 35, 66);
+            btnsave.Cursor = Cursors.Hand;
+            btnsave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnsave.ForeColor = Color.White;
+            btnsave.Location = new Point(175, 587);
+            btnsave.Name = "btnsave";
+            btnsave.Size = new Size(186, 63);
+            btnsave.TabIndex = 13;
+            btnsave.Text = "Save";
+            btnsave.UseVisualStyleBackColor = false;
+            btnsave.Click += btnsave_Click_1;
             // 
             // btnBack
             // 
@@ -213,27 +211,26 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1109, 622);
-            btnBack.Margin = new Padding(2, 0, 2, 0);
+            btnBack.Location = new Point(2092, 1278);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(95, 36);
+            btnBack.Size = new Size(135, 59);
             btnBack.TabIndex = 5;
             btnBack.TabStop = true;
             btnBack.Text = "Back";
             btnBack.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // AddSatff
+            // AddStaff
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 470);
+            ClientSize = new Size(1878, 1024);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(2);
-            Name = "AddSatff";
+            Name = "AddStaff";
             Text = "AddSatff";
+            WindowState = FormWindowState.Maximized;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -261,6 +258,6 @@
         private TextBox txtCNIC;
         private TextBox txtSalary;
         private TextBox txtPassword;
-        private LinkLabel button1;
+        private Button btnsave;
     }
 }
