@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Bismillah.UI
 {
-    public partial class AdminDashboard : Form
+    public partial class SupplierManagement : Form
     {
-        public AdminDashboard()
+        public SupplierManagement()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            StaffManagement addStaff = new StaffManagement();
+            AddSupplierUI addStaff = new AddSupplierUI();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
@@ -28,19 +27,24 @@ namespace Bismillah.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SupplierManagement addStaff = new SupplierManagement();
+
+            SupplierUI addStaff = new SupplierUI();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ProductManagement addStaff = new ProductManagement();
+
+            AdminDashboard addStaff = new AdminDashboard();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }
