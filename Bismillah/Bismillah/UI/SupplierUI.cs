@@ -18,57 +18,53 @@ namespace Bismillah.UI
         public SupplierUI()
         {
             InitializeComponent();
-            btnback.LinkClicked += (s, e) => this.Close();
+
             this.Load += SupplierUI_Load;
         }
 
 
-        private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private string Prompt(string title, string defaultValue)
         {
-            if (dgvsupplier.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a supplier to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Supplier", defaultValue);
+        }
 
-            int supplierId = Convert.ToInt32(dgvsupplier.SelectedRows[0].Cells["supplier_id"].Value);
-            Supplier supplier = SupplierDL.GetSupplierById(supplierId);
-
-            string newName = Prompt("Name:", supplier.Name);
-            string newContact = Prompt("Contact:", supplier.Contact);
-            string newCNIC = Prompt("CNIC:", supplier.CNIC);
-            
-            string newCompany = Prompt("Company:", supplier.Company);
-
-            supplier.Name = newName;
-            supplier.Contact = newContact;
-            supplier.CNIC = newCNIC;
-        
-            supplier.Company = newCompany;
-
-            string validationMessage = SupplerBL.ValidateForEdit(supplier);
-            if (!string.IsNullOrEmpty(validationMessage))
-            {
-                MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            bool updated = SupplierDL.UpdateSupplier(supplier);
-            if (updated)
-            {
-                MessageBox.Show("Supplier updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllSuppliers();
-            }
-            else
-            {
-                MessageBox.Show("Failed to update supplier.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void SupplierUI_Load(object sender, EventArgs e)
+        {
+            LoadAllSuppliers();
+            dataview();
+        }
+        private void LoadAllSuppliers()
+        {
+            DataTable dt = SupplierDL.GetAllSuppliers();
+            dgvsupplier.DataSource = dt;
         }
 
 
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-        private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        }
+
+        private void btnback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddSupplierUI addSupplierUI = new AddSupplierUI();
+            this.Hide();
+            addSupplierUI.ShowDialog();
+
+        }
+        public void dataview()
+        {
+            DataTable dataTable = new DataTable();
+            string query1 = $"Select * from supplier";
+            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
+            dgvsupplier.DataSource = dataTable;
+            dgvsupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvsupplier.Refresh();
+        }
+
+        private void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvsupplier.SelectedRows.Count == 0)
             {
@@ -101,48 +97,55 @@ namespace Bismillah.UI
                 }
             }
         }
-        private string Prompt(string title, string defaultValue)
+
+        private void edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Supplier", defaultValue);
+            if (dgvsupplier.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a supplier to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int supplierId = Convert.ToInt32(dgvsupplier.SelectedRows[0].Cells["supplier_id"].Value);
+            Supplier supplier = SupplierDL.GetSupplierById(supplierId);
+
+            string newName = Prompt("Name:", supplier.Name);
+            string newContact = Prompt("Contact:", supplier.Contact);
+            string newCNIC = Prompt("CNIC:", supplier.CNIC);
+
+            string newCompany = Prompt("Company:", supplier.Company);
+
+            supplier.Name = newName;
+            supplier.Contact = newContact;
+            supplier.CNIC = newCNIC;
+
+            supplier.Company = newCompany;
+
+            string validationMessage = SupplerBL.ValidateForEdit(supplier);
+            if (!string.IsNullOrEmpty(validationMessage))
+            {
+                MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool updated = SupplierDL.UpdateSupplier(supplier);
+            if (updated)
+            {
+                MessageBox.Show("Supplier updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllSuppliers();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update supplier.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void SupplierUI_Load(object sender, EventArgs e)
+        private void back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoadAllSuppliers();
-            dataview();
-        }
-        private void LoadAllSuppliers()
-        {
-            DataTable dt = SupplierDL.GetAllSuppliers();
-            dgvsupplier.DataSource = dt;
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AddSupplierUI addSupplierUI = new AddSupplierUI();
+            SupplierManagement supplierManagement = new SupplierManagement();
             this.Hide();
-            addSupplierUI.ShowDialog();
-
-        }
-        public void dataview()
-        {
-            DataTable dataTable = new DataTable();
-            string query1 = $"Select * from supplier";
-            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
-            dgvsupplier.DataSource = dataTable;
-            dgvsupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvsupplier.Refresh();
+            supplierManagement.ShowDialog();
+            this.Close();
         }
     }
 }

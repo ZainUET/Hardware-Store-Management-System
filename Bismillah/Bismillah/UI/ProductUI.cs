@@ -19,8 +19,8 @@ namespace Bismillah.UI
         {
             InitializeComponent();
             LoadProducts();
-            btnback.LinkClicked += (s, e) => this.Close();
-           
+
+
         }
         private void LoadProducts()
         {
@@ -33,7 +33,11 @@ namespace Bismillah.UI
 
         }
 
-        private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private string Prompt(string field, string defaultValue)
+        {
+            return Microsoft.VisualBasic.Interaction.InputBox(field, "Edit Product", defaultValue);
+        }
+        private void edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvProducts.SelectedRows.Count == 0)
             {
@@ -49,18 +53,16 @@ namespace Bismillah.UI
                 return;
             }
 
-            // Prompt fields
+            // Prompt fields (edit only editable fields)
             string name = Prompt("Product Name", p.Name);
             string size = Prompt("Size", p.Size);
-            string quantity = Prompt("Quantity", p.Quantity.ToString());
-            string purchase = Prompt("Purchase Price", p.PurchasePrice.ToString());
-            string sale = Prompt("Selling Price", p.SellingPrice.ToString());
+            string quantity = Prompt("Quantity In Stock", p.QuantityInStock.ToString());
+            string unitPrice = Prompt("Unit Price", p.UnitPrice.ToString());
 
             p.Name = name;
             p.Size = size;
-            p.Quantity = int.TryParse(quantity, out int q) ? q : 0;
-            p.PurchasePrice = decimal.TryParse(purchase, out decimal pp) ? pp : 0;
-            p.SellingPrice = decimal.TryParse(sale, out decimal sp) ? sp : 0;
+            p.QuantityInStock = int.TryParse(quantity, out int q) ? q : 0;
+            p.UnitPrice = decimal.TryParse(unitPrice, out decimal up) ? up : 0;
 
             string msg = ProductBL.ValidateProduct(p);
             if (!string.IsNullOrEmpty(msg))
@@ -80,7 +82,7 @@ namespace Bismillah.UI
             }
         }
 
-        private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvProducts.SelectedRows.Count == 0)
             {
@@ -103,19 +105,13 @@ namespace Bismillah.UI
                 }
             }
         }
-        public void dataview()
+
+        private void back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            string query1 = $"Select * from products";
-            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
-            dgvProducts.DataSource = dataTable;
-            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvProducts.Refresh();
-        }
-        private string Prompt(string field, string defaultValue)
-        {
-            return Microsoft.VisualBasic.Interaction.InputBox(field, "Edit Product", defaultValue);
+            ProductManagement productManagement = new ProductManagement();
+            this.Hide();
+            productManagement.ShowDialog();
+            this.Close();
         }
     }
 }

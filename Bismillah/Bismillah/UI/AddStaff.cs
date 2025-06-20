@@ -181,7 +181,7 @@ namespace Bismillah.UI
             txtName.Focus();
         }
 
-       
+
 
         private void txtCNIC_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -213,6 +213,11 @@ namespace Bismillah.UI
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
+        }
+
+        private void AddStaff_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

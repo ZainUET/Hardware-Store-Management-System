@@ -14,7 +14,7 @@ namespace Bismillah
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new SupplierUI());
+       
 
             Application.Run(new AdminDashboard());
 

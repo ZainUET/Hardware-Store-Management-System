@@ -29,11 +29,9 @@ namespace Bismillah.DL
                 Name = row["name"].ToString(),
                 CategoryId = Convert.ToInt32(row["category_id"]),
                 SupplierId = Convert.ToInt32(row["supplier_id"]),
-                BatchId = Convert.ToInt32(row["batch_id"]),
                 Size = row["size"].ToString(),
-                Quantity = Convert.ToInt32(row["quantity"]),
-                PurchasePrice = Convert.ToDecimal(row["purchase_price"]),
-                SellingPrice = Convert.ToDecimal(row["selling_price"]),
+                QuantityInStock = Convert.ToInt32(row["quantity_in_stock"]),
+                UnitPrice = Convert.ToDecimal(row["unit_price"]),
                 LastUpdated = Convert.ToDateTime(row["last_updated"])
             };
         }
@@ -45,13 +43,12 @@ namespace Bismillah.DL
                     name = '{p.Name}', 
                     category_id = {p.CategoryId}, 
                     supplier_id = {p.SupplierId}, 
-                    batch_id = {p.BatchId}, 
                     size = '{p.Size}', 
-                    quantity = {p.Quantity}, 
-                    purchase_price = {p.PurchasePrice}, 
-                    selling_price = {p.SellingPrice}, 
+                    unit_price = {p.UnitPrice}, 
+                    quantity_in_stock = {p.QuantityInStock}, 
                     last_updated = CURRENT_TIMESTAMP 
                 WHERE product_id = {p.ProductId}";
+
             return DatabaseHelper.Instance.Update(query) > 0;
         }
 

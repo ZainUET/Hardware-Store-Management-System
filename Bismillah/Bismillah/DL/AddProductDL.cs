@@ -13,8 +13,10 @@ namespace Bismillah.DL
         public static bool AddProduct(Product product)
         {
             string query = $@"
-                INSERT INTO products (name, category_id, supplier_id, batch_id, size, quantity, purchase_price, selling_price, last_updated)
-                VALUES ('{product.Name}', {product.CategoryId}, {product.SupplierId}, {product.BatchId}, '{product.Size}', {product.Quantity}, {product.PurchasePrice}, {product.SellingPrice}, '{product.LastUpdated:yyyy-MM-dd HH:mm:ss}')";
+                INSERT INTO products 
+                (name, category_id, supplier_id, size, unit_price, quantity_in_stock, last_updated)
+                VALUES 
+                ('{product.Name}', {product.CategoryId}, {product.SupplierId}, '{product.Size}', {product.UnitPrice}, {product.QuantityInStock}, '{product.LastUpdated:yyyy-MM-dd HH:mm:ss}')";
 
             return DatabaseHelper.Instance.Update(query) > 0;
         }
@@ -27,12 +29,6 @@ namespace Bismillah.DL
         public static DataTable GetSuppliers()
         {
             string query = "SELECT supplier_id, name FROM supplier";
-            return DatabaseHelper.Instance.GetDataTable(query);
-        }
-
-        public static DataTable GetBatches()
-        {
-            string query = "SELECT batch_id, arrival_date FROM batch";
             return DatabaseHelper.Instance.GetDataTable(query);
         }
     }

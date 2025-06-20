@@ -14,11 +14,9 @@ namespace Bismillah.BL
             if (string.IsNullOrWhiteSpace(product.Name)) return "Product name is required.";
             if (product.CategoryId <= 0) return "Please select a category.";
             if (product.SupplierId <= 0) return "Please select a supplier.";
-            if (product.BatchId <= 0) return "Please select a batch.";
             if (string.IsNullOrWhiteSpace(product.Size)) return "Size is required.";
-            if (product.Quantity < 0) return "Quantity cannot be negative.";
-            if (product.PurchasePrice < 0) return "Purchase price cannot be negative.";
-            if (product.SellingPrice < 0) return "Selling price cannot be negative.";
+            if (product.QuantityInStock < 0) return "Quantity must be 0 or more.";
+            if (product.UnitPrice < 0) return "Unit price must be 0 or more.";
             return string.Empty;
         }
     }

@@ -19,7 +19,7 @@ namespace Bismillah.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddProduct addStaff = new AddProduct();
+            AddProductsUI addStaff = new AddProductsUI();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
