@@ -23,9 +23,6 @@ namespace Bismillah.BL
             if (string.IsNullOrWhiteSpace(customer.Address))
                 return "Address is required.";
 
-            if (customer.LoyaltyPoints < 0)
-                return "Loyalty points cannot be negative.";
-
             return string.Empty;
         }
     }

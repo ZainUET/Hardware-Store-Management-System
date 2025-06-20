@@ -29,9 +29,7 @@ namespace Bismillah.DL
                 Name = row["name"].ToString(),
                 Contact = row["contact"].ToString(),
                 CNIC = row["cnic"].ToString(),
-                Address = row["address"].ToString(),
-                LoyaltyPoints = Convert.ToInt32(row["loyalty_points"]),
-                IsRegular = row["is_regular"].ToString().ToLower() == "yes"
+                Address = row["address"].ToString()
             };
         }
 
@@ -42,9 +40,7 @@ namespace Bismillah.DL
                     name = '{customer.Name}', 
                     contact = '{customer.Contact}', 
                     cnic = '{customer.CNIC}', 
-                    address = '{customer.Address}', 
-                    loyalty_points = {customer.LoyaltyPoints},
-                    is_regular = '{(customer.IsRegular ? "Yes" : "No")}'
+                    address = '{customer.Address}'
                 WHERE customer_id = {customer.CustomerId}";
             return DatabaseHelper.Instance.Update(query) > 0;
         }

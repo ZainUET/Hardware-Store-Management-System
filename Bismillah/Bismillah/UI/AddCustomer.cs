@@ -19,43 +19,42 @@ namespace Bismillah.UI
         {
             InitializeComponent();
             btnBack.LinkClicked += (s, e) => this.Close();
-            cmbregular.SelectedIndex = 1;
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)
         {
 
-
-            if (cmbregular.Items.Count == 0)
-            {
-                cmbregular.Items.Add("Yes");
-                cmbregular.Items.Add("No");
-            }
-            cmbregular.SelectedIndex = 1;
-           
         }
 
-        private void button1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+
+        private void ClearForm()
         {
+            txtName.Clear();
+            txtContact.Clear();
+            cnictxt.Clear();
+            txtaddress.Clear();
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer
+            {
+                Name = txtName.Text.Trim(),
+                Contact = txtContact.Text.Trim(),
+                CNIC = cnictxt.Text.Trim(),
+                Address = txtaddress.Text.Trim()
+            };
+
+            string validationMessage = AddCustomerBL.ValidateCustomer(customer);
+            if (!string.IsNullOrEmpty(validationMessage))
+            {
+                MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                Customer customer = new Customer
-                {
-                    Name = txtName.Text.Trim(),
-                    Contact = txtContact.Text.Trim(),
-                    CNIC = cnictxt.Text.Trim(),
-                    Address = txtaddress.Text.Trim(),
-                    LoyaltyPoints = int.TryParse(txtpoints.Text.Trim(), out int pts) ? pts : 0,
-                    IsRegular = cmbregular.SelectedItem != null && cmbregular.SelectedItem.ToString().ToLower() == "yes"
-                };
-
-                string validationMessage = AddCustomerBL.ValidateCustomer(customer);
-                if (!string.IsNullOrEmpty(validationMessage))
-                {
-                    MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 bool success = AddCustomerDL.AddCustomer(customer);
                 if (success)
                 {
@@ -69,19 +68,21 @@ namespace Bismillah.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-       
-        private void ClearForm()
+
+        private void button_Click(object sender, EventArgs e)
         {
-            txtName.Clear();
-            txtContact.Clear();
-            cnictxt.Clear();
-            txtaddress.Clear();
-            txtpoints.Clear();
-            cmbregular.SelectedIndex = 1;
+            CustomerManagement adminDashboard = new CustomerManagement();
+            this.Hide();
+            adminDashboard.ShowDialog();
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

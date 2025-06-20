@@ -16,7 +16,7 @@ namespace Bismillah
 
        
 
-            Application.Run(new AdminDashboard());
+            Application.Run(new CustomerManagement());
 
         }
     }

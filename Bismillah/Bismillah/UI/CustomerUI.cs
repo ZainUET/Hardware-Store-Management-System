@@ -25,15 +25,24 @@ namespace Bismillah.UI
         private void CustomerUI_Load(object sender, EventArgs e)
         {
             LoadAllCustomers();
-            dataview();
+
         }
         private void LoadAllCustomers()
         {
             DataTable dt = CustomerDL.GetAllCustomers();
             dgvcustomer.DataSource = dt;
+            dgvcustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvcustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
-        private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private string Prompt(string title, string defaultValue)
+        {
+            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Customer", defaultValue);
+        }
+
+
+        private void edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvcustomer.SelectedRows.Count == 0)
             {
@@ -48,15 +57,11 @@ namespace Bismillah.UI
             string newContact = Prompt("Contact:", customer.Contact);
             string newCNIC = Prompt("CNIC:", customer.CNIC);
             string newAddress = Prompt("Address:", customer.Address);
-            string newPoints = Prompt("Loyalty Points:", customer.LoyaltyPoints.ToString());
-            string newRegular = Prompt("Is Regular (1/0  1=No, 0=Yes):", customer.IsRegular ? "Yes" : "No");
 
             customer.Name = newName;
             customer.Contact = newContact;
             customer.CNIC = newCNIC;
             customer.Address = newAddress;
-            customer.LoyaltyPoints = int.TryParse(newPoints, out int pts) ? pts : 0;
-            customer.IsRegular = newRegular.ToLower() == "yes";
 
             string validation = CustomerBL.ValidateForEdit(customer);
             if (!string.IsNullOrEmpty(validation))
@@ -77,7 +82,7 @@ namespace Bismillah.UI
             }
         }
 
-        private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvcustomer.SelectedRows.Count == 0)
             {
@@ -100,21 +105,14 @@ namespace Bismillah.UI
                     MessageBox.Show("Failed to delete customer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
 
-        }
-        private string Prompt(string title, string defaultValue)
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Customer", defaultValue);
-        }
-        public void dataview()
-        {
-            DataTable dataTable = new DataTable();
-            string query1 = $"Select * from customer";
-            dataTable = DatabaseHelper.Instance.GetDataTable(query1);
-            dgvcustomer.DataSource = dataTable;
-            dgvcustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvcustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvcustomer.Refresh();
+            CustomerManagement addCustomer = new CustomerManagement();
+            this.Hide();
+            addCustomer.ShowDialog();
+            this.Close();
         }
     }
 }

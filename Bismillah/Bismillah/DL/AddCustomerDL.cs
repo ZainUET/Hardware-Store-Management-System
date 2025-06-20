@@ -13,8 +13,8 @@ namespace Bismillah.DL
         public static bool AddCustomer(Customer customer)
         {
             string query = $@"
-        INSERT INTO customer (name, contact, cnic, address, loyalty_points, is_regular)
-        VALUES ('{customer.Name}', '{customer.Contact}', '{customer.CNIC}', '{customer.Address}', {customer.LoyaltyPoints}, {(customer.IsRegular ? 1 : 0)})";
+                INSERT INTO customer (name, contact, cnic, address)
+                VALUES ('{customer.Name}', '{customer.Contact}', '{customer.CNIC}', '{customer.Address}')";
 
             try
             {
