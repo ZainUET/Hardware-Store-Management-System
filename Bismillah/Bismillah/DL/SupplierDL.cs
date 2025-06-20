@@ -34,7 +34,7 @@ namespace Bismillah.DL
                     Name = row["name"].ToString(),
                     Contact = row["contact"].ToString(),
                     CNIC = row["cnic"].ToString(),
-                    Address = row["address"].ToString(),
+                   
                     Company = row["company"].ToString()
                 };
             }
@@ -49,7 +49,7 @@ namespace Bismillah.DL
 
         public static bool UpdateSupplier(Supplier supplier)
         {
-            string query = $@"UPDATE supplier SET name = '{supplier.Name}', contact = '{supplier.Contact}', cnic = '{supplier.CNIC}', address = '{supplier.Address}', company = '{supplier.Company}' WHERE supplier_id = {supplier.SupplierId}";
+            string query = $@"UPDATE supplier SET name = '{supplier.Name}', contact = '{supplier.Contact}', cnic = '{supplier.CNIC}',  company = '{supplier.Company}' WHERE supplier_id = {supplier.SupplierId}";
             return DatabaseHelper.Instance.Update(query) > 0;
         }
         public static bool IsContactDuplicate(string contact, int excludeSupplierId = 0)

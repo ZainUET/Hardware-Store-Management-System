@@ -34,7 +34,6 @@
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtcomapny = new TextBox();
-            txtaddress = new TextBox();
             cnictxt = new TextBox();
             txtContact = new TextBox();
             label1 = new Label();
@@ -93,7 +92,6 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(txtcomapny, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtaddress, 0, 4);
             tableLayoutPanel1.Controls.Add(cnictxt, 0, 3);
             tableLayoutPanel1.Controls.Add(txtContact, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
@@ -122,15 +120,6 @@
             txtcomapny.PlaceholderText = "Company";
             txtcomapny.Size = new Size(241, 23);
             txtcomapny.TabIndex = 12;
-            // 
-            // txtaddress
-            // 
-            txtaddress.Location = new Point(70, 236);
-            txtaddress.Margin = new Padding(70, 15, 18, 15);
-            txtaddress.Name = "txtaddress";
-            txtaddress.PlaceholderText = "Address";
-            txtaddress.Size = new Size(241, 23);
-            txtaddress.TabIndex = 11;
             // 
             // cnictxt
             // 
@@ -251,7 +240,6 @@
         private ComboBox cmbregular;
         private LinkLabel btnBack;
         private TextBox txtcomapny;
-        private TextBox txtaddress;
         private TextBox cnictxt;
         private LinkLabel button1;
     }

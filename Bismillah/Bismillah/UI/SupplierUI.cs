@@ -37,13 +37,13 @@ namespace Bismillah.UI
             string newName = Prompt("Name:", supplier.Name);
             string newContact = Prompt("Contact:", supplier.Contact);
             string newCNIC = Prompt("CNIC:", supplier.CNIC);
-            string newAddress = Prompt("Address:", supplier.Address);
+            
             string newCompany = Prompt("Company:", supplier.Company);
 
             supplier.Name = newName;
             supplier.Contact = newContact;
             supplier.CNIC = newCNIC;
-            supplier.Address = newAddress;
+        
             supplier.Company = newCompany;
 
             string validationMessage = SupplerBL.ValidateForEdit(supplier);

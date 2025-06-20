@@ -33,7 +33,7 @@ namespace Bismillah.UI
                 Name = txtName.Text.Trim(),
                 Contact = txtContact.Text.Trim(),
                 CNIC = cnictxt.Text.Trim(),
-                Address = txtaddress.Text.Trim(),
+               
                 Company = txtcomapny.Text.Trim()
             };
 
@@ -67,7 +67,7 @@ namespace Bismillah.UI
             txtName.Clear();
             txtContact.Clear();
             cnictxt.Clear();
-            txtaddress.Clear();
+           
             txtcomapny.Clear();
 
         }

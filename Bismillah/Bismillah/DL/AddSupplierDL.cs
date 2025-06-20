@@ -10,7 +10,7 @@ namespace Bismillah.DL
         {
             string query = $@"
                 INSERT INTO supplier (name, contact, cnic, address, company)
-                VALUES ('{supplier.Name}', '{supplier.Contact}', '{supplier.CNIC}', '{supplier.Address}', '{supplier.Company}')";
+                VALUES ('{supplier.Name}', '{supplier.Contact}', '{supplier.CNIC}',  '{supplier.Company}')";
 
             try
             {

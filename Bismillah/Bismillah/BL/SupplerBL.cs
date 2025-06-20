@@ -38,8 +38,7 @@ namespace Bismillah.BL
             if (SupplierDL.IsCnicDuplicate(supplier.CNIC, supplier.SupplierId))
                 return "This CNIC is already used by another supplier.";
 
-            if (string.IsNullOrWhiteSpace(supplier.Address))
-                return "Address is required.";
+           
 
             if (string.IsNullOrWhiteSpace(supplier.Company))
                 return "Company is required.";
