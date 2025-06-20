@@ -93,6 +93,7 @@
             btnCreateBill.TabIndex = 13;
             btnCreateBill.Text = "Create Bill";
             btnCreateBill.UseVisualStyleBackColor = false;
+            btnCreateBill.Click += btnCreateBill_Click;
             // 
             // label3
             // 

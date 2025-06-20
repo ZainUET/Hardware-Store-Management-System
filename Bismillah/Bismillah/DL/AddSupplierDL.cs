@@ -9,7 +9,7 @@ namespace Bismillah.DL
         public static bool AddSupplier(Supplier supplier)
         {
             string query = $@"
-                INSERT INTO supplier (name, contact, cnic, address, company)
+                INSERT INTO supplier (name, contact, cnic,company)
                 VALUES ('{supplier.Name}', '{supplier.Contact}', '{supplier.CNIC}',  '{supplier.Company}')";
 
             try

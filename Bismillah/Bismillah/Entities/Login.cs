@@ -15,5 +15,7 @@ namespace Bismillah.Entities
             public string Password { get; set; }
             public int RoleId { get; set; }
     }
+
+   
 }
 

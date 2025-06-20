@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bismillah.BL;
+using Bismillah.UI;
+using Bismillah.Entities;
 namespace Bismillah
 {
     public partial class Login : Form
@@ -29,19 +31,25 @@ namespace Bismillah
 
             if (result.IsSuccess)
             {
-                Entities.Login staff = result.Staff;
+                Entities.Login staff = result.Staff; // Changed from Login to Staff to match your schema
 
                 MessageBox.Show(result.Message, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
 
-                if (staff.RoleId == 1)
+                // Get role from lookup table (1=Manager, 2=Cashier, 3=Salesman per your schema)
+                if (staff.RoleId == 1) // Manager
                 {
-                    //new ManagerDashboard().Show();
+                    AdminDashboard dashboard = new AdminDashboard();
+                    dashboard.Show();
+                    this.Close();
                 }
-                else if (staff.RoleId == 2)
+                else if (staff.RoleId == 2) // Cashier
                 {
-                    //new CashierDashboard().Show();
+                    CashierDashboard dashboard = new CashierDashboard(staff.StaffId);
+                    dashboard.Show();
+                    this.Close();
                 }
+                
                 else
                 {
                     MessageBox.Show("Role not recognized.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,7 +61,6 @@ namespace Bismillah
                 MessageBox.Show(result.Message, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
 
         private void nametextBox_KeyPress_1(object sender, KeyPressEventArgs e)

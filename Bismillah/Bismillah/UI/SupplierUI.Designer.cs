@@ -54,19 +54,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1181, 125);
+            tableLayoutPanel2.Size = new Size(1687, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 119);
+            pictureBox1.Size = new Size(196, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -77,9 +79,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(164, 37);
+            label2.Location = new Point(235, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,22 +95,22 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(dgvsupplier, 0, 1);
-            tableLayoutPanel1.Location = new Point(233, 229);
+            tableLayoutPanel1.Location = new Point(450, 384);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(661, 331);
+            tableLayoutPanel1.Size = new Size(944, 552);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(657, 40);
+            label1.Size = new Size(938, 67);
             label1.TabIndex = 1;
             label1.Text = " Supplier";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -116,10 +119,13 @@
             // dgvsupplier
             // 
             dgvsupplier.BackgroundColor = Color.FromArgb(240, 245, 255);
+            dgvsupplier.BorderStyle = BorderStyle.None;
             dgvsupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvsupplier.Location = new Point(3, 43);
+            dgvsupplier.Location = new Point(4, 72);
+            dgvsupplier.Margin = new Padding(4, 5, 4, 5);
             dgvsupplier.Name = "dgvsupplier";
-            dgvsupplier.Size = new Size(655, 285);
+            dgvsupplier.RowHeadersWidth = 62;
+            dgvsupplier.Size = new Size(936, 475);
             dgvsupplier.TabIndex = 0;
             // 
             // edit
@@ -134,10 +140,9 @@
             edit.ForeColor = Color.White;
             edit.LinkBehavior = LinkBehavior.NeverUnderline;
             edit.LinkColor = Color.White;
-            edit.Location = new Point(268, 573);
-            edit.Margin = new Padding(2, 0, 2, 0);
+            edit.Location = new Point(88, 456);
             edit.Name = "edit";
-            edit.Size = new Size(152, 39);
+            edit.Size = new Size(216, 64);
             edit.TabIndex = 14;
             edit.TabStop = true;
             edit.Text = "Edit";
@@ -156,10 +161,9 @@
             delete.ForeColor = Color.White;
             delete.LinkBehavior = LinkBehavior.NeverUnderline;
             delete.LinkColor = Color.White;
-            delete.Location = new Point(520, 573);
-            delete.Margin = new Padding(2, 0, 2, 0);
+            delete.Location = new Point(88, 594);
             delete.Name = "delete";
-            delete.Size = new Size(152, 39);
+            delete.Size = new Size(216, 64);
             delete.TabIndex = 15;
             delete.TabStop = true;
             delete.Text = "Delete";
@@ -178,10 +182,9 @@
             back.ForeColor = Color.White;
             back.LinkBehavior = LinkBehavior.NeverUnderline;
             back.LinkColor = Color.White;
-            back.Location = new Point(742, 573);
-            back.Margin = new Padding(2, 0, 2, 0);
+            back.Location = new Point(88, 736);
             back.Name = "back";
-            back.Size = new Size(152, 39);
+            back.Size = new Size(216, 64);
             back.TabIndex = 16;
             back.TabStop = true;
             back.Text = "Back";
@@ -190,16 +193,19 @@
             // 
             // SupplierUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1139, 621);
+            BackColor = Color.White;
+            ClientSize = new Size(1627, 1035);
             Controls.Add(back);
             Controls.Add(delete);
             Controls.Add(edit);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "SupplierUI";
             Text = "SupplierUI";
+            WindowState = FormWindowState.Maximized;
             Load += SupplierUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();

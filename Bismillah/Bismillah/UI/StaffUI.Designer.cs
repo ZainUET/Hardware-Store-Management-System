@@ -32,12 +32,12 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
-            dgvsupplier = new DataGridView();
             btnedit = new LinkLabel();
             btndelete = new LinkLabel();
             btnback = new LinkLabel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label1 = new Label();
+            dgvsupplier = new DataGridView();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -54,19 +54,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1299, 125);
+            tableLayoutPanel2.Size = new Size(1856, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 119);
+            pictureBox1.Size = new Size(196, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -77,52 +79,13 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(180, 37);
+            label2.Location = new Point(258, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.Anchor = AnchorStyles.None;
-            tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(dgvsupplier, 0, 1);
-            tableLayoutPanel1.Location = new Point(185, 152);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(780, 331);
-            tableLayoutPanel1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(776, 40);
-            label1.TabIndex = 1;
-            label1.Text = " Staff";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
-            // 
-            // dgvsupplier
-            // 
-            dgvsupplier.BackgroundColor = Color.FromArgb(240, 245, 255);
-            dgvsupplier.BorderStyle = BorderStyle.None;
-            dgvsupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvsupplier.Location = new Point(3, 43);
-            dgvsupplier.Name = "dgvsupplier";
-            dgvsupplier.RowHeadersWidth = 62;
-            dgvsupplier.Size = new Size(774, 285);
-            dgvsupplier.TabIndex = 0;
             // 
             // btnedit
             // 
@@ -136,10 +99,9 @@
             btnedit.ForeColor = Color.White;
             btnedit.LinkBehavior = LinkBehavior.NeverUnderline;
             btnedit.LinkColor = Color.White;
-            btnedit.Location = new Point(191, 516);
-            btnedit.Margin = new Padding(2, 0, 2, 0);
+            btnedit.Location = new Point(169, 360);
             btnedit.Name = "btnedit";
-            btnedit.Size = new Size(133, 38);
+            btnedit.Size = new Size(189, 62);
             btnedit.TabIndex = 14;
             btnedit.TabStop = true;
             btnedit.Text = "Edit";
@@ -158,10 +120,9 @@
             btndelete.ForeColor = Color.White;
             btndelete.LinkBehavior = LinkBehavior.NeverUnderline;
             btndelete.LinkColor = Color.White;
-            btndelete.Location = new Point(478, 516);
-            btndelete.Margin = new Padding(2, 0, 2, 0);
+            btndelete.Location = new Point(169, 492);
             btndelete.Name = "btndelete";
-            btndelete.Size = new Size(133, 37);
+            btndelete.Size = new Size(189, 60);
             btndelete.TabIndex = 15;
             btndelete.TabStop = true;
             btndelete.Text = "Delete";
@@ -180,27 +141,68 @@
             btnback.ForeColor = Color.White;
             btnback.LinkBehavior = LinkBehavior.NeverUnderline;
             btnback.LinkColor = Color.White;
-            btnback.Location = new Point(761, 511);
-            btnback.Margin = new Padding(2, 0, 2, 0);
+            btnback.Location = new Point(169, 621);
             btnback.Name = "btnback";
-            btnback.Size = new Size(133, 42);
+            btnback.Size = new Size(189, 69);
             btnback.TabIndex = 16;
             btnback.TabStop = true;
             btnback.Text = "Back";
             btnback.TextAlign = ContentAlignment.MiddleCenter;
             btnback.LinkClicked += btnback_LinkClicked;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.None;
+            tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(dgvsupplier, 0, 1);
+            tableLayoutPanel1.Location = new Point(560, 344);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1114, 552);
+            tableLayoutPanel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(10, 35, 66);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(1108, 67);
+            label1.TabIndex = 1;
+            label1.Text = " Staff";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
+            // 
+            // dgvsupplier
+            // 
+            dgvsupplier.BackgroundColor = Color.FromArgb(240, 245, 255);
+            dgvsupplier.BorderStyle = BorderStyle.None;
+            dgvsupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvsupplier.Location = new Point(4, 72);
+            dgvsupplier.Margin = new Padding(4, 5, 4, 5);
+            dgvsupplier.Name = "dgvsupplier";
+            dgvsupplier.RowHeadersWidth = 62;
+            dgvsupplier.Size = new Size(1106, 475);
+            dgvsupplier.TabIndex = 0;
+            // 
             // StaffUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(901, 457);
+            ClientSize = new Size(1878, 944);
             Controls.Add(btnback);
             Controls.Add(btndelete);
             Controls.Add(btnedit);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "StaffUI";
             Text = "SupplierUI";
             WindowState = FormWindowState.Maximized;
@@ -218,11 +220,11 @@
         private TableLayoutPanel tableLayoutPanel2;
         private PictureBox pictureBox1;
         private Label label2;
-        private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dgvsupplier;
         private LinkLabel btnedit;
         private LinkLabel btnback;
         private LinkLabel btndelete;
+        private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
+        private DataGridView dgvsupplier;
     }
 }
