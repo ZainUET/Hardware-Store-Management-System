@@ -15,21 +15,29 @@ namespace Bismillah.UI
         // CashierDashboard.cs
         private readonly int _staffId;
 
-            // Constructor now accepts staff ID
-            public CashierDashboard(int staffId)
-            {
-                InitializeComponent();
-                _staffId = staffId;
-            }
+        // Constructor now accepts staff ID
+        public CashierDashboard(int staffId)
+        {
+            InitializeComponent();
+            _staffId = staffId;
+        }
 
-            private void btnCreateBill_Click(object sender, EventArgs e)
-            {
-                // Pass the staff ID to CreateBill
-                CreateBill billForm = new CreateBill(_staffId);
-                this.Hide();
-                billForm.ShowDialog();
-                this.Close();
-            }
+        private void btnCreateBill_Click(object sender, EventArgs e)
+        {
+            // Pass the staff ID to CreateBill
+            CreateBill billForm = new CreateBill(_staffId);
+            this.Hide();
+            billForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Login billForm = new Login();
+            this.Hide();
+            billForm.ShowDialog();
+            this.Close();
         }
     }
+}
 

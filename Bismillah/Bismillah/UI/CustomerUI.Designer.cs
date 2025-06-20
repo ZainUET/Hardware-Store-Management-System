@@ -54,19 +54,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1017, 125);
+            tableLayoutPanel2.Size = new Size(1938, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(133, 119);
+            pictureBox1.Size = new Size(190, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -77,9 +79,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(142, 37);
+            label2.Location = new Point(269, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,22 +95,22 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(dgvcustomer, 0, 1);
-            tableLayoutPanel1.Location = new Point(175, 257);
+            tableLayoutPanel1.Location = new Point(679, 410);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(661, 331);
+            tableLayoutPanel1.Size = new Size(944, 552);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(657, 40);
+            label1.Size = new Size(938, 67);
             label1.TabIndex = 1;
             label1.Text = "Customer";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -117,9 +120,11 @@
             dgvcustomer.BackgroundColor = Color.FromArgb(240, 245, 255);
             dgvcustomer.BorderStyle = BorderStyle.None;
             dgvcustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvcustomer.Location = new Point(3, 43);
+            dgvcustomer.Location = new Point(4, 72);
+            dgvcustomer.Margin = new Padding(4, 5, 4, 5);
             dgvcustomer.Name = "dgvcustomer";
-            dgvcustomer.Size = new Size(655, 285);
+            dgvcustomer.RowHeadersWidth = 62;
+            dgvcustomer.Size = new Size(936, 475);
             dgvcustomer.TabIndex = 0;
             // 
             // edit
@@ -134,10 +139,9 @@
             edit.ForeColor = Color.White;
             edit.LinkBehavior = LinkBehavior.NeverUnderline;
             edit.LinkColor = Color.White;
-            edit.Location = new Point(200, 611);
-            edit.Margin = new Padding(2, 0, 2, 0);
+            edit.Location = new Point(171, 494);
             edit.Name = "edit";
-            edit.Size = new Size(152, 39);
+            edit.Size = new Size(216, 64);
             edit.TabIndex = 15;
             edit.TabStop = true;
             edit.Text = "Edit";
@@ -156,10 +160,9 @@
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(443, 611);
-            linkLabel1.Margin = new Padding(2, 0, 2, 0);
+            linkLabel1.Location = new Point(171, 657);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(152, 39);
+            linkLabel1.Size = new Size(216, 64);
             linkLabel1.TabIndex = 16;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Delete";
@@ -178,10 +181,9 @@
             linkLabel2.ForeColor = Color.White;
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(682, 608);
-            linkLabel2.Margin = new Padding(2, 0, 2, 0);
+            linkLabel2.Location = new Point(171, 810);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(152, 39);
+            linkLabel2.Size = new Size(216, 64);
             linkLabel2.TabIndex = 17;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Back";
@@ -190,16 +192,19 @@
             // 
             // CustomerUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 659);
+            BackColor = Color.White;
+            ClientSize = new Size(1878, 1098);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
             Controls.Add(edit);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "CustomerUI";
-            Text = "SupplierUI";
+            Text = "Edit/Delete Customer";
+            WindowState = FormWindowState.Maximized;
             Load += CustomerUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
