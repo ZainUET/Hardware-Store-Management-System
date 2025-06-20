@@ -17,7 +17,7 @@ namespace Bismillah
        
 
            
-            Application.Run(new CreateBill(1));
+            Application.Run(new CreateBill(3));
 
 
         }
