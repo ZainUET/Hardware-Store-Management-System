@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUI));
             tableLayoutPanel2 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
@@ -37,10 +37,11 @@
             edit = new LinkLabel();
             delete = new LinkLabel();
             back = new LinkLabel();
+            pictureBox2 = new PictureBox();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -50,24 +51,15 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.69863F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 86.30137F));
-            tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel2.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1181, 125);
+            tableLayoutPanel2.Size = new Size(1938, 208);
             tableLayoutPanel2.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 119);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -75,9 +67,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(164, 37);
+            label2.Location = new Point(269, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -90,22 +83,22 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(dgvProducts, 0, 1);
-            tableLayoutPanel1.Location = new Point(182, 220);
+            tableLayoutPanel1.Location = new Point(504, 298);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(932, 331);
+            tableLayoutPanel1.Size = new Size(1331, 552);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(928, 40);
+            label1.Size = new Size(1325, 67);
             label1.TabIndex = 1;
             label1.Text = "Product";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -113,10 +106,13 @@
             // dgvProducts
             // 
             dgvProducts.BackgroundColor = Color.FromArgb(240, 245, 255);
+            dgvProducts.BorderStyle = BorderStyle.None;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducts.Location = new Point(3, 43);
+            dgvProducts.Location = new Point(4, 72);
+            dgvProducts.Margin = new Padding(4, 5, 4, 5);
             dgvProducts.Name = "dgvProducts";
-            dgvProducts.Size = new Size(926, 285);
+            dgvProducts.RowHeadersWidth = 62;
+            dgvProducts.Size = new Size(1323, 475);
             dgvProducts.TabIndex = 0;
             // 
             // edit
@@ -131,10 +127,9 @@
             edit.ForeColor = Color.White;
             edit.LinkBehavior = LinkBehavior.NeverUnderline;
             edit.LinkColor = Color.White;
-            edit.Location = new Point(260, 573);
-            edit.Margin = new Padding(2, 0, 2, 0);
+            edit.Location = new Point(135, 380);
             edit.Name = "edit";
-            edit.Size = new Size(152, 39);
+            edit.Size = new Size(216, 64);
             edit.TabIndex = 15;
             edit.TabStop = true;
             edit.Text = "Edit";
@@ -153,10 +148,9 @@
             delete.ForeColor = Color.White;
             delete.LinkBehavior = LinkBehavior.NeverUnderline;
             delete.LinkColor = Color.White;
-            delete.Location = new Point(494, 573);
-            delete.Margin = new Padding(2, 0, 2, 0);
+            delete.Location = new Point(135, 553);
             delete.Name = "delete";
-            delete.Size = new Size(152, 39);
+            delete.Size = new Size(216, 64);
             delete.TabIndex = 16;
             delete.TabStop = true;
             delete.Text = "Delete";
@@ -175,41 +169,54 @@
             back.ForeColor = Color.White;
             back.LinkBehavior = LinkBehavior.NeverUnderline;
             back.LinkColor = Color.White;
-            back.Location = new Point(737, 573);
-            back.Margin = new Padding(2, 0, 2, 0);
+            back.Location = new Point(135, 737);
             back.Name = "back";
-            back.Size = new Size(152, 39);
+            back.Size = new Size(216, 64);
             back.TabIndex = 17;
             back.TabStop = true;
             back.Text = "Back";
             back.TextAlign = ContentAlignment.MiddleCenter;
             back.LinkClicked += back_LinkClicked;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(257, 178);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
             // ProductUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1139, 621);
+            BackColor = Color.White;
+            ClientSize = new Size(1878, 1035);
             Controls.Add(back);
             Controls.Add(delete);
             Controls.Add(edit);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ProductUI";
-            Text = "SupplierUI";
+            Text = "Edit/Delete Product";
+            WindowState = FormWindowState.Maximized;
             Load += ProductUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox pictureBox1;
         private Label label2;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvProducts;
@@ -217,5 +224,6 @@
         private LinkLabel edit;
         private LinkLabel delete;
         private LinkLabel back;
+        private PictureBox pictureBox2;
     }
 }

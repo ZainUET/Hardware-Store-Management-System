@@ -12,9 +12,24 @@ namespace Bismillah.UI
 {
     public partial class CashierDashboard : Form
     {
-        public CashierDashboard()
-        {
-            InitializeComponent();
+        // CashierDashboard.cs
+        private readonly int _staffId;
+
+            // Constructor now accepts staff ID
+            public CashierDashboard(int staffId)
+            {
+                InitializeComponent();
+                _staffId = staffId;
+            }
+
+            private void btnCreateBill_Click(object sender, EventArgs e)
+            {
+                // Pass the staff ID to CreateBill
+                CreateBill billForm = new CreateBill(_staffId);
+                this.Hide();
+                billForm.ShowDialog();
+                this.Close();
+            }
         }
     }
-}
+
