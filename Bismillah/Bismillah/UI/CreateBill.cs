@@ -79,8 +79,38 @@ namespace Bismillah.UI
 
             billContent = sb.ToString();
         }
+        //private void InitializeData()
+        //{
+        //    _billItems = new DataTable();
+        //    _billItems.Columns.Add("sr_no", typeof(int));
+        //    _billItems.Columns.Add("product_id", typeof(int));
+        //    _billItems.Columns.Add("name", typeof(string));
+        //    _billItems.Columns.Add("quantity", typeof(int));
+        //    _billItems.Columns.Add("unit_price", typeof(decimal));
+        //    _billItems.Columns.Add("unit_price_display", typeof(string));
+        //    _billItems.Columns.Add("total", typeof(decimal));
+        //    _billItems.Columns.Add("total_display", typeof(string));
+
+        //    dvgProductsinBill.Columns.Clear();
+        //    dvgProductsinBill.DataSource = _billItems;
+        //    dvgProductsinBill.ReadOnly = true;
+
+        //    dvgProductsinBill.Columns["sr_no"].HeaderText = "Sr #";
+        //    dvgProductsinBill.Columns["name"].HeaderText = "Product Name";
+        //    dvgProductsinBill.Columns["quantity"].HeaderText = "Qty";
+        //    dvgProductsinBill.Columns["unit_price_display"].HeaderText = "Unit Price";
+        //    dvgProductsinBill.Columns["total_display"].HeaderText = "Total";
+
+        //    LoadCustomers();
+        //    LoadProducts();
+        //    LoadPaymentStatuses();
+        //    ClearBillForm();
+        //}
+
+
         private void InitializeData()
         {
+            // Create the DataTable structure
             _billItems = new DataTable();
             _billItems.Columns.Add("sr_no", typeof(int));
             _billItems.Columns.Add("product_id", typeof(int));
@@ -90,12 +120,39 @@ namespace Bismillah.UI
             _billItems.Columns.Add("unit_price_display", typeof(string));
             _billItems.Columns.Add("total", typeof(decimal));
             _billItems.Columns.Add("total_display", typeof(string));
+
+            // Configure DataGridView properties
+            dvgProductsinBill.AutoGenerateColumns = false; // This is crucial
+            dvgProductsinBill.Columns.Clear();
+
+            // Manually add only the columns we want to display
+            AddColumnToGridView("sr_no", "Sr #", 50, true, DataGridViewContentAlignment.MiddleRight);
+            AddColumnToGridView("name", "Product Name", 250, true, DataGridViewContentAlignment.MiddleLeft);
+            AddColumnToGridView("quantity", "Qty", 60, true, DataGridViewContentAlignment.MiddleRight);
+            AddColumnToGridView("unit_price_display", "Unit Price", 100, true, DataGridViewContentAlignment.MiddleRight);
+            AddColumnToGridView("total_display", "Total", 120, true, DataGridViewContentAlignment.MiddleRight);
+
+            // Set the data source
             dvgProductsinBill.DataSource = _billItems;
+            dvgProductsinBill.ReadOnly = true;
 
             LoadCustomers();
             LoadProducts();
             LoadPaymentStatuses();
             ClearBillForm();
+        }
+
+        private void AddColumnToGridView(string dataPropertyName, string headerText, int width,
+                                       bool visible, DataGridViewContentAlignment alignment)
+        {
+            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = dataPropertyName;
+            column.HeaderText = headerText;
+            column.Width = width;
+            column.Visible = visible;
+            column.DefaultCellStyle.Alignment = alignment;
+            column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dvgProductsinBill.Columns.Add(column);
         }
 
 
@@ -324,11 +381,11 @@ namespace Bismillah.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CashierDashboard c = new CashierDashboard(2);
+            // Pass the current staff ID when creating the CashierDashboard
+            CashierDashboard c = new CashierDashboard(_currentStaffId);
             this.Hide();
             c.ShowDialog();
             this.Close();
-
         }
     }
 }

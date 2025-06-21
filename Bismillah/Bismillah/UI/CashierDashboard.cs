@@ -38,6 +38,16 @@ namespace Bismillah.UI
             billForm.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CustomerManagement billForm = new CustomerManagement();
+            this.Hide();
+            billForm.ShowDialog();
+            this.Close();
+        }
+
     }
-}
+    }
+
 

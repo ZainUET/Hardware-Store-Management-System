@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Bismillah.DL;
+using Bismillah.Entities;
+using Bismillah.UI;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bismillah.Entities;
-using Bismillah.DL;
-using Bismillah.UI;
 
 namespace Bismillah.BL
 {
@@ -35,6 +36,12 @@ namespace Bismillah.BL
                 return "Address is required.";
 
             return string.Empty;
+        }
+
+        public DataTable GetAllCustomers()
+        {
+            string query = "SELECT customer_id, name FROM customer ORDER BY name";
+            return DatabaseHelper.Instance.GetDataTable(query);
         }
     }
 }

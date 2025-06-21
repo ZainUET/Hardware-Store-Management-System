@@ -46,6 +46,8 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
+            button1 = new Button();
+            label8 = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -58,6 +60,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Controls.Add(label8, 0, 4);
             tableLayoutPanel1.Controls.Add(btnCreateBill, 0, 1);
             tableLayoutPanel1.Controls.Add(button2, 1, 1);
             tableLayoutPanel1.Controls.Add(button4, 0, 3);
@@ -70,15 +73,18 @@
             tableLayoutPanel1.Controls.Add(button3, 2, 1);
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
             tableLayoutPanel1.Controls.Add(label7, 2, 2);
+            tableLayoutPanel1.Controls.Add(button1, 0, 5);
             tableLayoutPanel1.Location = new Point(342, 323);
             tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1293, 535);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 175F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel1.Size = new Size(1293, 807);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // btnCreateBill
@@ -107,7 +113,7 @@
             button2.Name = "button2";
             button2.Size = new Size(405, 92);
             button2.TabIndex = 1;
-            button2.Text = "Products";
+            button2.Text = "View Products";
             button2.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -121,7 +127,7 @@
             button4.Name = "button4";
             button4.Size = new Size(405, 92);
             button4.TabIndex = 3;
-            button4.Text = "Reports";
+            button4.Text = "Returns";
             button4.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -132,7 +138,7 @@
             label2.Name = "label2";
             label2.Size = new Size(405, 167);
             label2.TabIndex = 6;
-            label2.Text = "🛠️";
+            label2.Text = "👀";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -143,7 +149,7 @@
             label5.Name = "label5";
             label5.Size = new Size(405, 161);
             label5.TabIndex = 9;
-            label5.Text = "📝";
+            label5.Text = "⟳";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button6
@@ -169,7 +175,7 @@
             label6.Name = "label6";
             label6.Size = new Size(405, 161);
             label6.TabIndex = 10;
-            label6.Text = "📊";
+            label6.Text = "💵";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button5
@@ -183,7 +189,7 @@
             button5.Name = "button5";
             button5.Size = new Size(405, 92);
             button5.TabIndex = 4;
-            button5.Text = "Stock";
+            button5.Text = "Payments";
             button5.UseVisualStyleBackColor = false;
             // 
             // label4
@@ -192,7 +198,7 @@
             label4.Location = new Point(830, 0);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(376, 167);
+            label4.Size = new Size(416, 167);
             label4.TabIndex = 8;
             label4.Text = "👤";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -208,8 +214,9 @@
             button3.Name = "button3";
             button3.Size = new Size(405, 92);
             button3.TabIndex = 2;
-            button3.Text = "Cashiers";
+            button3.Text = "Customer Management";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label3
             // 
@@ -274,11 +281,36 @@
             label1.Text = "Welcome Cashier";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(10, 35, 66);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(4, 712);
+            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(405, 90);
+            button1.TabIndex = 14;
+            button1.Text = "Borrowed";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Segoe UI", 56F);
+            label8.Location = new Point(4, 532);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(405, 175);
+            label8.TabIndex = 15;
+            label8.Text = "\U0001f91d";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CashierDashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1878, 944);
+            ClientSize = new Size(1878, 1144);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(4, 5, 4, 5);
@@ -308,5 +340,7 @@
         private Label label4;
         private Label label3;
         private Button btnCreateBill;
+        private Label label8;
+        private Button button1;
     }
 }

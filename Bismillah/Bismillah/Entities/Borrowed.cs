@@ -11,7 +11,7 @@ namespace Bismillah.Entities
         public int BorrowedId { get; set; }
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
-        public int BatchId { get; set; }           
+        public int BatchId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalAmount => Quantity * UnitPrice;
@@ -19,4 +19,3 @@ namespace Bismillah.Entities
         public DateTime DateBorrowed { get; set; }
     }
 }
-

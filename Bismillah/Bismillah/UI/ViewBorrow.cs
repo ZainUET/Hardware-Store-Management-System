@@ -14,14 +14,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bismillah.UI
 {
-    public partial class E_DBorrowUI : Form
+    public partial class ViewBorrow : Form
     {
-        public E_DBorrowUI()
+        public ViewBorrow()
         {
             InitializeComponent();
 
-            btnback.LinkClicked += (s, e) => this.Close();
-
+            
         }
 
         private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -129,5 +128,7 @@ namespace Bismillah.UI
         {
             return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Borrowed", defaultValue);
         }
+
+       
     }
 }
