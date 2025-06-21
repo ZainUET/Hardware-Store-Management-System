@@ -32,14 +32,16 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            grpcustomertype = new GroupBox();
-            rdregular = new RadioButton();
-            rdWalkin = new RadioButton();
             cmbSelectProducts = new ComboBox();
             numQuantity = new NumericUpDown();
             dvgProductsinBill = new DataGridView();
             cmbCustomer = new ComboBox();
             grpRegularCustomer = new GroupBox();
+            grpcustomers = new GroupBox();
+            contacttxt = new TextBox();
+            nametxt = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
             customerLoyaltyPoints = new Label();
             customerCNIC = new Label();
             txtdiscount = new TextBox();
@@ -58,12 +60,16 @@
             label1 = new Label();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             printPreviewDialog1 = new PrintPreviewDialog();
+            rdWalkin = new RadioButton();
+            rdregular = new RadioButton();
+            grpcustomertype = new GroupBox();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            grpcustomertype.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dvgProductsinBill).BeginInit();
             grpRegularCustomer.SuspendLayout();
+            grpcustomers.SuspendLayout();
+            grpcustomertype.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -104,45 +110,6 @@
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // grpcustomertype
-            // 
-            grpcustomertype.Controls.Add(rdregular);
-            grpcustomertype.Controls.Add(rdWalkin);
-            grpcustomertype.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            grpcustomertype.Location = new Point(1050, 130);
-            grpcustomertype.Margin = new Padding(2);
-            grpcustomertype.Name = "grpcustomertype";
-            grpcustomertype.Padding = new Padding(2);
-            grpcustomertype.Size = new Size(142, 90);
-            grpcustomertype.TabIndex = 5;
-            grpcustomertype.TabStop = false;
-            grpcustomertype.Text = "Customer Type:";
-            // 
-            // rdregular
-            // 
-            rdregular.AutoSize = true;
-            rdregular.Location = new Point(25, 23);
-            rdregular.Margin = new Padding(2);
-            rdregular.Name = "rdregular";
-            rdregular.Size = new Size(79, 23);
-            rdregular.TabIndex = 1;
-            rdregular.TabStop = true;
-            rdregular.Text = "Regular";
-            rdregular.UseVisualStyleBackColor = true;
-            rdregular.CheckedChanged += rdregular_CheckedChanged;
-            // 
-            // rdWalkin
-            // 
-            rdWalkin.AutoSize = true;
-            rdWalkin.Location = new Point(25, 47);
-            rdWalkin.Margin = new Padding(2);
-            rdWalkin.Name = "rdWalkin";
-            rdWalkin.Size = new Size(76, 23);
-            rdWalkin.TabIndex = 0;
-            rdWalkin.TabStop = true;
-            rdWalkin.Text = "Walk In";
-            rdWalkin.UseVisualStyleBackColor = true;
             // 
             // cmbSelectProducts
             // 
@@ -205,6 +172,57 @@
             grpRegularCustomer.TabStop = false;
             grpRegularCustomer.Text = "Regular Customers";
             grpRegularCustomer.Visible = false;
+            grpRegularCustomer.Enter += grpRegularCustomer_Enter;
+            // 
+            // grpcustomers
+            // 
+            grpcustomers.Controls.Add(contacttxt);
+            grpcustomers.Controls.Add(nametxt);
+            grpcustomers.Controls.Add(label3);
+            grpcustomers.Controls.Add(label4);
+            grpcustomers.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            grpcustomers.Location = new Point(779, 239);
+            grpcustomers.Margin = new Padding(2);
+            grpcustomers.Name = "grpcustomers";
+            grpcustomers.Padding = new Padding(2);
+            grpcustomers.Size = new Size(267, 132);
+            grpcustomers.TabIndex = 25;
+            grpcustomers.TabStop = false;
+            grpcustomers.Text = "Customer Details";
+            // 
+            // contacttxt
+            // 
+            contacttxt.Location = new Point(31, 92);
+            contacttxt.Name = "contacttxt";
+            contacttxt.Size = new Size(208, 25);
+            contacttxt.TabIndex = 13;
+            // 
+            // nametxt
+            // 
+            nametxt.Location = new Point(31, 35);
+            nametxt.Name = "nametxt";
+            nametxt.Size = new Size(208, 25);
+            nametxt.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label3.Location = new Point(73, 92);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 19);
+            label3.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label4.Location = new Point(73, 63);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 19);
+            label4.TabIndex = 10;
             // 
             // customerLoyaltyPoints
             // 
@@ -388,12 +406,53 @@
             printPreviewDialog1.Name = "printPreviewDialog1";
             printPreviewDialog1.Visible = false;
             // 
+            // rdWalkin
+            // 
+            rdWalkin.AutoSize = true;
+            rdWalkin.Location = new Point(25, 47);
+            rdWalkin.Margin = new Padding(2);
+            rdWalkin.Name = "rdWalkin";
+            rdWalkin.Size = new Size(76, 23);
+            rdWalkin.TabIndex = 0;
+            rdWalkin.TabStop = true;
+            rdWalkin.Text = "Walk In";
+            rdWalkin.UseVisualStyleBackColor = true;
+            rdWalkin.CheckedChanged += rdWalkin_CheckedChanged;
+            // 
+            // rdregular
+            // 
+            rdregular.AutoSize = true;
+            rdregular.Location = new Point(25, 23);
+            rdregular.Margin = new Padding(2);
+            rdregular.Name = "rdregular";
+            rdregular.Size = new Size(79, 23);
+            rdregular.TabIndex = 1;
+            rdregular.TabStop = true;
+            rdregular.Text = "Regular";
+            rdregular.UseVisualStyleBackColor = true;
+            rdregular.CheckedChanged += rdregular_CheckedChanged;
+            // 
+            // grpcustomertype
+            // 
+            grpcustomertype.Controls.Add(rdregular);
+            grpcustomertype.Controls.Add(rdWalkin);
+            grpcustomertype.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            grpcustomertype.Location = new Point(1050, 130);
+            grpcustomertype.Margin = new Padding(2);
+            grpcustomertype.Name = "grpcustomertype";
+            grpcustomertype.Padding = new Padding(2);
+            grpcustomertype.Size = new Size(142, 90);
+            grpcustomertype.TabIndex = 5;
+            grpcustomertype.TabStop = false;
+            grpcustomertype.Text = "Customer Type:";
+            // 
             // CreateBill
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1237, 628);
+            Controls.Add(grpcustomers);
             Controls.Add(label1);
             Controls.Add(btnApplyDiscount);
             Controls.Add(btnAddProduct);
@@ -421,12 +480,14 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            grpcustomertype.ResumeLayout(false);
-            grpcustomertype.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)dvgProductsinBill).EndInit();
             grpRegularCustomer.ResumeLayout(false);
             grpRegularCustomer.PerformLayout();
+            grpcustomers.ResumeLayout(false);
+            grpcustomers.PerformLayout();
+            grpcustomertype.ResumeLayout(false);
+            grpcustomertype.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -436,9 +497,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private PictureBox pictureBox1;
         private Label label2;
-        private GroupBox grpcustomertype;
-        private RadioButton rdregular;
-        private RadioButton rdWalkin;
         private ComboBox cmbSelectProducts;
         private NumericUpDown numQuantity;
         private DataGridView dvgProductsinBill;
@@ -462,5 +520,13 @@
         private Label label1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
+        private RadioButton rdWalkin;
+        private RadioButton rdregular;
+        private GroupBox grpcustomertype;
+        private GroupBox grpcustomers;
+        private TextBox nametxt;
+        private Label label3;
+        private Label label4;
+        private TextBox contacttxt;
     }
 }

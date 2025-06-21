@@ -12,10 +12,6 @@ namespace Bismillah.UI
 {
     public partial class CreateBill : Form
     {
-        private PrintDocument printDocument = new PrintDocument();
-        private string billTitle = "BISMILLAH SANITARY ELECTRIC AND HARDWARE STORE";
-        private Font billFont = new Font("Consolas", 10, FontStyle.Regular);
-        private string billContent = "";
         private readonly CreateBillBL _billBL;
         private DataTable _billItems;
         private int _currentStaffId;
@@ -23,43 +19,62 @@ namespace Bismillah.UI
         private decimal _subtotal = 0;
         private decimal _discountPercentage = 0;
 
+        private PrintDocument printDocument = new PrintDocument();
+        private string billContent = "";
+        private Font billFont = new Font("Consolas", 10);
+
         public CreateBill(int staffId)
         {
             InitializeComponent();
-            _billBL = new CreateBillBL();
             _currentStaffId = staffId;
+            _billBL = new CreateBillBL();
+
             printDocument.PrintPage += printDocument1_PrintPage;
+
             InitializeData();
         }
         private void GenerateBillContent()
         {
-            StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(billTitle);
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("BISMILLAH SANITARY ELECTRIC AND HARDWARE STORE");
             sb.AppendLine($"Date: {DateTime.Now:dd-MM-yyyy HH:mm}");
-            sb.AppendLine(new string('-', 60));
-            sb.AppendLine($"{"Sr",-4}{"Product",-28}{"Qty",5}{"Unit",10}{"Total",12}");
-            sb.AppendLine(new string('-', 60));
+
+            if (rdregular.Checked && cmbCustomer.SelectedItem != null)
+            {
+                var name = ((DataRowView)cmbCustomer.SelectedItem)["name"].ToString();
+                var contact = ((DataRowView)cmbCustomer.SelectedItem)["contact"].ToString();
+                sb.AppendLine($"Customer: {name}");
+                sb.AppendLine($"Contact: {contact}");
+            }
+            else
+            {
+                sb.AppendLine($"Customer: {nametxt.Text.Trim()}");
+                sb.AppendLine($"Contact: {contacttxt.Text.Trim()}");
+            }
+
+            sb.AppendLine(new string('-', 65));
+            sb.AppendLine(string.Format("{0,-4}{1,-28}{2,5}{3,10}{4,12}", "Sr", "Product", "Qty", "Unit", "Total"));
+            sb.AppendLine(new string('-', 65));
 
             foreach (DataRow row in _billItems.Rows)
             {
                 string sr = row["sr_no"].ToString();
-                string product = row["name"].ToString();
-                if (product.Length > 27) product = product.Substring(0, 27); // truncate
-
+                string prod = row["name"].ToString();
+                if (prod.Length > 27) prod = prod.Substring(0, 27);
                 string qty = row["quantity"].ToString();
                 string unit = $"Rs. {Convert.ToDecimal(row["unit_price"]):N2}";
                 string total = $"Rs. {Convert.ToDecimal(row["total"]):N2}";
 
-                sb.AppendLine($"{sr,-4}{product,-28}{qty,5}{unit,10}{total,12}");
+                sb.AppendLine(string.Format("{0,-4}{1,-28}{2,5}{3,10}{4,12}", sr, prod, qty, unit, total));
             }
 
-            sb.AppendLine(new string('-', 60));
-            sb.AppendLine($"{"Subtotal:",-20} Rs. {_subtotal:N2}");
-            sb.AppendLine($"{"Discount:",-20} {_discountPercentage}%");
+            sb.AppendLine(new string('-', 65));
+            sb.AppendLine(string.Format("{0,-20} Rs. {1:N2}", "Subtotal:", _subtotal));
+            sb.AppendLine(string.Format("{0,-20} {1}%", "Discount:", _discountPercentage));
             decimal totalAmount = _subtotal - (_subtotal * (_discountPercentage / 100m));
-            sb.AppendLine($"{"Total:",-20} Rs. {totalAmount:N2}");
-            sb.AppendLine(new string('-', 60));
+            sb.AppendLine(string.Format("{0,-20} Rs. {1:N2}", "Total:", totalAmount));
+            sb.AppendLine(new string('-', 65));
             sb.AppendLine("Thank you for shopping with us!");
 
             billContent = sb.ToString();
@@ -103,20 +118,9 @@ namespace Bismillah.UI
             cmbPaymentStatus.DataSource = _billBL.LoadPaymentStatuses();
             cmbPaymentStatus.DisplayMember = "value";
             cmbPaymentStatus.ValueMember = "lookup_id";
-            SetDefaultPaymentStatus();
         }
 
-        private void SetDefaultPaymentStatus()
-        {
-            foreach (DataRowView item in cmbPaymentStatus.Items)
-            {
-                if (item["value"].ToString() == "Pending")
-                {
-                    cmbPaymentStatus.SelectedItem = item;
-                    break;
-                }
-            }
-        }
+       
 
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -132,7 +136,7 @@ namespace Bismillah.UI
 
             if (!_billBL.ValidateProductStock(productId, quantity))
             {
-                MessageBox.Show("Insufficient stock for this product");
+                MessageBox.Show("Insufficient stock");
                 return;
             }
 
@@ -157,38 +161,34 @@ namespace Bismillah.UI
 
         private void CalculateSubtotal()
         {
-            _subtotal = _billItems.AsEnumerable().Sum(row => Convert.ToDecimal(row["total"]));
+            _subtotal = _billItems.AsEnumerable().Sum(r => Convert.ToDecimal(r["total"]));
             lblSubtotal.Text = DatabaseHelper.FormatAsPKR(_subtotal);
             CalculateTotal();
         }
 
         private void CalculateTotal()
         {
-            decimal discountAmount = _subtotal * (_discountPercentage / 100m);
-            decimal total = _subtotal - discountAmount;
+            decimal discount = _subtotal * (_discountPercentage / 100);
+            decimal total = _subtotal - discount;
             lblTotal.Text = DatabaseHelper.FormatAsPKR(total);
         }
 
 
         private void btnApplyDiscount_Click(object sender, EventArgs e)
         {
-            if (decimal.TryParse(txtdiscount.Text, out decimal discountPercent) && discountPercent >= 0 && discountPercent <= 100)
+            if (decimal.TryParse(txtdiscount.Text, out decimal percent) && percent >= 0 && percent <= 100)
             {
-                _discountPercentage = discountPercent;
+                _discountPercentage = percent;
                 CalculateTotal();
             }
             else
             {
                 MessageBox.Show("Discount must be between 0 and 100");
-                txtdiscount.Text = "0";
-                _discountPercentage = 0;
-                CalculateTotal();
             }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
             foreach (DataGridViewRow row in dvgProductsinBill.SelectedRows)
                 dvgProductsinBill.Rows.Remove(row);
 
@@ -204,7 +204,7 @@ namespace Bismillah.UI
         {
             if (_billItems.Rows.Count == 0)
             {
-                MessageBox.Show("Add products before saving.");
+                MessageBox.Show("Add at least one product.");
                 return;
             }
 
@@ -213,10 +213,26 @@ namespace Bismillah.UI
                 int paymentStatusId = Convert.ToInt32(cmbPaymentStatus.SelectedValue);
                 int? customerId = rdregular.Checked ? (int?)cmbCustomer.SelectedValue : null;
 
+                if (rdWalkin.Checked)
+                {
+                    string name = nametxt.Text.Trim();
+                    string contact = contacttxt.Text.Trim();
+                    decimal total = _subtotal - (_subtotal * (_discountPercentage / 100));
+
+                    if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(contact))
+                    {
+                        string insert = $@"
+                    INSERT INTO walkin_bills (name, contact, total_amount)
+                     VALUES ('{name}', '{contact}', {total})";
+
+                        DatabaseHelper.Instance.Update(insert);
+                    }
+                }
+
                 int billId = _billBL.ProcessBill(
                     customerId,
                     _currentStaffId,
-                    _subtotal * (_discountPercentage / 100m),
+                    _subtotal * (_discountPercentage / 100),
                     _billItems,
                     paymentStatusId,
                     out string formattedTotal
@@ -227,37 +243,35 @@ namespace Bismillah.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving bill: {ex.Message}");
+                MessageBox.Show("Error saving bill: " + ex.Message);
             }
         }
 
         private void ClearBillForm()
         {
-            _billItems.Rows.Clear();
+
+            _billItems.Clear();
             _rowNumber = 1;
             _subtotal = 0;
             _discountPercentage = 0;
 
-            cmbCustomer.SelectedIndex = -1;
-            cmbSelectProducts.SelectedIndex = -1;
-            txtdiscount.Text = "0";
-            numQuantity.Value = 1;
-
             lblSubtotal.Text = "Rs. 0.00";
             lblTotal.Text = "Rs. 0.00";
-            rdWalkin.Checked = true;
-            grpRegularCustomer.Visible = false;
+            txtdiscount.Text = "0";
+            numQuantity.Value = 1;
+            cmbSelectProducts.SelectedIndex = -1;
+            cmbCustomer.SelectedIndex = -1;
+
+            nametxt.Text = "";
+            contacttxt.Text = "";
+
+            rdWalkin.Checked = true; // reset to default;
         }
 
         private void rdregular_CheckedChanged(object sender, EventArgs e)
         {
             grpRegularCustomer.Visible = rdregular.Checked;
-            if (!rdregular.Checked)
-            {
-                cmbCustomer.SelectedIndex = -1;
-                customerCNIC.Text = string.Empty;
-                customerLoyaltyPoints.Text = string.Empty;
-            }
+            grpcustomers.Visible = !rdregular.Checked;
         }
 
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,28 +286,40 @@ namespace Bismillah.UI
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            float x = 20, y = 20;
-            e.Graphics.DrawString(billContent, billFont, Brushes.Black, new RectangleF(x, y, e.MarginBounds.Width, e.MarginBounds.Height));
+            e.Graphics.DrawString(billContent, billFont, Brushes.Black,
+                new RectangleF(20, 20, e.MarginBounds.Width, e.MarginBounds.Height));
         }
+        
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
             if (_billItems.Rows.Count == 0)
             {
-                MessageBox.Show("No bill to print.");
+                MessageBox.Show("Nothing to print.");
                 return;
             }
 
             GenerateBillContent();
-
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog
+            PrintPreviewDialog preview = new PrintPreviewDialog
             {
                 Document = printDocument,
                 Width = 800,
                 Height = 600
             };
+            preview.ShowDialog();
+        }
+        
 
-            previewDialog.ShowDialog();
+        private void grpRegularCustomer_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdWalkin_CheckedChanged(object sender, EventArgs e)
+        {
+
+            grpcustomers.Visible = rdWalkin.Checked;
+            grpRegularCustomer.Visible = !rdWalkin.Checked;
         }
     }
 }
