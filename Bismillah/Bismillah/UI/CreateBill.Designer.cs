@@ -37,17 +37,16 @@
             dvgProductsinBill = new DataGridView();
             cmbCustomer = new ComboBox();
             grpRegularCustomer = new GroupBox();
+            customerLoyaltyPoints = new Label();
+            customerCNIC = new Label();
             grpcustomers = new GroupBox();
             contacttxt = new TextBox();
             nametxt = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            customerLoyaltyPoints = new Label();
-            customerCNIC = new Label();
             txtdiscount = new TextBox();
             BillDate = new DateTimePicker();
             btnRemove = new Button();
-            txtBillNumber = new TextBox();
             lblSubtotal = new Label();
             SubTotal = new Label();
             Total = new Label();
@@ -64,6 +63,7 @@
             rdregular = new RadioButton();
             grpcustomertype = new GroupBox();
             button1 = new Button();
+            label5 = new Label();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
@@ -83,18 +83,20 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(1, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(2025, 125);
+            tableLayoutPanel2.Size = new Size(2893, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 119);
+            pictureBox1.Size = new Size(221, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -105,9 +107,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(280, 37);
+            label2.Location = new Point(400, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -115,18 +118,16 @@
             // cmbSelectProducts
             // 
             cmbSelectProducts.FormattingEnabled = true;
-            cmbSelectProducts.Location = new Point(34, 223);
-            cmbSelectProducts.Margin = new Padding(2);
+            cmbSelectProducts.Location = new Point(49, 372);
             cmbSelectProducts.Name = "cmbSelectProducts";
-            cmbSelectProducts.Size = new Size(316, 23);
+            cmbSelectProducts.Size = new Size(450, 33);
             cmbSelectProducts.TabIndex = 6;
             // 
             // numQuantity
             // 
-            numQuantity.Location = new Point(384, 223);
-            numQuantity.Margin = new Padding(2);
+            numQuantity.Location = new Point(549, 372);
             numQuantity.Name = "numQuantity";
-            numQuantity.Size = new Size(87, 23);
+            numQuantity.Size = new Size(124, 31);
             numQuantity.TabIndex = 7;
             // 
             // dvgProductsinBill
@@ -140,21 +141,19 @@
             dvgProductsinBill.BackgroundColor = Color.White;
             dvgProductsinBill.BorderStyle = BorderStyle.None;
             dvgProductsinBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgProductsinBill.Location = new Point(36, 271);
-            dvgProductsinBill.Margin = new Padding(2);
+            dvgProductsinBill.Location = new Point(51, 452);
             dvgProductsinBill.Name = "dvgProductsinBill";
             dvgProductsinBill.ReadOnly = true;
             dvgProductsinBill.RowHeadersWidth = 62;
-            dvgProductsinBill.Size = new Size(672, 375);
+            dvgProductsinBill.Size = new Size(1206, 625);
             dvgProductsinBill.TabIndex = 8;
             // 
             // cmbCustomer
             // 
             cmbCustomer.FormattingEnabled = true;
-            cmbCustomer.Location = new Point(29, 35);
-            cmbCustomer.Margin = new Padding(2);
+            cmbCustomer.Location = new Point(41, 58);
             cmbCustomer.Name = "cmbCustomer";
-            cmbCustomer.Size = new Size(222, 25);
+            cmbCustomer.Size = new Size(315, 36);
             cmbCustomer.TabIndex = 9;
             cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
             // 
@@ -164,16 +163,32 @@
             grpRegularCustomer.Controls.Add(customerCNIC);
             grpRegularCustomer.Controls.Add(cmbCustomer);
             grpRegularCustomer.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            grpRegularCustomer.Location = new Point(1050, 229);
-            grpRegularCustomer.Margin = new Padding(2);
+            grpRegularCustomer.Location = new Point(1500, 382);
             grpRegularCustomer.Name = "grpRegularCustomer";
-            grpRegularCustomer.Padding = new Padding(2);
-            grpRegularCustomer.Size = new Size(267, 132);
+            grpRegularCustomer.Size = new Size(381, 220);
             grpRegularCustomer.TabIndex = 10;
             grpRegularCustomer.TabStop = false;
             grpRegularCustomer.Text = "Regular Customers";
             grpRegularCustomer.Visible = false;
             grpRegularCustomer.Enter += grpRegularCustomer_Enter;
+            // 
+            // customerLoyaltyPoints
+            // 
+            customerLoyaltyPoints.AutoSize = true;
+            customerLoyaltyPoints.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            customerLoyaltyPoints.Location = new Point(106, 155);
+            customerLoyaltyPoints.Name = "customerLoyaltyPoints";
+            customerLoyaltyPoints.Size = new Size(0, 28);
+            customerLoyaltyPoints.TabIndex = 11;
+            // 
+            // customerCNIC
+            // 
+            customerCNIC.AutoSize = true;
+            customerCNIC.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            customerCNIC.Location = new Point(106, 107);
+            customerCNIC.Name = "customerCNIC";
+            customerCNIC.Size = new Size(0, 28);
+            customerCNIC.TabIndex = 10;
             // 
             // grpcustomers
             // 
@@ -182,127 +197,94 @@
             grpcustomers.Controls.Add(label3);
             grpcustomers.Controls.Add(label4);
             grpcustomers.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            grpcustomers.Location = new Point(779, 229);
-            grpcustomers.Margin = new Padding(2);
+            grpcustomers.Location = new Point(1140, 397);
             grpcustomers.Name = "grpcustomers";
-            grpcustomers.Padding = new Padding(2);
-            grpcustomers.Size = new Size(267, 132);
+            grpcustomers.Size = new Size(354, 205);
             grpcustomers.TabIndex = 25;
             grpcustomers.TabStop = false;
             grpcustomers.Text = "Customer Details";
             // 
             // contacttxt
             // 
-            contacttxt.Location = new Point(31, 92);
+            contacttxt.Location = new Point(44, 153);
+            contacttxt.Margin = new Padding(4, 5, 4, 5);
             contacttxt.Name = "contacttxt";
-            contacttxt.Size = new Size(208, 25);
+            contacttxt.PlaceholderText = "Contact";
+            contacttxt.Size = new Size(295, 34);
             contacttxt.TabIndex = 13;
             // 
             // nametxt
             // 
-            nametxt.Location = new Point(31, 35);
+            nametxt.Location = new Point(44, 58);
+            nametxt.Margin = new Padding(4, 5, 4, 5);
             nametxt.Name = "nametxt";
-            nametxt.Size = new Size(208, 25);
+            nametxt.PlaceholderText = "Name";
+            nametxt.Size = new Size(295, 34);
             nametxt.TabIndex = 12;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label3.Location = new Point(73, 92);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(104, 153);
             label3.Name = "label3";
-            label3.Size = new Size(0, 19);
+            label3.Size = new Size(0, 28);
             label3.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label4.Location = new Point(73, 63);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(104, 105);
             label4.Name = "label4";
-            label4.Size = new Size(0, 19);
+            label4.Size = new Size(0, 28);
             label4.TabIndex = 10;
-            // 
-            // customerLoyaltyPoints
-            // 
-            customerLoyaltyPoints.AutoSize = true;
-            customerLoyaltyPoints.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customerLoyaltyPoints.Location = new Point(74, 93);
-            customerLoyaltyPoints.Margin = new Padding(2, 0, 2, 0);
-            customerLoyaltyPoints.Name = "customerLoyaltyPoints";
-            customerLoyaltyPoints.Size = new Size(0, 19);
-            customerLoyaltyPoints.TabIndex = 11;
-            // 
-            // customerCNIC
-            // 
-            customerCNIC.AutoSize = true;
-            customerCNIC.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            customerCNIC.Location = new Point(74, 64);
-            customerCNIC.Margin = new Padding(2, 0, 2, 0);
-            customerCNIC.Name = "customerCNIC";
-            customerCNIC.Size = new Size(0, 19);
-            customerCNIC.TabIndex = 10;
             // 
             // txtdiscount
             // 
-            txtdiscount.Location = new Point(1050, 433);
-            txtdiscount.Margin = new Padding(2);
+            txtdiscount.Location = new Point(1500, 722);
             txtdiscount.Name = "txtdiscount";
             txtdiscount.PlaceholderText = "Discount";
-            txtdiscount.Size = new Size(106, 23);
+            txtdiscount.Size = new Size(150, 31);
             txtdiscount.TabIndex = 11;
             // 
             // BillDate
             // 
             BillDate.CustomFormat = "";
             BillDate.Format = DateTimePickerFormat.Short;
-            BillDate.Location = new Point(34, 164);
-            BillDate.Margin = new Padding(2);
+            BillDate.Location = new Point(1621, 242);
             BillDate.Name = "BillDate";
-            BillDate.Size = new Size(104, 23);
+            BillDate.Size = new Size(144, 31);
             BillDate.TabIndex = 12;
             BillDate.Value = new DateTime(2025, 6, 14, 13, 17, 21, 0);
             // 
             // btnRemove
             // 
             btnRemove.BackColor = Color.White;
-            btnRemove.Location = new Point(611, 220);
-            btnRemove.Margin = new Padding(2);
+            btnRemove.Location = new Point(873, 367);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(90, 22);
+            btnRemove.Size = new Size(129, 37);
             btnRemove.TabIndex = 13;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
             // 
-            // txtBillNumber
-            // 
-            txtBillNumber.Location = new Point(168, 166);
-            txtBillNumber.Margin = new Padding(2);
-            txtBillNumber.Name = "txtBillNumber";
-            txtBillNumber.Size = new Size(106, 23);
-            txtBillNumber.TabIndex = 14;
-            // 
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
             lblSubtotal.Font = new Font("Segoe UI", 12F);
-            lblSubtotal.Location = new Point(1163, 398);
-            lblSubtotal.Margin = new Padding(2, 0, 2, 0);
+            lblSubtotal.Location = new Point(1661, 663);
             lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(0, 21);
+            lblSubtotal.Size = new Size(0, 32);
             lblSubtotal.TabIndex = 15;
             // 
             // SubTotal
             // 
             SubTotal.AutoSize = true;
             SubTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            SubTotal.Location = new Point(1050, 398);
-            SubTotal.Margin = new Padding(2, 0, 2, 0);
+            SubTotal.Location = new Point(1500, 663);
             SubTotal.Name = "SubTotal";
-            SubTotal.Size = new Size(81, 21);
+            SubTotal.Size = new Size(120, 32);
             SubTotal.TabIndex = 16;
             SubTotal.Text = "SubTotal:";
             // 
@@ -310,10 +292,9 @@
             // 
             Total.AutoSize = true;
             Total.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            Total.Location = new Point(1050, 471);
-            Total.Margin = new Padding(2, 0, 2, 0);
+            Total.Location = new Point(1500, 785);
             Total.Name = "Total";
-            Total.Size = new Size(52, 21);
+            Total.Size = new Size(77, 32);
             Total.TabIndex = 17;
             Total.Text = "Total:";
             // 
@@ -321,18 +302,16 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 12F);
-            lblTotal.Location = new Point(1123, 471);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(1604, 785);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(0, 21);
+            lblTotal.Size = new Size(0, 32);
             lblTotal.TabIndex = 18;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(1056, 576);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(1509, 960);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(78, 20);
+            btnSave.Size = new Size(111, 33);
             btnSave.TabIndex = 19;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -340,10 +319,9 @@
             // 
             // btnPrint
             // 
-            btnPrint.Location = new Point(1193, 576);
-            btnPrint.Margin = new Padding(2);
+            btnPrint.Location = new Point(1704, 960);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(78, 20);
+            btnPrint.Size = new Size(111, 33);
             btnPrint.TabIndex = 20;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = true;
@@ -352,19 +330,17 @@
             // cmbPaymentStatus
             // 
             cmbPaymentStatus.FormattingEnabled = true;
-            cmbPaymentStatus.Location = new Point(1050, 536);
-            cmbPaymentStatus.Margin = new Padding(2);
+            cmbPaymentStatus.Location = new Point(1500, 893);
             cmbPaymentStatus.Name = "cmbPaymentStatus";
-            cmbPaymentStatus.Size = new Size(233, 23);
+            cmbPaymentStatus.Size = new Size(331, 33);
             cmbPaymentStatus.TabIndex = 21;
             // 
             // btnAddProduct
             // 
             btnAddProduct.BackColor = Color.White;
-            btnAddProduct.Location = new Point(496, 220);
-            btnAddProduct.Margin = new Padding(2);
+            btnAddProduct.Location = new Point(709, 367);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(90, 22);
+            btnAddProduct.Size = new Size(129, 37);
             btnAddProduct.TabIndex = 22;
             btnAddProduct.Text = "Add";
             btnAddProduct.UseVisualStyleBackColor = false;
@@ -373,10 +349,9 @@
             // btnApplyDiscount
             // 
             btnApplyDiscount.BackColor = Color.White;
-            btnApplyDiscount.Location = new Point(1173, 433);
-            btnApplyDiscount.Margin = new Padding(2);
+            btnApplyDiscount.Location = new Point(1676, 722);
             btnApplyDiscount.Name = "btnApplyDiscount";
-            btnApplyDiscount.Size = new Size(90, 19);
+            btnApplyDiscount.Size = new Size(129, 32);
             btnApplyDiscount.TabIndex = 23;
             btnApplyDiscount.Text = "Apply";
             btnApplyDiscount.UseVisualStyleBackColor = false;
@@ -386,10 +361,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(1050, 506);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(1500, 843);
             label1.Name = "label1";
-            label1.Size = new Size(82, 21);
+            label1.Size = new Size(120, 32);
             label1.TabIndex = 24;
             label1.Text = "Payment:";
             // 
@@ -410,10 +384,9 @@
             // rdWalkin
             // 
             rdWalkin.AutoSize = true;
-            rdWalkin.Location = new Point(25, 47);
-            rdWalkin.Margin = new Padding(2);
+            rdWalkin.Location = new Point(36, 78);
             rdWalkin.Name = "rdWalkin";
-            rdWalkin.Size = new Size(76, 23);
+            rdWalkin.Size = new Size(108, 32);
             rdWalkin.TabIndex = 0;
             rdWalkin.TabStop = true;
             rdWalkin.Text = "Walk In";
@@ -423,10 +396,9 @@
             // rdregular
             // 
             rdregular.AutoSize = true;
-            rdregular.Location = new Point(25, 23);
-            rdregular.Margin = new Padding(2);
+            rdregular.Location = new Point(36, 38);
             rdregular.Name = "rdregular";
-            rdregular.Size = new Size(79, 23);
+            rdregular.Size = new Size(110, 32);
             rdregular.TabIndex = 1;
             rdregular.TabStop = true;
             rdregular.Text = "Regular";
@@ -438,32 +410,40 @@
             grpcustomertype.Controls.Add(rdregular);
             grpcustomertype.Controls.Add(rdWalkin);
             grpcustomertype.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            grpcustomertype.Location = new Point(1050, 130);
-            grpcustomertype.Margin = new Padding(2);
+            grpcustomertype.Location = new Point(1154, 216);
             grpcustomertype.Name = "grpcustomertype";
-            grpcustomertype.Padding = new Padding(2);
-            grpcustomertype.Size = new Size(142, 90);
+            grpcustomertype.Size = new Size(203, 150);
             grpcustomertype.TabIndex = 5;
             grpcustomertype.TabStop = false;
             grpcustomertype.Text = "Customer Type:";
             // 
             // button1
             // 
-            button1.Location = new Point(1135, 609);
-            button1.Margin = new Padding(2);
+            button1.Location = new Point(1606, 1002);
             button1.Name = "button1";
-            button1.Size = new Size(78, 20);
+            button1.Size = new Size(111, 33);
             button1.TabIndex = 26;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label5.Location = new Point(1558, 242);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 28);
+            label5.TabIndex = 27;
+            label5.Text = "Date:";
+            // 
             // CreateBill
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1300, 628);
+            ClientSize = new Size(1857, 1047);
+            Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(grpcustomers);
             Controls.Add(label1);
@@ -476,7 +456,6 @@
             Controls.Add(Total);
             Controls.Add(SubTotal);
             Controls.Add(lblSubtotal);
-            Controls.Add(txtBillNumber);
             Controls.Add(btnRemove);
             Controls.Add(BillDate);
             Controls.Add(txtdiscount);
@@ -486,7 +465,6 @@
             Controls.Add(cmbSelectProducts);
             Controls.Add(grpcustomertype);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(2);
             Name = "CreateBill";
             Text = "CreateBill";
             WindowState = FormWindowState.Maximized;
@@ -520,7 +498,6 @@
         private TextBox txtdiscount;
         private DateTimePicker BillDate;
         private Button btnRemove;
-        private TextBox txtBillNumber;
         private Label lblSubtotal;
         private Label SubTotal;
         private Label Total;
@@ -542,5 +519,6 @@
         private Label label4;
         private TextBox contacttxt;
         private Button button1;
+        private Label label5;
     }
 }
