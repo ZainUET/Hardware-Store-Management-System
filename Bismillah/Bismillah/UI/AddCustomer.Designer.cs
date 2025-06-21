@@ -56,19 +56,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(-1, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1371, 125);
+            tableLayoutPanel2.Size = new Size(2407, 208);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(181, 119);
+            pictureBox1.Size = new Size(259, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -79,9 +81,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(190, 37);
+            label2.Location = new Point(333, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -97,10 +100,9 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1151, 760);
-            btnBack.Margin = new Padding(2, 0, 2, 0);
+            btnBack.Location = new Point(2092, 1267);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(95, 36);
+            btnBack.Size = new Size(135, 59);
             btnBack.TabIndex = 5;
             btnBack.TabStop = true;
             btnBack.Text = "Back";
@@ -118,8 +120,7 @@
             tableLayoutPanel3.Controls.Add(txtName, 0, 1);
             tableLayoutPanel3.Controls.Add(label3, 0, 0);
             tableLayoutPanel3.Controls.Add(btnsave, 0, 7);
-            tableLayoutPanel3.Location = new Point(372, 206);
-            tableLayoutPanel3.Margin = new Padding(2);
+            tableLayoutPanel3.Location = new Point(635, 343);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 8;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
@@ -130,53 +131,52 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
-            tableLayoutPanel3.Size = new Size(375, 311);
+            tableLayoutPanel3.Size = new Size(536, 518);
             tableLayoutPanel3.TabIndex = 6;
             // 
             // txtaddress
             // 
-            txtaddress.Location = new Point(70, 226);
-            txtaddress.Margin = new Padding(70, 15, 18, 15);
+            txtaddress.Location = new Point(100, 355);
+            txtaddress.Margin = new Padding(100, 25, 26, 25);
             txtaddress.Name = "txtaddress";
             txtaddress.PlaceholderText = "Address";
-            txtaddress.Size = new Size(241, 23);
+            txtaddress.Size = new Size(343, 31);
             txtaddress.TabIndex = 17;
             // 
             // cnictxt
             // 
-            cnictxt.Location = new Point(70, 173);
-            cnictxt.Margin = new Padding(70, 15, 18, 15);
+            cnictxt.Location = new Point(100, 274);
+            cnictxt.Margin = new Padding(100, 25, 26, 25);
             cnictxt.Name = "cnictxt";
             cnictxt.PlaceholderText = "CNIC";
-            cnictxt.Size = new Size(241, 23);
+            cnictxt.Size = new Size(343, 31);
             cnictxt.TabIndex = 16;
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(70, 120);
-            txtContact.Margin = new Padding(70, 15, 18, 15);
+            txtContact.Location = new Point(100, 193);
+            txtContact.Margin = new Padding(100, 25, 26, 25);
             txtContact.Name = "txtContact";
             txtContact.PlaceholderText = "Contact";
-            txtContact.Size = new Size(241, 23);
+            txtContact.Size = new Size(343, 31);
             txtContact.TabIndex = 15;
             // 
             // txtName
             // 
-            txtName.Location = new Point(70, 67);
-            txtName.Margin = new Padding(70, 15, 18, 15);
+            txtName.Location = new Point(100, 112);
+            txtName.Margin = new Padding(100, 25, 26, 25);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
-            txtName.Size = new Size(241, 23);
+            txtName.Size = new Size(343, 31);
             txtName.TabIndex = 14;
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(10, 35, 66);
-            label3.Location = new Point(2, 0);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(3, 0);
             label3.Name = "label3";
-            label3.Size = new Size(370, 52);
+            label3.Size = new Size(529, 87);
             label3.TabIndex = 0;
             label3.Text = "Add Customer";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -189,10 +189,9 @@
             btnsave.Cursor = Cursors.Hand;
             btnsave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnsave.ForeColor = Color.White;
-            btnsave.Location = new Point(122, 268);
-            btnsave.Margin = new Padding(2);
+            btnsave.Location = new Point(175, 433);
             btnsave.Name = "btnsave";
-            btnsave.Size = new Size(130, 38);
+            btnsave.Size = new Size(186, 63);
             btnsave.TabIndex = 13;
             btnsave.Text = "Save";
             btnsave.UseVisualStyleBackColor = false;
@@ -205,10 +204,9 @@
             button.Cursor = Cursors.Hand;
             button.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             button.ForeColor = Color.White;
-            button.Location = new Point(553, 547);
-            button.Margin = new Padding(2);
+            button.Location = new Point(1365, 776);
             button.Name = "button";
-            button.Size = new Size(130, 38);
+            button.Size = new Size(186, 63);
             button.TabIndex = 15;
             button.Text = "Back";
             button.UseVisualStyleBackColor = false;
@@ -216,17 +214,17 @@
             // 
             // AddCustomer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1001, 608);
+            ClientSize = new Size(1878, 1013);
             Controls.Add(button);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(2);
             Name = "AddCustomer";
-            Text = "AddSatff";
+            Text = "Add Customer";
+            WindowState = FormWindowState.Maximized;
             Load += AddCustomer_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();

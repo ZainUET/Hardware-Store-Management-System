@@ -43,5 +43,23 @@ namespace Bismillah.UI
             this.Close();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CustomerManagement addStaff = new CustomerManagement();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Login addStaff = new Login();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+
+        }
     }
 }
