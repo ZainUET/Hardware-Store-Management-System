@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\entities\\borrowed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\entities\\borrowed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\entities\\billitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\entities\\billitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\createbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\createbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\e-dborrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\e-dborrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\bismillah\\ui\\e-dborrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\e-dborrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\dl\\borroweddl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\dl\\borroweddl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\createbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\createbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,14 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\addborrowedui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\createbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\createbill.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\dl\\createbilldl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,34 +166,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AdminDashboard.cs",
-              "RelativeDocumentMoniker": "Bismillah\\UI\\AdminDashboard.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AdminDashboard.cs [Design]",
-              "RelativeToolTip": "Bismillah\\UI\\AdminDashboard.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Borrowed.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Entities\\Borrowed.cs",
+              "RelativeDocumentMoniker": "Bismillah\\Entities\\Borrowed.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Entities\\Borrowed.cs",
+              "RelativeToolTip": "Bismillah\\Entities\\Borrowed.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T07:16:21.071Z"
+              "WhenOpened": "2025-06-21T20:05:59.275Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreateBill.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.cs",
-              "RelativeDocumentMoniker": "Bismillah\\UI\\CreateBill.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.cs [Design]",
-              "RelativeToolTip": "Bismillah\\UI\\CreateBill.cs [Design]",
+              "Title": "BillItem.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Entities\\BillItem.cs",
+              "RelativeDocumentMoniker": "Bismillah\\Entities\\BillItem.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Entities\\BillItem.cs",
+              "RelativeToolTip": "Bismillah\\Entities\\BillItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T20:12:17.97Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-21T20:01:04.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "E-DBorrowUI.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\E-DBorrowUI.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\E-DBorrowUI.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\E-DBorrowUI.cs",
+              "RelativeToolTip": "Bismillah\\UI\\E-DBorrowUI.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAUwIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:59:45.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "E-DBorrowUI.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\E-DBorrowUI.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\E-DBorrowUI.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\E-DBorrowUI.cs [Design]",
+              "RelativeToolTip": "Bismillah\\UI\\E-DBorrowUI.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:59:41.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BorrowedDL.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\BorrowedDL.cs",
+              "RelativeDocumentMoniker": "Bismillah\\DL\\BorrowedDL.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\BorrowedDL.cs",
+              "RelativeToolTip": "Bismillah\\DL\\BorrowedDL.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAADwvzQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:58:47.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "CustomerManagement.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CustomerManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CustomerManagement.cs",
@@ -184,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Program.cs",
               "RelativeDocumentMoniker": "Bismillah\\Program.cs",
@@ -196,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "CreateBill.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CreateBill.cs",
@@ -209,7 +268,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "CreateBill.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.Designer.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\CreateBill.Designer.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.Designer.cs",
+              "RelativeToolTip": "Bismillah\\UI\\CreateBill.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBMCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T05:15:49.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateBill.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\CreateBill.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.cs [Design]",
+              "RelativeToolTip": "Bismillah\\UI\\CreateBill.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T20:12:17.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "AddSupplierUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddSupplierUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddSupplierUI.cs",
@@ -220,7 +302,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
+              "Title": "AddBorrowedUI.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddBorrowedUI.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\AddBorrowedUI.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddBorrowedUI.cs",
+              "RelativeToolTip": "Bismillah\\UI\\AddBorrowedUI.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAiwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T04:58:55.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Bismillah\\UI\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AdminDashboard.cs [Design]",
+              "RelativeToolTip": "Bismillah\\UI\\AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T07:16:21.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "CashierDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CashierDashboard.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CashierDashboard.cs",
@@ -231,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "AddStaff.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddStaff.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddStaff.cs",
@@ -242,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "AddProductsUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddProductsUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddProductsUI.cs",
@@ -253,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "AddBorrowedUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddBorrowedUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddBorrowedUI.cs",
@@ -264,31 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AddBorrowedUI.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddBorrowedUI.cs",
-              "RelativeDocumentMoniker": "Bismillah\\UI\\AddBorrowedUI.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddBorrowedUI.cs",
-              "RelativeToolTip": "Bismillah\\UI\\AddBorrowedUI.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T04:58:55.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateBill.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.Designer.cs",
-              "RelativeDocumentMoniker": "Bismillah\\UI\\CreateBill.Designer.cs",
-              "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CreateBill.Designer.cs",
-              "RelativeToolTip": "Bismillah\\UI\\CreateBill.Designer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAIwBMCAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T05:15:49.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "AddCustomer.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddCustomer.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddCustomer.cs",
@@ -301,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "AddCustomer.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddCustomer.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddCustomer.cs",
@@ -312,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "CreateBillDL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\CreateBillDL.cs",
               "RelativeDocumentMoniker": "Bismillah\\DL\\CreateBillDL.cs",
@@ -324,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "CreateBillBL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\BL\\CreateBillBL.cs",
               "RelativeDocumentMoniker": "Bismillah\\BL\\CreateBillBL.cs",
@@ -336,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "DatabaseHelper.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\DatabaseHelper.cs",
               "RelativeDocumentMoniker": "Bismillah\\DL\\DatabaseHelper.cs",
@@ -348,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "CustomerManagement.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CustomerManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CustomerManagement.cs",
@@ -360,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "CustomerManagement.Designer.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CustomerManagement.Designer.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CustomerManagement.Designer.cs",
@@ -372,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "CustomerUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CustomerUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\CustomerUI.cs",
@@ -383,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "ProductManagement.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\ProductManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\ProductManagement.cs",
@@ -394,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "SupplierUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\SupplierUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\SupplierUI.cs",
@@ -405,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "SupplierUI.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\SupplierUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\SupplierUI.cs",
@@ -417,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "AdminDashboard.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AdminDashboard.cs",
@@ -429,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "SupplierManagement.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\SupplierManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\SupplierManagement.cs",
@@ -442,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "SupplierManagement.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\SupplierManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\SupplierManagement.cs",
@@ -453,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "StaffManagement.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\StaffManagement.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\StaffManagement.cs",
@@ -464,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "AddStaff.Designer.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\AddStaff.Designer.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\AddStaff.Designer.cs",
@@ -476,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "StaffUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\StaffUI.cs",
               "RelativeDocumentMoniker": "Bismillah\\UI\\StaffUI.cs",
@@ -487,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "AddSupplierDL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\AddSupplierDL.cs",
               "RelativeDocumentMoniker": "Bismillah\\DL\\AddSupplierDL.cs",
@@ -499,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "AddSupplierBL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\BL\\AddSupplierBL.cs",
               "RelativeDocumentMoniker": "Bismillah\\BL\\AddSupplierBL.cs",
@@ -511,7 +593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "Supplier.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\Entities\\Supplier.cs",
               "RelativeDocumentMoniker": "Bismillah\\Entities\\Supplier.cs",
@@ -523,7 +605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "SupplerBL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\BL\\SupplerBL.cs",
               "RelativeDocumentMoniker": "Bismillah\\BL\\SupplerBL.cs",
@@ -535,7 +617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "SupplierDL.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\DL\\SupplierDL.cs",
               "RelativeDocumentMoniker": "Bismillah\\DL\\SupplierDL.cs",
