@@ -63,6 +63,7 @@
             rdWalkin = new RadioButton();
             rdregular = new RadioButton();
             grpcustomertype = new GroupBox();
+            button1 = new Button();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
@@ -85,7 +86,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1962, 125);
+            tableLayoutPanel2.Size = new Size(2025, 125);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
@@ -104,7 +105,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(271, 37);
+            label2.Location = new Point(280, 37);
             label2.Name = "label2";
             label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
@@ -181,7 +182,7 @@
             grpcustomers.Controls.Add(label3);
             grpcustomers.Controls.Add(label4);
             grpcustomers.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            grpcustomers.Location = new Point(779, 239);
+            grpcustomers.Location = new Point(779, 229);
             grpcustomers.Margin = new Padding(2);
             grpcustomers.Name = "grpcustomers";
             grpcustomers.Padding = new Padding(2);
@@ -446,12 +447,24 @@
             grpcustomertype.TabStop = false;
             grpcustomertype.Text = "Customer Type:";
             // 
+            // button1
+            // 
+            button1.Location = new Point(1135, 609);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(78, 20);
+            button1.TabIndex = 26;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // CreateBill
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1237, 628);
+            ClientSize = new Size(1300, 628);
+            Controls.Add(button1);
             Controls.Add(grpcustomers);
             Controls.Add(label1);
             Controls.Add(btnApplyDiscount);
@@ -528,5 +541,6 @@
         private Label label3;
         private Label label4;
         private TextBox contacttxt;
+        private Button button1;
     }
 }

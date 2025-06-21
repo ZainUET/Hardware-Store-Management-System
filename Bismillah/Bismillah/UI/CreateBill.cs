@@ -120,7 +120,7 @@ namespace Bismillah.UI
             cmbPaymentStatus.ValueMember = "lookup_id";
         }
 
-       
+
 
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace Bismillah.UI
             e.Graphics.DrawString(billContent, billFont, Brushes.Black,
                 new RectangleF(20, 20, e.MarginBounds.Width, e.MarginBounds.Height));
         }
-        
+
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -308,7 +308,7 @@ namespace Bismillah.UI
             };
             preview.ShowDialog();
         }
-        
+
 
         private void grpRegularCustomer_Enter(object sender, EventArgs e)
         {
@@ -320,6 +320,15 @@ namespace Bismillah.UI
 
             grpcustomers.Visible = rdWalkin.Checked;
             grpRegularCustomer.Visible = !rdWalkin.Checked;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CashierDashboard c = new CashierDashboard(2);
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+
         }
     }
 }
