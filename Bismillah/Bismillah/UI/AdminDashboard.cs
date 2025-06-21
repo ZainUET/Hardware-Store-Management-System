@@ -61,5 +61,14 @@ namespace Bismillah.UI
             this.Close();
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Reports addStaff = new Reports();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+
+        }
     }
 }

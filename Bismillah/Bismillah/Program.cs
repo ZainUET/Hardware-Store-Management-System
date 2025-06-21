@@ -17,7 +17,7 @@ namespace Bismillah
        
 
            
-            Application.Run(new E_DBorrowUI());
+            Application.Run(new Reports());
 
 
         }

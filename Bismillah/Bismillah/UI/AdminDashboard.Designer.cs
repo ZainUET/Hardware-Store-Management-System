@@ -197,6 +197,7 @@
             button5.TabIndex = 4;
             button5.Text = "Reports";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
