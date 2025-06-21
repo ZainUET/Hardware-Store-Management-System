@@ -19,116 +19,47 @@ namespace Bismillah.UI
         public ViewBorrow()
         {
             InitializeComponent();
-
-            
         }
 
-        private void btnedit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-            if (dgvborrowed.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Select a borrowed record to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            DataGridViewRow row = dgvborrowed.SelectedRows[0];
-
-            int borrowedId = Convert.ToInt32(row.Cells["borrowed_id"].Value);
-            int customerId = Convert.ToInt32(row.Cells["customer_id"].Value);
-            int productId = Convert.ToInt32(row.Cells["product_id"].Value);
-            int batchId = Convert.ToInt32(row.Cells["batch_id"].Value);
-            int quantity = Convert.ToInt32(row.Cells["quantity"].Value);
-            decimal unitPrice = Convert.ToDecimal(row.Cells["unit_price"].Value);
-            bool isPaid = Convert.ToBoolean(row.Cells["is_paid"].Value);
-
-            string newQtyStr = Prompt("Quantity:", quantity.ToString());
-            string newPriceStr = Prompt("Unit Price:", unitPrice.ToString());
-
-            if (!int.TryParse(newQtyStr, out int newQty) || newQty <= 0)
-            {
-                MessageBox.Show("Quantity must be a valid positive number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!decimal.TryParse(newPriceStr, out decimal newPrice) || newPrice <= 0)
-            {
-                MessageBox.Show("Unit Price must be a valid positive number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            Borrowed b = new Borrowed
-            {
-                BorrowedId = borrowedId,
-                CustomerId = customerId,
-                ProductId = productId,
-                BatchId = batchId,
-                Quantity = newQty,
-                UnitPrice = newPrice,
-                IsPaid = isPaid
-            };
-
-            string validation = BorrowedBL.ValidateBorrowed(b);
-            if (!string.IsNullOrEmpty(validation))
-            {
-                MessageBox.Show(validation, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            bool updated = BorrowedDL.UpdateBorrowed(b);
-            if (updated)
-            {
-                MessageBox.Show("Borrowed record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadBorrowedGrid();
-            }
-            else
-            {
-                MessageBox.Show("Failed to update record.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
-        private void E_DBorrowUI_Load(object sender, EventArgs e)
+        private void ViewBorrow_Load(object sender, EventArgs e)
         {
-            LoadBorrowedGrid();
+            LoadCustomers();
+            LoadAllBorrowed();
+
+            cmbCustomers.SelectedIndexChanged += cmbCustomers_SelectedIndexChanged;
         }
-        private void LoadBorrowedGrid()
+        private void LoadCustomers()
         {
-            DataTable dt = BorrowedDL.GetBorrowedList();
-            dgvborrowed.DataSource = dt;
-            dgvborrowed.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvborrowed.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvborrowed.Refresh();
+            cmbCustomers.DataSource = BorrowedDL.GetCustomerList();
+            cmbCustomers.DisplayMember = "name";
+            cmbCustomers.ValueMember = "customer_id";
+            cmbCustomers.SelectedIndex = -1; // start unselected
         }
 
-        private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LoadAllBorrowed()
         {
-            if (dgvborrowed.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Select a borrowed record to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            dgvBorrow.DataSource = BorrowedDL.GetAllBorrowedWithCustomerInfo();
+        }
 
-            int borrowedId = Convert.ToInt32(dgvborrowed.SelectedRows[0].Cells["borrowed_id"].Value);
-
-            DialogResult result = MessageBox.Show("Are you sure to delete this record?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+        private void cmbCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCustomers.SelectedValue != null && int.TryParse(cmbCustomers.SelectedValue.ToString(), out int customerId))
             {
-                bool deleted = BorrowedDL.DeleteBorrowed(borrowedId);
-                if (deleted)
-                {
-                    MessageBox.Show("Record deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadBorrowedGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to delete record.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                dgvBorrow.DataSource = BorrowedDL.GetBorrowedByCustomerId(customerId);
             }
         }
-        private string Prompt(string title, string defaultValue)
-        {
-            return Microsoft.VisualBasic.Interaction.InputBox(title, "Edit Borrowed", defaultValue);
-        }
 
-       
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            BorrowManagement b = new BorrowManagement();
+            this.Hide();
+            b.ShowDialog();
+            this.Close();
+        }
     }
 }

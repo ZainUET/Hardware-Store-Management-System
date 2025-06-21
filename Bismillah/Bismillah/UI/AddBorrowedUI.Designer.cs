@@ -52,20 +52,19 @@
             label2 = new Label();
             btnBack = new LinkLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             cmbcustomers = new ComboBox();
-            txtpoints = new TextBox();
-            txtaddress = new TextBox();
             label1 = new Label();
-            linkLabel1 = new LinkLabel();
+            txtaddress = new TextBox();
+            txtpoints = new TextBox();
             chkIsPaid = new CheckBox();
             dateTimePicker1 = new DateTimePicker();
+            btnsave = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             label3 = new Label();
             dgvBorrowed = new DataGridView();
-            linkLabel2 = new LinkLabel();
             tableLayoutPanel4 = new TableLayoutPanel();
+            button1 = new Button();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -137,22 +136,21 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSize = true;
-            tableLayoutPanel1.BackColor = Color.FromArgb(10, 35, 66);
+            tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(comboBox3, 0, 3);
             tableLayoutPanel1.Controls.Add(comboBox2, 0, 2);
             tableLayoutPanel1.Controls.Add(cmbcustomers, 0, 1);
-            tableLayoutPanel1.Controls.Add(txtpoints, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtaddress, 0, 4);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(linkLabel1, 0, 8);
-            tableLayoutPanel1.Controls.Add(chkIsPaid, 0, 6);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 0, 7);
-            tableLayoutPanel1.Location = new Point(11, 180);
+            tableLayoutPanel1.Controls.Add(txtaddress, 0, 3);
+            tableLayoutPanel1.Controls.Add(txtpoints, 0, 4);
+            tableLayoutPanel1.Controls.Add(chkIsPaid, 0, 5);
+            tableLayoutPanel1.Controls.Add(dateTimePicker1, 0, 6);
+            tableLayoutPanel1.Controls.Add(btnsave, 0, 7);
+            tableLayoutPanel1.Location = new Point(11, 262);
             tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -162,22 +160,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(375, 469);
+            tableLayoutPanel1.Size = new Size(375, 389);
             tableLayoutPanel1.TabIndex = 14;
-            // 
-            // comboBox3
-            // 
-            comboBox3.ForeColor = SystemColors.WindowFrame;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox3.Location = new Point(70, 173);
-            comboBox3.Margin = new Padding(70, 15, 18, 15);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(241, 23);
-            comboBox3.TabIndex = 16;
-            comboBox3.Text = "Select products batch";
             // 
             // comboBox2
             // 
@@ -203,28 +187,10 @@
             cmbcustomers.TabIndex = 14;
             cmbcustomers.Text = "Select Customers";
             // 
-            // txtpoints
-            // 
-            txtpoints.Location = new Point(70, 279);
-            txtpoints.Margin = new Padding(70, 15, 18, 15);
-            txtpoints.Name = "txtpoints";
-            txtpoints.PlaceholderText = "Enter unit price";
-            txtpoints.Size = new Size(241, 23);
-            txtpoints.TabIndex = 12;
-            // 
-            // txtaddress
-            // 
-            txtaddress.Location = new Point(70, 226);
-            txtaddress.Margin = new Padding(70, 15, 18, 15);
-            txtaddress.Name = "txtaddress";
-            txtaddress.PlaceholderText = "Enter quantity";
-            txtaddress.Size = new Size(241, 23);
-            txtaddress.TabIndex = 11;
-            // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.FromArgb(10, 35, 66);
             label1.Location = new Point(2, 0);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -233,26 +199,23 @@
             label1.Text = "Borrow Products";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // linkLabel1
+            // txtaddress
             // 
-            linkLabel1.ActiveLinkColor = Color.FromArgb(10, 35, 66);
-            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            linkLabel1.BackColor = Color.FromArgb(10, 35, 66);
-            linkLabel1.CausesValidation = false;
-            linkLabel1.Cursor = Cursors.Hand;
-            linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            linkLabel1.ForeColor = Color.White;
-            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(2, 427);
-            linkLabel1.Margin = new Padding(2, 0, 2, 0);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(371, 42);
-            linkLabel1.TabIndex = 13;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Borrow";
-            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            txtaddress.Location = new Point(70, 173);
+            txtaddress.Margin = new Padding(70, 15, 18, 15);
+            txtaddress.Name = "txtaddress";
+            txtaddress.PlaceholderText = "Enter quantity";
+            txtaddress.Size = new Size(241, 23);
+            txtaddress.TabIndex = 11;
+            // 
+            // txtpoints
+            // 
+            txtpoints.Location = new Point(70, 226);
+            txtpoints.Margin = new Padding(70, 15, 18, 15);
+            txtpoints.Name = "txtpoints";
+            txtpoints.PlaceholderText = "Enter unit price";
+            txtpoints.Size = new Size(241, 23);
+            txtpoints.TabIndex = 12;
             // 
             // chkIsPaid
             // 
@@ -260,7 +223,7 @@
             chkIsPaid.BackColor = Color.WhiteSmoke;
             chkIsPaid.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             chkIsPaid.ForeColor = SystemColors.WindowFrame;
-            chkIsPaid.Location = new Point(70, 332);
+            chkIsPaid.Location = new Point(70, 279);
             chkIsPaid.Margin = new Padding(70, 15, 18, 15);
             chkIsPaid.Name = "chkIsPaid";
             chkIsPaid.Size = new Size(241, 24);
@@ -271,15 +234,31 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Location = new Point(65, 374);
+            dateTimePicker1.Location = new Point(65, 321);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(245, 23);
             dateTimePicker1.TabIndex = 18;
             // 
+            // btnsave
+            // 
+            btnsave.Anchor = AnchorStyles.None;
+            btnsave.BackColor = Color.FromArgb(10, 35, 66);
+            btnsave.Cursor = Cursors.Hand;
+            btnsave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnsave.ForeColor = Color.White;
+            btnsave.Location = new Point(122, 349);
+            btnsave.Margin = new Padding(2);
+            btnsave.Name = "btnsave";
+            btnsave.Size = new Size(130, 38);
+            btnsave.TabIndex = 19;
+            btnsave.Text = "Borrow";
+            btnsave.UseVisualStyleBackColor = false;
+            btnsave.Click += btnsave_Click;
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.Anchor = AnchorStyles.None;
-            tableLayoutPanel3.BackColor = Color.FromArgb(10, 35, 66);
+            tableLayoutPanel3.BackColor = Color.FromArgb(240, 245, 255);
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Controls.Add(label3, 0, 0);
@@ -295,57 +274,53 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.FromArgb(10, 35, 66);
             label3.Location = new Point(2, 0);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(633, 40);
+            label3.Size = new Size(730, 40);
             label3.TabIndex = 1;
             label3.Text = "Borrowed";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dgvBorrowed
             // 
-            dgvBorrowed.BackgroundColor = Color.FromArgb(10, 35, 66);
+            dgvBorrowed.BackgroundColor = Color.FromArgb(240, 245, 255);
             dgvBorrowed.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBorrowed.Location = new Point(3, 43);
             dgvBorrowed.Name = "dgvBorrowed";
             dgvBorrowed.Size = new Size(728, 285);
             dgvBorrowed.TabIndex = 0;
             // 
-            // linkLabel2
-            // 
-            linkLabel2.ActiveLinkColor = Color.FromArgb(10, 35, 66);
-            linkLabel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            linkLabel2.BackColor = Color.FromArgb(10, 35, 66);
-            linkLabel2.CausesValidation = false;
-            linkLabel2.Cursor = Cursors.Hand;
-            linkLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            linkLabel2.ForeColor = Color.White;
-            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(2, 0);
-            linkLabel2.Margin = new Padding(2, 0, 2, 0);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(196, 39);
-            linkLabel2.TabIndex = 16;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Back";
-            linkLabel2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 1;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Controls.Add(linkLabel2, 0, 0);
-            tableLayoutPanel4.Location = new Point(990, 634);
+            tableLayoutPanel4.Controls.Add(button1, 0, 0);
+            tableLayoutPanel4.Location = new Point(1070, 634);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(200, 39);
+            tableLayoutPanel4.Size = new Size(120, 39);
             tableLayoutPanel4.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(10, 35, 66);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(2, 2);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(116, 35);
+            button1.TabIndex = 20;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // AddBorrowedUI
             // 
@@ -387,17 +362,16 @@
         private TextBox txtName;
         private LinkLabel btnBack;
         private TableLayoutPanel tableLayoutPanel1;
-        private ComboBox comboBox3;
         private ComboBox comboBox2;
         private ComboBox cmbcustomers;
         private TextBox txtpoints;
         private TextBox txtaddress;
         private Label label1;
-        private LinkLabel linkLabel1;
         private DateTimePicker dateTimePicker1;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label3;
-        private LinkLabel linkLabel2;
         private TableLayoutPanel tableLayoutPanel4;
+        private Button btnsave;
+        private Button button1;
     }
 }
