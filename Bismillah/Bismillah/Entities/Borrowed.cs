@@ -12,6 +12,7 @@ namespace Bismillah.Entities
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public int PaymentStatusId { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalAmount => Quantity * UnitPrice; // Calculated property
         public bool IsPaid { get; set; }

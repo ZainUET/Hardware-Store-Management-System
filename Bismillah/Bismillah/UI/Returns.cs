@@ -1,4 +1,5 @@
 using Bismillah.BL;
+using Bismillah.UI;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -155,6 +156,9 @@ namespace Bismillah
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            CashierDashboard c = new CashierDashboard(2);
+            this.Hide();
+            c.ShowDialog();
             this.Close();
         }
 

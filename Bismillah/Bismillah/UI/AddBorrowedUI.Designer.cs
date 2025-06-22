@@ -22,7 +22,6 @@
 
         private Button btnEdit;
         private Button btnDelete;
-        private CheckBox chkIsPaid;
         private DataGridView dgvBorrowed;
 
         /// <summary>
@@ -57,7 +56,6 @@
             label1 = new Label();
             txtaddress = new TextBox();
             txtpoints = new TextBox();
-            chkIsPaid = new CheckBox();
             dateTimePicker1 = new DateTimePicker();
             btnsave = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -65,6 +63,7 @@
             dgvBorrowed = new DataGridView();
             tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
+            cmbPaymentStatus = new ComboBox();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -139,12 +138,12 @@
             tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(cmbPaymentStatus, 0, 5);
             tableLayoutPanel1.Controls.Add(comboBox2, 0, 2);
             tableLayoutPanel1.Controls.Add(cmbcustomers, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(txtaddress, 0, 3);
             tableLayoutPanel1.Controls.Add(txtpoints, 0, 4);
-            tableLayoutPanel1.Controls.Add(chkIsPaid, 0, 5);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 0, 6);
             tableLayoutPanel1.Controls.Add(btnsave, 0, 7);
             tableLayoutPanel1.Location = new Point(11, 262);
@@ -217,24 +216,10 @@
             txtpoints.Size = new Size(241, 23);
             txtpoints.TabIndex = 12;
             // 
-            // chkIsPaid
-            // 
-            chkIsPaid.Anchor = AnchorStyles.Left;
-            chkIsPaid.BackColor = Color.WhiteSmoke;
-            chkIsPaid.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkIsPaid.ForeColor = SystemColors.WindowFrame;
-            chkIsPaid.Location = new Point(70, 279);
-            chkIsPaid.Margin = new Padding(70, 15, 18, 15);
-            chkIsPaid.Name = "chkIsPaid";
-            chkIsPaid.Size = new Size(241, 24);
-            chkIsPaid.TabIndex = 17;
-            chkIsPaid.Text = "Is Paid";
-            chkIsPaid.UseVisualStyleBackColor = false;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Location = new Point(65, 321);
+            dateTimePicker1.Location = new Point(65, 320);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(245, 23);
             dateTimePicker1.TabIndex = 18;
@@ -246,7 +231,7 @@
             btnsave.Cursor = Cursors.Hand;
             btnsave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnsave.ForeColor = Color.White;
-            btnsave.Location = new Point(122, 349);
+            btnsave.Location = new Point(122, 348);
             btnsave.Margin = new Padding(2);
             btnsave.Name = "btnsave";
             btnsave.Size = new Size(130, 38);
@@ -322,6 +307,18 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // cmbPaymentStatus
+            // 
+            cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
+            cmbPaymentStatus.FormattingEnabled = true;
+            cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
+            cmbPaymentStatus.Location = new Point(70, 279);
+            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
+            cmbPaymentStatus.Name = "cmbPaymentStatus";
+            cmbPaymentStatus.Size = new Size(241, 23);
+            cmbPaymentStatus.TabIndex = 20;
+            cmbPaymentStatus.Text = "Select Payment  Status";
+            // 
             // AddBorrowedUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -373,5 +370,6 @@
         private TableLayoutPanel tableLayoutPanel4;
         private Button btnsave;
         private Button button1;
+        private ComboBox cmbPaymentStatus;
     }
 }

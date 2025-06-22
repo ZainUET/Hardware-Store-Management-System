@@ -1,12 +1,20 @@
-﻿
-using Bismillah.BL;
+﻿using Bismillah.BL;
 using Bismillah.DL;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PDF_Font = iTextSharp.text.Font;
+using GDI_Font = System.Drawing.Font;
+using GDI_Rectangle = System.Drawing.Rectangle;
+using PDF_Rectangle = iTextSharp.text.Rectangle;
+
 
 namespace Bismillah.UI
 {
@@ -20,8 +28,8 @@ namespace Bismillah.UI
         private decimal _discountPercentage = 0;
 
         private PrintDocument printDocument = new PrintDocument();
-        private string billContent = "";
-        private Font billFont = new Font("Consolas", 10);
+        private GDI_Font billFont = new GDI_Font("Consolas", 10);
+        private string? billContent;
 
         public CreateBill(int staffId)
         {
@@ -33,79 +41,112 @@ namespace Bismillah.UI
 
             InitializeData();
         }
-        private void GenerateBillContent()
+        private void GenerateBillPDF(string filePath)
         {
+            Document doc = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+            doc.Open();
 
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("BISMILLAH SANITARY ELECTRIC AND HARDWARE STORE");
-            sb.AppendLine($"Date: {DateTime.Now:dd-MM-yyyy HH:mm}");
-
-            if (rdregular.Checked && cmbCustomer.SelectedItem != null)
+            // Title
+            PDF_Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18f, BaseColor.BLACK);
+            Paragraph title = new Paragraph("Bismillah Sanitary Electric and Hardware Store", titleFont)
             {
-                var name = ((DataRowView)cmbCustomer.SelectedItem)["name"].ToString();
-                var contact = ((DataRowView)cmbCustomer.SelectedItem)["contact"].ToString();
-                sb.AppendLine($"Customer: {name}");
-                sb.AppendLine($"Contact: {contact}");
-            }
-            else
-            {
-                sb.AppendLine($"Customer: {nametxt.Text.Trim()}");
-                sb.AppendLine($"Contact: {contacttxt.Text.Trim()}");
-            }
+                Alignment = Element.ALIGN_CENTER,
+                SpacingAfter = 10f
+            };
+            doc.Add(title);
 
-            sb.AppendLine(new string('-', 65));
-            sb.AppendLine(string.Format("{0,-4}{1,-28}{2,5}{3,10}{4,12}", "Sr", "Product", "Qty", "Unit", "Total"));
-            sb.AppendLine(new string('-', 65));
+            // Customer Info
+            PDF_Font infoFont = FontFactory.GetFont(FontFactory.HELVETICA, 10f);
+            PdfPTable infoTable = new PdfPTable(2) { WidthPercentage = 100 };
+
+            string customerName = rdregular.Checked && cmbCustomer.SelectedItem != null
+                ? ((DataRowView)cmbCustomer.SelectedItem)["name"].ToString()
+                : nametxt.Text.Trim();
+
+            string customerContact = rdregular.Checked && cmbCustomer.SelectedItem != null
+                ? ((DataRowView)cmbCustomer.SelectedItem)["contact"].ToString()
+                : contacttxt.Text.Trim();
+
+            PdfPCell leftInfo = new PdfPCell(new Phrase($"Customer: {customerName}\nContact: {customerContact}", infoFont))
+            {
+                Border = PDF_Rectangle.NO_BORDER
+            };
+
+            PdfPCell rightInfo = new PdfPCell(new Phrase($"Date: {DateTime.Now:dd-MM-yyyy HH:mm}", infoFont))
+            {
+                Border = PDF_Rectangle.NO_BORDER,
+                HorizontalAlignment = Element.ALIGN_RIGHT
+            };
+
+            infoTable.AddCell(leftInfo);
+            infoTable.AddCell(rightInfo);
+            doc.Add(infoTable);
+
+            // Product Table
+            PdfPTable billTable = new PdfPTable(5)
+            {
+                WidthPercentage = 100,
+                SpacingBefore = 10f
+            };
+            billTable.SetWidths(new float[] { 1.5f, 4f, 2f, 3f, 3f });
+
+            PDF_Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10f, BaseColor.WHITE);
+            BaseColor headerBg = new BaseColor(10, 35, 66);
+            PDF_Font cellFont = FontFactory.GetFont(FontFactory.HELVETICA, 9f);
+
+            string[] headers = { "Sr", "Product", "Qty", "Unit Price", "Total" };
+            foreach (string col in headers)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col, headerFont))
+                {
+                    BackgroundColor = headerBg,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    Padding = 5
+                };
+                billTable.AddCell(cell);
+            }
 
             foreach (DataRow row in _billItems.Rows)
             {
-                string sr = row["sr_no"].ToString();
-                string prod = row["name"].ToString();
-                if (prod.Length > 27) prod = prod.Substring(0, 27);
-                string qty = row["quantity"].ToString();
-                string unit = $"Rs. {Convert.ToDecimal(row["unit_price"]):N2}";
-                string total = $"Rs. {Convert.ToDecimal(row["total"]):N2}";
+                billTable.AddCell(new PdfPCell(new Phrase(row["sr_no"].ToString(), cellFont)));
+                billTable.AddCell(new PdfPCell(new Phrase(row["name"].ToString(), cellFont)));
+                billTable.AddCell(new PdfPCell(new Phrase(row["quantity"].ToString(), cellFont)) { HorizontalAlignment = Element.ALIGN_CENTER });
+                billTable.AddCell(new PdfPCell(new Phrase(row["unit_price_display"].ToString(), cellFont)) { HorizontalAlignment = Element.ALIGN_RIGHT });
+                billTable.AddCell(new PdfPCell(new Phrase(row["total_display"].ToString(), cellFont)) { HorizontalAlignment = Element.ALIGN_RIGHT });
+            }
+            doc.Add(billTable);
 
-                sb.AppendLine(string.Format("{0,-4}{1,-28}{2,5}{3,10}{4,12}", sr, prod, qty, unit, total));
+            // Totals
+            decimal totalAmount = _subtotal - (_subtotal * (_discountPercentage / 100m));
+            PdfPTable totalsTable = new PdfPTable(2)
+            {
+                WidthPercentage = 40,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                SpacingBefore = 10f
+            };
+            PDF_Font boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10f);
+
+            void AddTotalRow(string label, string value)
+            {
+                totalsTable.AddCell(new PdfPCell(new Phrase(label, boldFont)) { Border = PDF_Rectangle.NO_BORDER });
+                totalsTable.AddCell(new PdfPCell(new Phrase(value, boldFont)) { Border = PDF_Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
             }
 
-            sb.AppendLine(new string('-', 65));
-            sb.AppendLine(string.Format("{0,-20} Rs. {1:N2}", "Subtotal:", _subtotal));
-            sb.AppendLine(string.Format("{0,-20} {1}%", "Discount:", _discountPercentage));
-            decimal totalAmount = _subtotal - (_subtotal * (_discountPercentage / 100m));
-            sb.AppendLine(string.Format("{0,-20} Rs. {1:N2}", "Total:", totalAmount));
-            sb.AppendLine(new string('-', 65));
-            sb.AppendLine("Thank you for shopping with us!");
+            AddTotalRow("Subtotal:", DatabaseHelper.FormatAsPKR(_subtotal));
+            AddTotalRow("Discount:", $"{_discountPercentage}%");
+            AddTotalRow("Total:", DatabaseHelper.FormatAsPKR(totalAmount));
+            doc.Add(totalsTable);
 
-            billContent = sb.ToString();
+            // Thank you note
+            Paragraph footer = new Paragraph("Thank you for shopping with us!", infoFont)
+            {
+                Alignment = Element.ALIGN_CENTER,
+                SpacingBefore = 30f
+            };
+            doc.Add(footer);
+            doc.Close();
         }
-        //private void InitializeData()
-        //{
-        //    _billItems = new DataTable();
-        //    _billItems.Columns.Add("sr_no", typeof(int));
-        //    _billItems.Columns.Add("product_id", typeof(int));
-        //    _billItems.Columns.Add("name", typeof(string));
-        //    _billItems.Columns.Add("quantity", typeof(int));
-        //    _billItems.Columns.Add("unit_price", typeof(decimal));
-        //    _billItems.Columns.Add("unit_price_display", typeof(string));
-        //    _billItems.Columns.Add("total", typeof(decimal));
-        //    _billItems.Columns.Add("total_display", typeof(string));
-
-        //    dvgProductsinBill.Columns.Clear();
-        //    dvgProductsinBill.DataSource = _billItems;
-        //    dvgProductsinBill.ReadOnly = true;
-
-        //    dvgProductsinBill.Columns["sr_no"].HeaderText = "Sr #";
-        //    dvgProductsinBill.Columns["name"].HeaderText = "Product Name";
-        //    dvgProductsinBill.Columns["quantity"].HeaderText = "Qty";
-        //    dvgProductsinBill.Columns["unit_price_display"].HeaderText = "Unit Price";
-        //    dvgProductsinBill.Columns["total_display"].HeaderText = "Total";
-
-        //    LoadCustomers();
-        //    LoadProducts();
-        //    LoadPaymentStatuses();
-        //    ClearBillForm();
-        //}
 
 
         private void InitializeData()
@@ -269,23 +310,23 @@ namespace Bismillah.UI
             {
                 int paymentStatusId = Convert.ToInt32(cmbPaymentStatus.SelectedValue);
                 int? customerId = rdregular.Checked ? (int?)cmbCustomer.SelectedValue : null;
+                string customerName = rdregular.Checked
+                    ? ((DataRowView)cmbCustomer.SelectedItem)["name"].ToString()
+                    : nametxt.Text.Trim();
 
+                decimal total = _subtotal - (_subtotal * (_discountPercentage / 100));
+
+                // Save walk-in bill record if needed
                 if (rdWalkin.Checked)
                 {
-                    string name = nametxt.Text.Trim();
-                    string contact = contacttxt.Text.Trim();
-                    decimal total = _subtotal - (_subtotal * (_discountPercentage / 100));
+                    string insert = $@"
+        INSERT INTO walkin_bills (name, contact, total_amount)
+        VALUES ('{customerName}', '{contacttxt.Text.Trim()}', {total})";
 
-                    if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(contact))
-                    {
-                        string insert = $@"
-                    INSERT INTO walkin_bills (name, contact, total_amount)
-                     VALUES ('{name}', '{contact}', {total})";
-
-                        DatabaseHelper.Instance.Update(insert);
-                    }
+                    DatabaseHelper.Instance.Update(insert);
                 }
 
+                // Save bill quotation
                 int billId = _billBL.ProcessBill(
                     customerId,
                     _currentStaffId,
@@ -295,6 +336,21 @@ namespace Bismillah.UI
                     out string formattedTotal
                 );
 
+                // Insert into payments if payment is Completed
+                string paymentStatus = ((DataRowView)cmbPaymentStatus.SelectedItem)["value"].ToString();
+                if (paymentStatus.Equals("Completed", StringComparison.OrdinalIgnoreCase))
+                {
+                    string paymentQuery = $@"
+        INSERT INTO payments (customer_id, customer_name, amount_paid, payment_method)
+        VALUES (
+            {(customerId.HasValue ? customerId.ToString() : "NULL")},
+            '{customerName}',
+            {total},
+            'Cash'
+        )";
+                    DatabaseHelper.Instance.Update(paymentQuery);
+                }
+
                 MessageBox.Show($"Bill #{billId} saved. Total: {formattedTotal}");
                 ClearBillForm();
             }
@@ -302,6 +358,7 @@ namespace Bismillah.UI
             {
                 MessageBox.Show("Error saving bill: " + ex.Message);
             }
+
         }
 
         private void ClearBillForm()
@@ -356,14 +413,25 @@ namespace Bismillah.UI
                 return;
             }
 
-            GenerateBillContent();
-            PrintPreviewDialog preview = new PrintPreviewDialog
+            SaveFileDialog saveFile = new SaveFileDialog
             {
-                Document = printDocument,
-                Width = 800,
-                Height = 600
+                Filter = "PDF Files|*.pdf",
+                Title = "Save Bill PDF",
+                FileName = $"Bill_{DateTime.Now:yyyyMMdd_HHmmss}.pdf"
             };
-            preview.ShowDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    GenerateBillPDF(saveFile.FileName);
+                    MessageBox.Show("Bill exported as PDF successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error generating PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
 

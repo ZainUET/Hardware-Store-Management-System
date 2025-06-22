@@ -54,21 +54,19 @@
             tableLayoutPanel2.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1938, 208);
+            tableLayoutPanel2.Size = new Size(1357, 125);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox2
             // 
             pictureBox2.ErrorImage = null;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(4, 5);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(257, 178);
+            pictureBox2.Size = new Size(179, 107);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -79,10 +77,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(269, 67);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(188, 37);
             label2.Name = "label2";
-            label2.Size = new Size(1247, 74);
+            label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -94,13 +91,12 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dgvProducts, 0, 1);
-            tableLayoutPanel1.Location = new Point(502, 413);
-            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
+            tableLayoutPanel1.Location = new Point(351, 262);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(869, 552);
+            tableLayoutPanel1.Size = new Size(608, 331);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // dgvProducts
@@ -115,22 +111,22 @@
             dgvProducts.BorderStyle = BorderStyle.None;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvProducts.Location = new Point(4, 13);
-            dgvProducts.Margin = new Padding(4, 5, 4, 5);
+            dgvProducts.Location = new Point(3, 8);
             dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersWidth = 62;
-            dgvProducts.Size = new Size(851, 475);
+            dgvProducts.Size = new Size(596, 285);
             dgvProducts.TabIndex = 0;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(584, 222);
+            label1.Location = new Point(409, 133);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(784, 99);
+            label1.Size = new Size(549, 59);
             label1.TabIndex = 1;
             label1.Text = "Products";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -147,9 +143,10 @@
             back.ForeColor = Color.White;
             back.LinkBehavior = LinkBehavior.NeverUnderline;
             back.LinkColor = Color.White;
-            back.Location = new Point(1605, 937);
+            back.Location = new Point(1124, 576);
+            back.Margin = new Padding(2, 0, 2, 0);
             back.Name = "back";
-            back.Size = new Size(216, 64);
+            back.Size = new Size(152, 39);
             back.TabIndex = 17;
             back.TabStop = true;
             back.Text = "Back";
@@ -159,34 +156,35 @@
             // cmbCategories
             // 
             cmbCategories.FormattingEnabled = true;
-            cmbCategories.Location = new Point(1058, 363);
+            cmbCategories.Location = new Point(741, 218);
+            cmbCategories.Margin = new Padding(2, 2, 2, 2);
             cmbCategories.Name = "cmbCategories";
-            cmbCategories.Size = new Size(255, 33);
+            cmbCategories.Size = new Size(180, 23);
             cmbCategories.TabIndex = 18;
             cmbCategories.SelectedIndexChanged += cmbCategories_SelectedIndexChanged_1;
             // 
             // cmbproducts
             // 
             cmbproducts.FormattingEnabled = true;
-            cmbproducts.Location = new Point(538, 363);
+            cmbproducts.Location = new Point(377, 218);
+            cmbproducts.Margin = new Padding(2, 2, 2, 2);
             cmbproducts.Name = "cmbproducts";
-            cmbproducts.Size = new Size(329, 33);
+            cmbproducts.Size = new Size(232, 23);
             cmbproducts.TabIndex = 19;
             cmbproducts.TextChanged += cmbproducts_TextChanged_1;
             // 
             // ViewProduct
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1878, 1035);
+            ClientSize = new Size(959, 476);
             Controls.Add(cmbproducts);
             Controls.Add(label1);
             Controls.Add(cmbCategories);
             Controls.Add(back);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "ViewProduct";
             Text = "Edit/Delete Product";
             WindowState = FormWindowState.Maximized;

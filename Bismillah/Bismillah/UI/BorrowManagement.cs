@@ -37,7 +37,7 @@ namespace Bismillah.UI
         private void button3_Click(object sender, EventArgs e)
         {
 
-            AdminDashboard addStaff = new AdminDashboard();
+            CashierDashboard addStaff = new CashierDashboard(2);
             this.Hide();
             addStaff.ShowDialog();
             this.Close();

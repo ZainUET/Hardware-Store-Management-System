@@ -47,7 +47,39 @@ namespace Bismillah.UI
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ViewProduct v = new ViewProduct(2);
+            this.Hide();
+            v.ShowDialog();
+            this.Close();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Returns r = new Returns();
+            this.Hide();
+            r.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BorrowManagement borrowManagement = new BorrowManagement();
+            this.Hide();
+            borrowManagement.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ViewPayments v = new ViewPayments();
+            this.Hide();
+            v.ShowDialog();
+            this.Close();
+        }
     }
-    }
+}
 
 

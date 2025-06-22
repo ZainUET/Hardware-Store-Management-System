@@ -35,7 +35,6 @@ namespace Bismillah.UI
             DataGridViewRow selectedRow = dgvborrowed.SelectedRows[0];
             int borrowedId = Convert.ToInt32(selectedRow.Cells["borrowed_id"].Value);
 
-            // Get borrowed data
             DataTable dt = BorrowedDL.GetBorrowedById(borrowedId);
             if (dt.Rows.Count == 0)
             {
@@ -51,20 +50,27 @@ namespace Bismillah.UI
                 ProductId = Convert.ToInt32(row["product_id"]),
                 Quantity = Convert.ToInt32(row["quantity"]),
                 UnitPrice = Convert.ToDecimal(row["unit_price"]),
-                IsPaid = Convert.ToBoolean(row["is_paid"]),
+                PaymentStatusId = Convert.ToInt32(row["payment_status_id"])
             };
 
-            // Prompt user for updated values
+            string oldStatus = BorrowedDL.GetLookupValueById(b.PaymentStatusId);
             string newQtyStr = Prompt("Quantity:", b.Quantity.ToString());
             string newPriceStr = Prompt("Unit Price:", b.UnitPrice.ToString());
-            DialogResult paidResult = MessageBox.Show("Is the item paid?", "Payment Status", MessageBoxButtons.YesNo);
+
+            // Status prompt
+            DataTable statusTable = DatabaseHelper.Instance.GetDataTable("SELECT lookup_id, value FROM lookup WHERE category = 'Payment Status'");
+            string selectedStatus = Microsoft.VisualBasic.Interaction.InputBox("Enter payment status (Pending, Completed, Failed):", "Edit Status", oldStatus);
+            DataRow selectedStatusRow = statusTable.AsEnumerable().FirstOrDefault(r => r["value"].ToString().Equals(selectedStatus, StringComparison.OrdinalIgnoreCase));
+            if (selectedStatusRow == null)
+            {
+                MessageBox.Show("Invalid status entered.");
+                return;
+            }
 
             b.Quantity = int.TryParse(newQtyStr, out int q) ? q : b.Quantity;
             b.UnitPrice = decimal.TryParse(newPriceStr, out decimal p) ? p : b.UnitPrice;
-            b.IsPaid = (paidResult == DialogResult.Yes);
-           
+            b.PaymentStatusId = Convert.ToInt32(selectedStatusRow["lookup_id"]);
 
-            // Validate
             string validation = BorrowedBL.ValidateBorrowed(b);
             if (!string.IsNullOrEmpty(validation))
             {
@@ -72,15 +78,32 @@ namespace Bismillah.UI
                 return;
             }
 
-            // Update
+            string newStatus = selectedStatus;
+            decimal total = b.Quantity * b.UnitPrice;
+
+            // Check stock if increasing
+            if (!BorrowedDL.IsStockAvailable(b.ProductId, b.Quantity))
+            {
+                MessageBox.Show("Insufficient stock.");
+                return;
+            }
+
+            // Update record
             if (BorrowedDL.UpdateBorrowed(b))
             {
+                if ((newStatus == "Completed" || newStatus == "Pending") && (oldStatus != newStatus))
+                {
+                    BorrowedDL.InsertPayment(b.CustomerId, total, newStatus, "");
+                    BorrowedDL.ReduceProductStock(b.ProductId, b.Quantity);
+                }
+
                 MessageBox.Show("Record updated successfully.");
-                cmbCustomer_SelectedIndexChanged(null, null); // Refresh grid
+                cmbCustomer_SelectedIndexChanged(null, null);
             }
             else
             {
                 MessageBox.Show("Failed to update.");
+
             }
         }
 
@@ -95,7 +118,7 @@ namespace Bismillah.UI
             cmbCustomer.ValueMember = "customer_id";
             cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
         }
-        
+
         private void btndelete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvborrowed.SelectedRows.Count == 0)
@@ -132,7 +155,12 @@ namespace Bismillah.UI
             BorrowManagement b = new BorrowManagement();
             this.Hide();
             b.ShowDialog();
-            this.Close();   
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
