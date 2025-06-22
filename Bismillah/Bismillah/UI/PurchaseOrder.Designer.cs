@@ -324,6 +324,7 @@
             Controls.Add(cmbProducts);
             Controls.Add(label5);
             Controls.Add(tableLayoutPanel3);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "PurchaseOrder";
             Text = "Purchase Order";

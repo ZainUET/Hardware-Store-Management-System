@@ -215,6 +215,7 @@
             Controls.Add(label1);
             Controls.Add(back);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "Reports";
             Text = "Reports Generation";

@@ -245,6 +245,7 @@
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddStaff";
             Text = "AddSatff";
             WindowState = FormWindowState.Maximized;

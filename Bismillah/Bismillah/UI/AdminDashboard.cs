@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bismillah.DL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,15 @@ namespace Bismillah.UI
         private void button5_Click(object sender, EventArgs e)
         {
             Reports addStaff = new Reports();
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PurchaseOrder addStaff = new PurchaseOrder();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();

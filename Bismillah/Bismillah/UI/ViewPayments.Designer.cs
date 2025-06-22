@@ -52,20 +52,22 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 86.30137F));
             tableLayoutPanel2.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
-            tableLayoutPanel2.Location = new Point(1, 1);
+            tableLayoutPanel2.Location = new Point(1, 2);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1357, 125);
+            tableLayoutPanel2.Size = new Size(1906, 208);
             tableLayoutPanel2.TabIndex = 5;
             // 
             // pictureBox2
             // 
             pictureBox2.ErrorImage = null;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(179, 107);
+            pictureBox2.Size = new Size(253, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -76,9 +78,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(188, 37);
+            label2.Location = new Point(265, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -87,10 +90,9 @@
             // 
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(427, 129);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(610, 215);
             label1.Name = "label1";
-            label1.Size = new Size(549, 59);
+            label1.Size = new Size(784, 98);
             label1.TabIndex = 20;
             label1.Text = "Products";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,10 +100,9 @@
             // cmbCustomers
             // 
             cmbCustomers.FormattingEnabled = true;
-            cmbCustomers.Location = new Point(410, 216);
-            cmbCustomers.Margin = new Padding(2);
+            cmbCustomers.Location = new Point(586, 360);
             cmbCustomers.Name = "cmbCustomers";
-            cmbCustomers.Size = new Size(220, 23);
+            cmbCustomers.Size = new Size(313, 33);
             cmbCustomers.TabIndex = 22;
             cmbCustomers.SelectedIndexChanged += cmbCustomers_SelectedIndexChanged;
             // 
@@ -112,12 +113,13 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dgvPayments, 0, 1);
-            tableLayoutPanel1.Location = new Point(397, 265);
+            tableLayoutPanel1.Location = new Point(567, 442);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(608, 331);
+            tableLayoutPanel1.Size = new Size(869, 552);
             tableLayoutPanel1.TabIndex = 21;
             // 
             // dgvPayments
@@ -132,12 +134,13 @@
             dgvPayments.BorderStyle = BorderStyle.None;
             dgvPayments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPayments.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvPayments.Location = new Point(3, 8);
+            dgvPayments.Location = new Point(4, 13);
+            dgvPayments.Margin = new Padding(4, 5, 4, 5);
             dgvPayments.MultiSelect = false;
             dgvPayments.Name = "dgvPayments";
             dgvPayments.ReadOnly = true;
             dgvPayments.RowHeadersWidth = 62;
-            dgvPayments.Size = new Size(596, 320);
+            dgvPayments.Size = new Size(851, 533);
             dgvPayments.TabIndex = 0;
             // 
             // btnback
@@ -146,10 +149,9 @@
             btnback.Cursor = Cursors.Hand;
             btnback.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnback.ForeColor = Color.White;
-            btnback.Location = new Point(899, 624);
-            btnback.Margin = new Padding(2);
+            btnback.Location = new Point(1284, 1040);
             btnback.Name = "btnback";
-            btnback.Size = new Size(97, 30);
+            btnback.Size = new Size(139, 50);
             btnback.TabIndex = 24;
             btnback.Text = "Back";
             btnback.UseVisualStyleBackColor = false;
@@ -157,14 +159,16 @@
             // 
             // ViewPayments
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 665);
+            ClientSize = new Size(1924, 1108);
             Controls.Add(btnback);
             Controls.Add(label1);
             Controls.Add(cmbCustomers);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ViewPayments";
             Text = "ViewPayments";
             Load += ViewPayments_Load;

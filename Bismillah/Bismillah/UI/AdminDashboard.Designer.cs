@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             tableLayoutPanel1 = new TableLayoutPanel();
-            label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -39,9 +38,12 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            button6 = new Button();
             label2 = new Label();
             label3 = new Label();
+            label7 = new Label();
+            button6 = new Button();
+            label8 = new Label();
+            button7 = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -57,7 +59,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.47122F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.60107F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.8607769F));
-            tableLayoutPanel1.Controls.Add(label7, 2, 2);
             tableLayoutPanel1.Controls.Add(label6, 1, 2);
             tableLayoutPanel1.Controls.Add(label5, 0, 2);
             tableLayoutPanel1.Controls.Add(label4, 2, 0);
@@ -66,30 +67,24 @@
             tableLayoutPanel1.Controls.Add(button3, 2, 1);
             tableLayoutPanel1.Controls.Add(button4, 0, 3);
             tableLayoutPanel1.Controls.Add(button5, 1, 3);
-            tableLayoutPanel1.Controls.Add(button6, 2, 3);
             tableLayoutPanel1.Controls.Add(label2, 1, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
-            tableLayoutPanel1.Location = new Point(276, 312);
+            tableLayoutPanel1.Controls.Add(label7, 1, 4);
+            tableLayoutPanel1.Controls.Add(button6, 1, 5);
+            tableLayoutPanel1.Controls.Add(label8, 2, 2);
+            tableLayoutPanel1.Controls.Add(button7, 2, 3);
+            tableLayoutPanel1.Location = new Point(261, 248);
             tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1494, 497);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 144F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 14F));
+            tableLayoutPanel1.Size = new Size(1494, 724);
             tableLayoutPanel1.TabIndex = 3;
-            // 
-            // label7
-            // 
-            label7.Font = new Font("Segoe UI", 56F);
-            label7.Location = new Point(1021, 240);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(376, 149);
-            label7.TabIndex = 11;
-            label7.Text = "🏃";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -199,21 +194,6 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(10, 35, 66);
-            button6.Cursor = Cursors.Hand;
-            button6.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(1021, 394);
-            button6.Margin = new Padding(4, 5, 4, 5);
-            button6.Name = "button6";
-            button6.Size = new Size(376, 92);
-            button6.TabIndex = 5;
-            button6.Text = "Logout";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
-            // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 50F);
@@ -235,6 +215,58 @@
             label3.TabIndex = 7;
             label3.Text = "👥";
             label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 56F);
+            label7.Location = new Point(519, 491);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(376, 144);
+            label7.TabIndex = 11;
+            label7.Text = "🏃";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(10, 35, 66);
+            button6.Cursor = Cursors.Hand;
+            button6.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = SystemColors.ButtonHighlight;
+            button6.Location = new Point(519, 640);
+            button6.Margin = new Padding(4, 5, 4, 5);
+            button6.Name = "button6";
+            button6.Size = new Size(376, 79);
+            button6.TabIndex = 5;
+            button6.Text = "Logout";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Segoe UI", 56F);
+            label8.Location = new Point(1021, 240);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(376, 149);
+            label8.TabIndex = 13;
+            label8.Text = "🛍️";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(10, 35, 66);
+            button7.Cursor = Cursors.Hand;
+            button7.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.ForeColor = SystemColors.ButtonHighlight;
+            button7.Location = new Point(1021, 394);
+            button7.Margin = new Padding(4, 5, 4, 5);
+            button7.Name = "button7";
+            button7.Size = new Size(376, 78);
+            button7.TabIndex = 12;
+            button7.Text = "Purchase Order";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -281,9 +313,10 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 944);
+            ClientSize = new Size(1924, 986);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "AdminDashboard";
             Text = "Dashboard";
@@ -311,5 +344,7 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Button button7;
+        private Label label8;
     }
 }

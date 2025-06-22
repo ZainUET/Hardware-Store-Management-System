@@ -465,6 +465,7 @@
             Controls.Add(cmbSelectProducts);
             Controls.Add(grpcustomertype);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CreateBill";
             Text = "CreateBill";
             WindowState = FormWindowState.Maximized;
