@@ -51,6 +51,7 @@
             label2 = new Label();
             btnBack = new LinkLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            cmbPaymentStatus = new ComboBox();
             comboBox2 = new ComboBox();
             cmbcustomers = new ComboBox();
             label1 = new Label();
@@ -63,7 +64,6 @@
             dgvBorrowed = new DataGridView();
             tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
-            cmbPaymentStatus = new ComboBox();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -162,6 +162,18 @@
             tableLayoutPanel1.Size = new Size(375, 389);
             tableLayoutPanel1.TabIndex = 14;
             // 
+            // cmbPaymentStatus
+            // 
+            cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
+            cmbPaymentStatus.FormattingEnabled = true;
+            cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
+            cmbPaymentStatus.Location = new Point(70, 279);
+            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
+            cmbPaymentStatus.Name = "cmbPaymentStatus";
+            cmbPaymentStatus.Size = new Size(241, 23);
+            cmbPaymentStatus.TabIndex = 20;
+            cmbPaymentStatus.Text = "Select Payment  Status";
+            // 
             // comboBox2
             // 
             comboBox2.ForeColor = SystemColors.WindowFrame;
@@ -173,6 +185,7 @@
             comboBox2.Size = new Size(241, 23);
             comboBox2.TabIndex = 15;
             comboBox2.Text = "Select Products";
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // cmbcustomers
             // 
@@ -212,7 +225,8 @@
             txtpoints.Location = new Point(70, 226);
             txtpoints.Margin = new Padding(70, 15, 18, 15);
             txtpoints.Name = "txtpoints";
-            txtpoints.PlaceholderText = "Enter unit price";
+            txtpoints.PlaceholderText = "Unit price";
+            txtpoints.ReadOnly = true;
             txtpoints.Size = new Size(241, 23);
             txtpoints.TabIndex = 12;
             // 
@@ -306,18 +320,6 @@
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // cmbPaymentStatus
-            // 
-            cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
-            cmbPaymentStatus.FormattingEnabled = true;
-            cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
-            cmbPaymentStatus.Location = new Point(70, 279);
-            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
-            cmbPaymentStatus.Name = "cmbPaymentStatus";
-            cmbPaymentStatus.Size = new Size(241, 23);
-            cmbPaymentStatus.TabIndex = 20;
-            cmbPaymentStatus.Text = "Select Payment  Status";
             // 
             // AddBorrowedUI
             // 

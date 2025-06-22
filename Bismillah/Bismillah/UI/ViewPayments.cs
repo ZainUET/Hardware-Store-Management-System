@@ -24,7 +24,20 @@ namespace Bismillah.UI
         private void ViewPayments_Load(object sender, EventArgs e)
         {
             LoadCustomerComboBox();
+            LoadWalkinComboBox();
             LoadAllPayments();
+        }
+        private void LoadWalkinComboBox()
+        {
+            DataTable walkinDT = PaymentDL.GetWalkinCustomerNames();
+            DataRow allRow = walkinDT.NewRow();
+            allRow["customer_name"] = "All Walk-in Customers";
+            walkinDT.Rows.InsertAt(allRow, 0);
+
+            cmbwalkin.DataSource = walkinDT;
+            cmbwalkin.DisplayMember = "customer_name";
+            cmbwalkin.ValueMember = "customer_name";
+            cmbwalkin.SelectedIndexChanged += cmbwalkin_SelectedIndexChanged;
         }
         private void LoadCustomerComboBox()
         {
@@ -64,8 +77,13 @@ namespace Bismillah.UI
         {
             CashierDashboard c = new CashierDashboard(2);
             this.Hide();
-            c.Show(); 
+            c.ShowDialog();
             this.Close();
+        }
+
+        private void cmbwalkin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvPayments.DataSource = PaymentDL.GetAllWalkinPayments();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Bismillah.UI
 
             string oldStatus = BorrowedDL.GetLookupValueById(b.PaymentStatusId);
             string newQtyStr = Prompt("Quantity:", b.Quantity.ToString());
-            string newPriceStr = Prompt("Unit Price:", b.UnitPrice.ToString());
+             b.UnitPrice = b.UnitPrice;
 
             // Status prompt
             DataTable statusTable = DatabaseHelper.Instance.GetDataTable("SELECT lookup_id, value FROM lookup WHERE category = 'Payment Status'");
@@ -68,7 +68,7 @@ namespace Bismillah.UI
             }
 
             b.Quantity = int.TryParse(newQtyStr, out int q) ? q : b.Quantity;
-            b.UnitPrice = decimal.TryParse(newPriceStr, out decimal p) ? p : b.UnitPrice;
+          
             b.PaymentStatusId = Convert.ToInt32(selectedStatusRow["lookup_id"]);
 
             string validation = BorrowedBL.ValidateBorrowed(b);

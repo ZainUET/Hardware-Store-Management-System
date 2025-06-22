@@ -31,6 +31,7 @@ namespace Bismillah.UI
 
             // Load products
             comboBox2.DataSource = DatabaseHelper.Instance.GetDataTable("SELECT product_id, name FROM products");
+            
             comboBox2.DisplayMember = "name";
             comboBox2.ValueMember = "product_id";
 
@@ -39,6 +40,7 @@ namespace Bismillah.UI
             cmbPaymentStatus.DisplayMember = "value";
             cmbPaymentStatus.ValueMember = "lookup_id";
 
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             dgvBorrowed.DataSource = BorrowedDL.GetBorrowedList();
         }
         private void BorrowedUI_Load(object sender, EventArgs e)
@@ -96,25 +98,34 @@ namespace Bismillah.UI
 
                     BorrowedDL.InsertPayment(customerId, total, method, custName);
                     BorrowedDL.ReduceProductStock(productId, quantity);
-                   
-                    
+
+
                 }
                 dgvBorrowed.DataSource = BorrowedDL.GetBorrowedList();
                 MessageBox.Show("Borrowed Successfully.");
- 
+
             }
             else
             {
                 MessageBox.Show("Failed to add.");
             }
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
             BorrowManagement b = new BorrowManagement();
             this.Hide();
             b.ShowDialog();
             this.Close();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedValue != null && int.TryParse(comboBox2.SelectedValue.ToString(), out int productId))
+            {
+                decimal price = BorrowedDL.GetUnitPrice(productId);
+                txtpoints.Text = price.ToString("0.00");
+            }
         }
     }
 }

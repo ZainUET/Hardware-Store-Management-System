@@ -37,6 +37,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvPayments = new DataGridView();
             btnback = new Button();
+            cmbwalkin = new ComboBox();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -155,11 +156,22 @@
             btnback.UseVisualStyleBackColor = false;
             btnback.Click += btnback_Click;
             // 
+            // cmbwalkin
+            // 
+            cmbwalkin.FormattingEnabled = true;
+            cmbwalkin.Location = new Point(776, 216);
+            cmbwalkin.Margin = new Padding(2);
+            cmbwalkin.Name = "cmbwalkin";
+            cmbwalkin.Size = new Size(220, 23);
+            cmbwalkin.TabIndex = 25;
+            cmbwalkin.SelectedIndexChanged += cmbwalkin_SelectedIndexChanged;
+            // 
             // ViewPayments
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 665);
+            Controls.Add(cmbwalkin);
             Controls.Add(btnback);
             Controls.Add(label1);
             Controls.Add(cmbCustomers);
@@ -186,5 +198,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvPayments;
         private Button btnback;
+        private ComboBox cmbwalkin;
     }
 }
