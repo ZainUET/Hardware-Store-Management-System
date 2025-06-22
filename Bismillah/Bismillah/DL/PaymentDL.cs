@@ -30,6 +30,12 @@ namespace Bismillah.DL
             string query = "SELECT customer_id, name FROM customer ORDER BY name";
             return DatabaseHelper.Instance.GetDataTable(query);
         }
+        public static DataTable GetAllWalkinPayments()
+        {
+            string query = "SELECT * FROM payments WHERE customer_id IS NULL";
+            return DatabaseHelper.Instance.GetDataTable(query);
+        }
+
 
         public static DataTable GetPaymentsByCustomerId(int customerId)
         {
@@ -46,5 +52,17 @@ namespace Bismillah.DL
         ORDER BY p.payment_date DESC";
             return DatabaseHelper.Instance.GetDataTable(query);
         }
+        public static DataTable GetWalkinCustomerNames()
+        {
+            string query = "SELECT DISTINCT customer_name FROM payments WHERE customer_id IS NULL";
+            return DatabaseHelper.Instance.GetDataTable(query);
+        }
+
+        public static DataTable GetPaymentsByWalkinName(string name)
+        {
+            string query = $"SELECT * FROM payments WHERE customer_id IS NULL AND customer_name = '{name.Replace("'", "''")}'";
+            return DatabaseHelper.Instance.GetDataTable(query);
+        }
+
     }
 }

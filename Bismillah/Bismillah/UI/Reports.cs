@@ -208,7 +208,7 @@ namespace Bismillah.UI
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
-            Login addStaff = new Login();
+            AdminDashboard addStaff = new AdminDashboard();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();

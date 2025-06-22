@@ -168,10 +168,10 @@
             cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
             cmbPaymentStatus.FormattingEnabled = true;
             cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
-            cmbPaymentStatus.Location = new Point(100, 440);
-            cmbPaymentStatus.Margin = new Padding(100, 25, 26, 25);
+            cmbPaymentStatus.Location = new Point(70, 279);
+            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
             cmbPaymentStatus.Name = "cmbPaymentStatus";
-            cmbPaymentStatus.Size = new Size(343, 33);
+            cmbPaymentStatus.Size = new Size(241, 23);
             cmbPaymentStatus.TabIndex = 20;
             cmbPaymentStatus.Text = "Select Payment  Status";
             // 
@@ -186,6 +186,7 @@
             comboBox2.Size = new Size(343, 33);
             comboBox2.TabIndex = 15;
             comboBox2.Text = "Select Products";
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // cmbcustomers
             // 
@@ -224,8 +225,9 @@
             txtpoints.Location = new Point(100, 359);
             txtpoints.Margin = new Padding(100, 25, 26, 25);
             txtpoints.Name = "txtpoints";
-            txtpoints.PlaceholderText = "Enter unit price";
-            txtpoints.Size = new Size(343, 31);
+            txtpoints.PlaceholderText = "Unit price";
+            txtpoints.ReadOnly = true;
+            txtpoints.Size = new Size(241, 23);
             txtpoints.TabIndex = 12;
             // 
             // dateTimePicker1

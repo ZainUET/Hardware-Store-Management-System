@@ -27,7 +27,7 @@ namespace Bismillah.BL
             }
 
             // Hash the password before storing
-            staff.Password = HashPassword(staff.Password);
+            staff.Password = staff.Password;
 
             return staffDL.AddStaff(staff);
         }
@@ -58,18 +58,6 @@ namespace Bismillah.BL
                 throw new ArgumentException("Role must be selected.");
         }
 
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashedBytes.Length; i++)
-                {
-                    builder.Append(hashedBytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
+        
         }
     }
-}

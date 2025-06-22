@@ -58,7 +58,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1939, 208);
+            tableLayoutPanel2.Size = new Size(1702, 125);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox2
@@ -79,8 +79,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(269, 67);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(236, 37);
             label2.Name = "label2";
             label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
@@ -94,8 +93,7 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dgvProducts, 0, 1);
-            tableLayoutPanel1.Location = new Point(501, 437);
-            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
+            tableLayoutPanel1.Location = new Point(409, 275);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
@@ -147,7 +145,8 @@
             back.ForeColor = Color.White;
             back.LinkBehavior = LinkBehavior.NeverUnderline;
             back.LinkColor = Color.White;
-            back.Location = new Point(1606, 960);
+            back.Location = new Point(883, 642);
+            back.Margin = new Padding(2, 0, 2, 0);
             back.Name = "back";
             back.Size = new Size(216, 64);
             back.TabIndex = 17;
@@ -159,7 +158,8 @@
             // cmbCategories
             // 
             cmbCategories.FormattingEnabled = true;
-            cmbCategories.Location = new Point(1059, 363);
+            cmbCategories.Location = new Point(741, 218);
+            cmbCategories.Margin = new Padding(2);
             cmbCategories.Name = "cmbCategories";
             cmbCategories.Size = new Size(255, 33);
             cmbCategories.TabIndex = 18;
@@ -168,7 +168,8 @@
             // cmbproducts
             // 
             cmbproducts.FormattingEnabled = true;
-            cmbproducts.Location = new Point(539, 363);
+            cmbproducts.Location = new Point(377, 218);
+            cmbproducts.Margin = new Padding(2);
             cmbproducts.Name = "cmbproducts";
             cmbproducts.Size = new Size(330, 33);
             cmbproducts.TabIndex = 19;
@@ -179,7 +180,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1370, 793);
+            ClientSize = new Size(1304, 734);
             Controls.Add(cmbproducts);
             Controls.Add(label1);
             Controls.Add(cmbCategories);

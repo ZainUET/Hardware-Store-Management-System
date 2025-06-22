@@ -123,6 +123,16 @@ namespace Bismillah.DL
 
             return DatabaseHelper.Instance.Update(query) > 0;
         }
+        public static decimal GetUnitPrice(int productId)
+        {
+            string query = $"SELECT unit_price FROM products WHERE product_id = {productId}";
+            var dt = DatabaseHelper.Instance.GetDataTable(query);
+            if (dt.Rows.Count > 0)
+                return Convert.ToDecimal(dt.Rows[0]["unit_price"]);
+            return 0;
+        }
+
+
 
     }
 }
