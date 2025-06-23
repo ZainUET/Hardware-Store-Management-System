@@ -121,6 +121,9 @@ namespace Bismillah.UI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            AdminDashboard a = new AdminDashboard();
+            this.Hide();
+            a.ShowDialog();
             this.Close();
         }
 

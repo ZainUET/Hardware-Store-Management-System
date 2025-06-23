@@ -17,7 +17,7 @@ namespace Bismillah
        
 
            
-            Application.Run(new ViewPayments());
+            Application.Run(new CashierDashboard(2));
 
 
         }
