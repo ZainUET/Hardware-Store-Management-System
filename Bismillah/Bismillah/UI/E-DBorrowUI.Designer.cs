@@ -59,19 +59,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1713, 125);
+            tableLayoutPanel2.Size = new Size(2447, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 119);
+            pictureBox1.Size = new Size(196, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -82,9 +84,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(237, 37);
+            label2.Location = new Point(339, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -96,12 +99,13 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dgvborrowed, 0, 1);
-            tableLayoutPanel1.Location = new Point(275, 232);
+            tableLayoutPanel1.Location = new Point(393, 387);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(905, 303);
+            tableLayoutPanel1.Size = new Size(1293, 505);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // dgvborrowed
@@ -109,19 +113,19 @@
             dgvborrowed.BackgroundColor = Color.FromArgb(240, 245, 255);
             dgvborrowed.BorderStyle = BorderStyle.None;
             dgvborrowed.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvborrowed.Location = new Point(3, 8);
+            dgvborrowed.Location = new Point(4, 13);
+            dgvborrowed.Margin = new Padding(4, 5, 4, 5);
             dgvborrowed.Name = "dgvborrowed";
             dgvborrowed.RowHeadersWidth = 62;
-            dgvborrowed.Size = new Size(899, 262);
+            dgvborrowed.Size = new Size(1284, 437);
             dgvborrowed.TabIndex = 0;
             // 
             // cmbCustomer
             // 
             cmbCustomer.FormattingEnabled = true;
-            cmbCustomer.Location = new Point(468, 212);
-            cmbCustomer.Margin = new Padding(2, 2, 2, 2);
+            cmbCustomer.Location = new Point(669, 353);
             cmbCustomer.Name = "cmbCustomer";
-            cmbCustomer.Size = new Size(196, 23);
+            cmbCustomer.Size = new Size(278, 33);
             cmbCustomer.TabIndex = 17;
             cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
             // 
@@ -129,10 +133,9 @@
             // 
             label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(289, 136);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(413, 227);
             label1.Name = "label1";
-            label1.Size = new Size(842, 40);
+            label1.Size = new Size(1203, 67);
             label1.TabIndex = 1;
             label1.Text = "Borrowed";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -150,10 +153,9 @@
             btnedit.ForeColor = Color.White;
             btnedit.LinkBehavior = LinkBehavior.NeverUnderline;
             btnedit.LinkColor = Color.White;
-            btnedit.Location = new Point(2, 27);
-            btnedit.Margin = new Padding(2, 0, 2, 0);
+            btnedit.Location = new Point(4, 47);
             btnedit.Name = "btnedit";
-            btnedit.Size = new Size(129, 41);
+            btnedit.Size = new Size(183, 67);
             btnedit.TabIndex = 14;
             btnedit.TabStop = true;
             btnedit.Text = "Edit";
@@ -172,10 +174,9 @@
             btndelete.ForeColor = Color.White;
             btndelete.LinkBehavior = LinkBehavior.NeverUnderline;
             btndelete.LinkColor = Color.White;
-            btndelete.Location = new Point(2, 96);
-            btndelete.Margin = new Padding(2, 0, 2, 0);
+            btndelete.Location = new Point(4, 163);
             btndelete.Name = "btndelete";
-            btndelete.Size = new Size(129, 40);
+            btndelete.Size = new Size(183, 65);
             btndelete.TabIndex = 15;
             btndelete.TabStop = true;
             btndelete.Text = "Delete";
@@ -194,10 +195,9 @@
             btnback.ForeColor = Color.White;
             btnback.LinkBehavior = LinkBehavior.NeverUnderline;
             btnback.LinkColor = Color.White;
-            btnback.Location = new Point(432, 583);
-            btnback.Margin = new Padding(2, 0, 2, 0);
+            btnback.Location = new Point(617, 972);
             btnback.Name = "btnback";
-            btnback.Size = new Size(133, 42);
+            btnback.Size = new Size(189, 69);
             btnback.TabIndex = 16;
             btnback.TabStop = true;
             btnback.Text = "Back";
@@ -215,10 +215,9 @@
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(2, 165);
-            linkLabel1.Margin = new Padding(2, 0, 2, 0);
+            linkLabel1.Location = new Point(4, 277);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(129, 40);
+            linkLabel1.Size = new Size(183, 65);
             linkLabel1.TabIndex = 18;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Back";
@@ -232,32 +231,32 @@
             tableLayoutPanel3.Controls.Add(btnedit, 0, 0);
             tableLayoutPanel3.Controls.Add(linkLabel1, 0, 2);
             tableLayoutPanel3.Controls.Add(btndelete, 0, 1);
-            tableLayoutPanel3.Location = new Point(85, 312);
+            tableLayoutPanel3.Location = new Point(121, 520);
+            tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.Size = new Size(133, 205);
+            tableLayoutPanel3.Size = new Size(190, 342);
             tableLayoutPanel3.TabIndex = 19;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(349, 214);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(499, 357);
             label3.Name = "label3";
-            label3.Size = new Size(111, 15);
+            label3.Size = new Size(170, 25);
             label3.TabIndex = 20;
             label3.Text = "Select a Customer:";
             // 
             // E_DBorrowUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 449);
+            ClientSize = new Size(1370, 748);
             Controls.Add(label3);
             Controls.Add(cmbCustomer);
             Controls.Add(tableLayoutPanel3);
@@ -265,6 +264,8 @@
             Controls.Add(btnback);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "E_DBorrowUI";
             Text = "Edit/Delete Borrow";
             WindowState = FormWindowState.Maximized;

@@ -222,6 +222,7 @@
             Controls.Add(tableLayoutPanel3);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddCustomer";
             Text = "Add Customer";
             WindowState = FormWindowState.Maximized;

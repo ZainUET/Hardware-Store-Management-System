@@ -56,19 +56,21 @@
             tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(-1, 0);
+            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1589, 125);
+            tableLayoutPanel2.Size = new Size(2270, 208);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(181, 119);
+            pictureBox1.Size = new Size(259, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -79,9 +81,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(220, 37);
+            label2.Location = new Point(314, 67);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(845, 51);
+            label2.Size = new Size(1247, 74);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,66 +101,64 @@
             tableLayoutPanel1.Controls.Add(txtName, 0, 1);
             tableLayoutPanel1.Controls.Add(txtcomapny, 0, 4);
             tableLayoutPanel1.Controls.Add(button1, 0, 5);
-            tableLayoutPanel1.Location = new Point(496, 158);
-            tableLayoutPanel1.Margin = new Padding(2);
+            tableLayoutPanel1.Location = new Point(709, 263);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.76073F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 47.2392654F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(375, 341);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 93F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 103F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 93F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanel1.Size = new Size(536, 568);
             tableLayoutPanel1.TabIndex = 4;
             // 
             // cnictxt
             // 
-            cnictxt.Location = new Point(70, 181);
-            cnictxt.Margin = new Padding(70, 15, 18, 15);
+            cnictxt.Location = new Point(100, 303);
+            cnictxt.Margin = new Padding(100, 25, 26, 25);
             cnictxt.Name = "cnictxt";
             cnictxt.PlaceholderText = "CNIC";
-            cnictxt.Size = new Size(241, 23);
+            cnictxt.Size = new Size(343, 31);
             cnictxt.TabIndex = 10;
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(70, 127);
-            txtContact.Margin = new Padding(70, 15, 18, 15);
+            txtContact.Location = new Point(100, 213);
+            txtContact.Margin = new Padding(100, 25, 26, 25);
             txtContact.Name = "txtContact";
             txtContact.PlaceholderText = "Contact";
-            txtContact.Size = new Size(241, 23);
+            txtContact.Size = new Size(343, 31);
             txtContact.TabIndex = 5;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(370, 52);
+            label1.Size = new Size(529, 87);
             label1.TabIndex = 0;
             label1.Text = "Add Supplier";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtName
             // 
-            txtName.Location = new Point(70, 74);
-            txtName.Margin = new Padding(70, 15, 18, 15);
+            txtName.Location = new Point(100, 124);
+            txtName.Margin = new Padding(100, 25, 26, 25);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
-            txtName.Size = new Size(241, 23);
+            txtName.Size = new Size(343, 31);
             txtName.TabIndex = 2;
             // 
             // txtcomapny
             // 
-            txtcomapny.Location = new Point(70, 237);
-            txtcomapny.Margin = new Padding(70, 15, 18, 15);
+            txtcomapny.Location = new Point(100, 396);
+            txtcomapny.Margin = new Padding(100, 25, 26, 25);
             txtcomapny.Name = "txtcomapny";
             txtcomapny.PlaceholderText = "Company";
-            txtcomapny.Size = new Size(241, 23);
+            txtcomapny.Size = new Size(343, 31);
             txtcomapny.TabIndex = 12;
             // 
             // button1
@@ -172,10 +173,9 @@
             button1.ForeColor = Color.White;
             button1.LinkBehavior = LinkBehavior.NeverUnderline;
             button1.LinkColor = Color.White;
-            button1.Location = new Point(111, 293);
-            button1.Margin = new Padding(2, 0, 2, 0);
+            button1.Location = new Point(160, 489);
             button1.Name = "button1";
-            button1.Size = new Size(152, 39);
+            button1.Size = new Size(216, 64);
             button1.TabIndex = 13;
             button1.TabStop = true;
             button1.Text = "Save";
@@ -193,10 +193,9 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(1369, 874);
-            btnBack.Margin = new Padding(2, 0, 2, 0);
+            btnBack.Location = new Point(1956, 1457);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(95, 36);
+            btnBack.Size = new Size(135, 59);
             btnBack.TabIndex = 5;
             btnBack.TabStop = true;
             btnBack.Text = "Back";
@@ -214,10 +213,9 @@
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(905, 514);
-            linkLabel1.Margin = new Padding(2, 0, 2, 0);
+            linkLabel1.Location = new Point(1293, 857);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(152, 39);
+            linkLabel1.Size = new Size(216, 64);
             linkLabel1.TabIndex = 14;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Back";
@@ -226,15 +224,15 @@
             // 
             // AddSupplierUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1177, 563);
+            ClientSize = new Size(1681, 938);
             Controls.Add(linkLabel1);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddSupplierUI";
             Text = "AddSatff";
             WindowState = FormWindowState.Maximized;

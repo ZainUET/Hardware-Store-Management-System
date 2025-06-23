@@ -40,9 +40,9 @@
             button6 = new Button();
             label6 = new Label();
             button5 = new Button();
-            label3 = new Label();
             label7 = new Label();
             label8 = new Label();
+            label3 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -67,19 +67,18 @@
             tableLayoutPanel1.Controls.Add(button6, 2, 3);
             tableLayoutPanel1.Controls.Add(label6, 1, 2);
             tableLayoutPanel1.Controls.Add(button5, 1, 3);
-            tableLayoutPanel1.Controls.Add(label3, 0, 0);
             tableLayoutPanel1.Controls.Add(label7, 2, 2);
             tableLayoutPanel1.Controls.Add(label8, 2, 0);
-            tableLayoutPanel1.Location = new Point(239, 194);
+            tableLayoutPanel1.Controls.Add(label3, 0, 0);
+            tableLayoutPanel1.Location = new Point(322, 456);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 17F));
-            tableLayoutPanel1.Size = new Size(1188, 682);
+            tableLayoutPanel1.Size = new Size(1257, 553);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // button1
@@ -88,9 +87,10 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(583, 108);
+            button1.Location = new Point(832, 180);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(284, 54);
+            button1.Size = new Size(406, 90);
             button1.TabIndex = 16;
             button1.Text = "Borrowed";
             button1.UseVisualStyleBackColor = false;
@@ -102,9 +102,10 @@
             btnCreateBill.Cursor = Cursors.Hand;
             btnCreateBill.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateBill.ForeColor = SystemColors.ButtonHighlight;
-            btnCreateBill.Location = new Point(3, 108);
+            btnCreateBill.Location = new Point(4, 180);
+            btnCreateBill.Margin = new Padding(4, 5, 4, 5);
             btnCreateBill.Name = "btnCreateBill";
-            btnCreateBill.Size = new Size(284, 55);
+            btnCreateBill.Size = new Size(406, 92);
             btnCreateBill.TabIndex = 13;
             btnCreateBill.Text = "Create Bill";
             btnCreateBill.UseVisualStyleBackColor = false;
@@ -116,9 +117,10 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(293, 108);
+            button2.Location = new Point(418, 180);
+            button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
-            button2.Size = new Size(284, 55);
+            button2.Size = new Size(406, 92);
             button2.TabIndex = 1;
             button2.Text = "View Products";
             button2.UseVisualStyleBackColor = false;
@@ -130,9 +132,10 @@
             button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(3, 266);
+            button4.Location = new Point(4, 444);
+            button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
-            button4.Size = new Size(284, 55);
+            button4.Size = new Size(406, 92);
             button4.TabIndex = 3;
             button4.Text = "Returns";
             button4.UseVisualStyleBackColor = false;
@@ -141,9 +144,10 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 56F);
-            label2.Location = new Point(293, 0);
+            label2.Location = new Point(418, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(284, 100);
+            label2.Size = new Size(406, 167);
             label2.TabIndex = 6;
             label2.Text = "👀";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -151,9 +155,10 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 56F);
-            label5.Location = new Point(3, 166);
+            label5.Location = new Point(4, 277);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(284, 97);
+            label5.Size = new Size(406, 162);
             label5.TabIndex = 9;
             label5.Text = "⟳";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -164,9 +169,10 @@
             button6.Cursor = Cursors.Hand;
             button6.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(583, 266);
+            button6.Location = new Point(832, 444);
+            button6.Margin = new Padding(4, 5, 4, 5);
             button6.Name = "button6";
-            button6.Size = new Size(284, 55);
+            button6.Size = new Size(406, 92);
             button6.TabIndex = 5;
             button6.Text = "Logout";
             button6.UseVisualStyleBackColor = false;
@@ -175,9 +181,10 @@
             // label6
             // 
             label6.Font = new Font("Segoe UI", 56F);
-            label6.Location = new Point(293, 166);
+            label6.Location = new Point(418, 277);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(284, 97);
+            label6.Size = new Size(406, 162);
             label6.TabIndex = 10;
             label6.Text = "💵";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -188,30 +195,22 @@
             button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(293, 266);
+            button5.Location = new Point(418, 444);
+            button5.Margin = new Padding(4, 5, 4, 5);
             button5.Name = "button5";
-            button5.Size = new Size(284, 55);
+            button5.Size = new Size(406, 92);
             button5.TabIndex = 4;
             button5.Text = "Payments";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // label3
-            // 
-            label3.Font = new Font("Segoe UI", 56F);
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(284, 100);
-            label3.TabIndex = 12;
-            label3.Text = "\U0001f9fe";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label7
             // 
             label7.Font = new Font("Segoe UI", 56F);
-            label7.Location = new Point(583, 166);
+            label7.Location = new Point(832, 277);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(291, 97);
+            label7.Size = new Size(416, 162);
             label7.TabIndex = 11;
             label7.Text = "🏃";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -219,12 +218,24 @@
             // label8
             // 
             label8.Font = new Font("Segoe UI", 56F);
-            label8.Location = new Point(583, 0);
+            label8.Location = new Point(832, 0);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(284, 105);
+            label8.Size = new Size(406, 175);
             label8.TabIndex = 15;
             label8.Text = "\U0001f91d";
             label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 56F);
+            label3.Location = new Point(4, 0);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(406, 167);
+            label3.TabIndex = 12;
+            label3.Text = "\U0001f9fe";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -236,46 +247,53 @@
             tableLayoutPanel3.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel3.Controls.Add(label1, 1, 0);
             tableLayoutPanel3.Location = new Point(1, 0);
+            tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1616, 125);
+            tableLayoutPanel3.Size = new Size(1879, 208);
             tableLayoutPanel3.TabIndex = 4;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(155, 119);
+            pictureBox2.Size = new Size(221, 198);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Left;
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
             label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(245, 36);
+            label1.Location = new Point(838, 67);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(904, 53);
+            label1.Size = new Size(483, 74);
             label1.TabIndex = 1;
             label1.Text = "Welcome Cashier";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CashierDashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1242, 647);
+            ClientSize = new Size(1878, 1144);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "CashierDashboard";
             Text = "Cashier Dashboard";
             WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }

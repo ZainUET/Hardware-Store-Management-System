@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUI));
             tableLayoutPanel2 = new TableLayoutPanel();
+            pictureBox2 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
@@ -37,11 +38,10 @@
             edit = new LinkLabel();
             delete = new LinkLabel();
             back = new LinkLabel();
-            pictureBox2 = new PictureBox();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -60,6 +60,18 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(1938, 208);
             tableLayoutPanel2.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(257, 178);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -178,18 +190,6 @@
             back.TextAlign = ContentAlignment.MiddleCenter;
             back.LinkClicked += back_LinkClicked;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.ErrorImage = null;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(4, 5);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(257, 178);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            // 
             // ProductUI
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -201,6 +201,7 @@
             Controls.Add(edit);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "ProductUI";
             Text = "Edit/Delete Product";
@@ -208,9 +209,9 @@
             Load += ProductUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 

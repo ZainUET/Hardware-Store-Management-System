@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductsUI));
             tableLayoutPanel2 = new TableLayoutPanel();
             label2 = new Label();
+            pictureBox2 = new PictureBox();
             label1 = new Label();
             btnBack = new LinkLabel();
             label3 = new Label();
@@ -45,10 +46,9 @@
             btnsave = new Button();
             txtquantity = new TextBox();
             button = new Button();
-            pictureBox2 = new PictureBox();
             tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            tableLayoutPanel5.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -82,6 +82,18 @@
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(298, 178);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -258,18 +270,6 @@
             button.UseVisualStyleBackColor = false;
             button.Click += button_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.ErrorImage = null;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(4, 5);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(298, 178);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
             // AddProductsUI
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -282,15 +282,16 @@
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddProductsUI";
             Text = "Add Product";
             WindowState = FormWindowState.Maximized;
             Load += AddProductsUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

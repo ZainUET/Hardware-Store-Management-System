@@ -49,7 +49,7 @@ namespace Bismillah.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ViewProduct v = new ViewProduct(2);
+            ViewProduct v = new ViewProduct(_staffId);
             this.Hide();
             v.ShowDialog();
             this.Close();
