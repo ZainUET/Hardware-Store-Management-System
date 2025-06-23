@@ -52,22 +52,22 @@
             tableLayoutPanel1.Controls.Add(nametextBox, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(button1, 0, 3);
-            tableLayoutPanel1.Location = new Point(437, 235);
+            tableLayoutPanel1.Location = new Point(498, 296);
             tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 24.6621628F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 22.466217F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.9459457F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 31.7567558F));
-            tableLayoutPanel1.Size = new Size(654, 717);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.6833858F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.3385582F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.2131653F));
+            tableLayoutPanel1.Size = new Size(654, 638);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // paastextBox
             // 
             paastextBox.Anchor = AnchorStyles.None;
             paastextBox.Font = new Font("Microsoft JhengHei UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            paastextBox.Location = new Point(99, 397);
+            paastextBox.Location = new Point(99, 382);
             paastextBox.Margin = new Padding(4, 5, 4, 5);
             paastextBox.Name = "paastextBox";
             paastextBox.PasswordChar = '*';
@@ -79,7 +79,7 @@
             // 
             nametextBox.Anchor = AnchorStyles.None;
             nametextBox.Font = new Font("Microsoft JhengHei UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nametextBox.Location = new Point(99, 241);
+            nametextBox.Location = new Point(99, 232);
             nametextBox.Margin = new Padding(4, 5, 4, 5);
             nametextBox.Name = "nametextBox";
             nametextBox.PlaceholderText = "CNIC";
@@ -108,7 +108,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Microsoft New Tai Lue", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(228, 561);
+            button1.Location = new Point(228, 506);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
             button1.Size = new Size(197, 82);
@@ -172,14 +172,14 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(219, 807);
+            tableLayoutPanel3.Size = new Size(219, 1147);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 812);
+            ClientSize = new Size(1370, 1152);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);

@@ -42,5 +42,13 @@ namespace Bismillah.UI
             addStaff.ShowDialog();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewProduct addStaff = new ViewProduct(1);
+            this.Hide();
+            addStaff.ShowDialog();
+            this.Close();
+        }
     }
 }

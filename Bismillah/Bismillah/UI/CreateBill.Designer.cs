@@ -64,6 +64,7 @@
             grpcustomertype = new GroupBox();
             button1 = new Button();
             label5 = new Label();
+            label6 = new Label();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
@@ -260,10 +261,13 @@
             // 
             // btnRemove
             // 
-            btnRemove.BackColor = Color.White;
+            btnRemove.BackColor = Color.FromArgb(10, 35, 66);
+            btnRemove.Cursor = Cursors.Hand;
+            btnRemove.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRemove.ForeColor = Color.White;
             btnRemove.Location = new Point(873, 367);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(129, 37);
+            btnRemove.Size = new Size(129, 46);
             btnRemove.TabIndex = 13;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = false;
@@ -309,38 +313,49 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(1509, 960);
+            btnSave.BackColor = Color.FromArgb(10, 35, 66);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(1500, 903);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(111, 33);
+            btnSave.Size = new Size(120, 50);
             btnSave.TabIndex = 19;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnPrint
             // 
-            btnPrint.Location = new Point(1704, 960);
+            btnPrint.BackColor = Color.FromArgb(10, 35, 66);
+            btnPrint.Cursor = Cursors.Hand;
+            btnPrint.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnPrint.ForeColor = Color.White;
+            btnPrint.Location = new Point(1704, 903);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(111, 33);
+            btnPrint.Size = new Size(127, 50);
             btnPrint.TabIndex = 20;
             btnPrint.Text = "Print";
-            btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
             // 
             // cmbPaymentStatus
             // 
             cmbPaymentStatus.FormattingEnabled = true;
-            cmbPaymentStatus.Location = new Point(1500, 893);
+            cmbPaymentStatus.Location = new Point(1500, 864);
             cmbPaymentStatus.Name = "cmbPaymentStatus";
             cmbPaymentStatus.Size = new Size(331, 33);
             cmbPaymentStatus.TabIndex = 21;
             // 
             // btnAddProduct
             // 
-            btnAddProduct.BackColor = Color.White;
+            btnAddProduct.BackColor = Color.FromArgb(10, 35, 66);
+            btnAddProduct.Cursor = Cursors.Hand;
+            btnAddProduct.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddProduct.ForeColor = Color.White;
             btnAddProduct.Location = new Point(709, 367);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(129, 37);
+            btnAddProduct.Size = new Size(129, 46);
             btnAddProduct.TabIndex = 22;
             btnAddProduct.Text = "Add";
             btnAddProduct.UseVisualStyleBackColor = false;
@@ -348,10 +363,13 @@
             // 
             // btnApplyDiscount
             // 
-            btnApplyDiscount.BackColor = Color.White;
-            btnApplyDiscount.Location = new Point(1676, 722);
+            btnApplyDiscount.BackColor = Color.FromArgb(10, 35, 66);
+            btnApplyDiscount.Cursor = Cursors.Hand;
+            btnApplyDiscount.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnApplyDiscount.ForeColor = Color.White;
+            btnApplyDiscount.Location = new Point(1676, 713);
             btnApplyDiscount.Name = "btnApplyDiscount";
-            btnApplyDiscount.Size = new Size(129, 32);
+            btnApplyDiscount.Size = new Size(129, 40);
             btnApplyDiscount.TabIndex = 23;
             btnApplyDiscount.Text = "Apply";
             btnApplyDiscount.UseVisualStyleBackColor = false;
@@ -361,7 +379,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(1500, 843);
+            label1.Location = new Point(1500, 829);
             label1.Name = "label1";
             label1.Size = new Size(120, 32);
             label1.TabIndex = 24;
@@ -419,12 +437,16 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1606, 1002);
+            button1.BackColor = Color.FromArgb(10, 35, 66);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1598, 964);
             button1.Name = "button1";
-            button1.Size = new Size(111, 33);
+            button1.Size = new Size(132, 53);
             button1.TabIndex = 26;
             button1.Text = "Back";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label5
@@ -437,12 +459,27 @@
             label5.TabIndex = 27;
             label5.Text = "Date:";
             // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(10, 35, 66);
+            label6.Location = new Point(487, 227);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(201, 74);
+            label6.TabIndex = 28;
+            label6.Text = "Billing";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CreateBill
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1857, 1047);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(grpcustomers);
@@ -521,5 +558,6 @@
         private TextBox contacttxt;
         private Button button1;
         private Label label5;
+        private Label label6;
     }
 }

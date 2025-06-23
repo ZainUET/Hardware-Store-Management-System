@@ -15,6 +15,10 @@ namespace Bismillah.UI
     {
         public AdminDashboard()
         {
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
         }
 

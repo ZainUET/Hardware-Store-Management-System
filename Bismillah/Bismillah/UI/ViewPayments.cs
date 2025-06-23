@@ -85,5 +85,10 @@ namespace Bismillah.UI
         {
             dgvPayments.DataSource = PaymentDL.GetAllWalkinPayments();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -51,25 +51,22 @@
             label2 = new Label();
             btnBack = new LinkLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            cmbPaymentStatus = new ComboBox();
             comboBox2 = new ComboBox();
-            cmbcustomers = new ComboBox();
             label1 = new Label();
             txtaddress = new TextBox();
-            txtpoints = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
             btnsave = new Button();
+            cmbcustomers = new ComboBox();
+            txtpoints = new TextBox();
+            cmbPaymentStatus = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             label3 = new Label();
             dgvBorrowed = new DataGridView();
-            tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBorrowed).BeginInit();
-            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -86,7 +83,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(2319, 208);
+            tableLayoutPanel2.Size = new Size(2407, 208);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
@@ -107,7 +104,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(321, 67);
+            label2.Location = new Point(333, 67);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(1247, 74);
@@ -126,7 +123,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(2004, 1395);
+            btnBack.Location = new Point(2092, 1397);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(135, 59);
             btnBack.TabIndex = 5;
@@ -140,15 +137,14 @@
             tableLayoutPanel1.BackColor = Color.FromArgb(240, 245, 255);
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(cmbPaymentStatus, 0, 5);
             tableLayoutPanel1.Controls.Add(comboBox2, 0, 2);
-            tableLayoutPanel1.Controls.Add(cmbcustomers, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(txtaddress, 0, 3);
-            tableLayoutPanel1.Controls.Add(txtpoints, 0, 4);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 0, 6);
             tableLayoutPanel1.Controls.Add(btnsave, 0, 7);
-            tableLayoutPanel1.Location = new Point(16, 437);
+            tableLayoutPanel1.Controls.Add(cmbcustomers, 0, 1);
+            tableLayoutPanel1.Controls.Add(txtpoints, 0, 4);
+            tableLayoutPanel1.Controls.Add(cmbPaymentStatus, 0, 5);
+            tableLayoutPanel1.Location = new Point(54, 270);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -163,18 +159,6 @@
             tableLayoutPanel1.Size = new Size(536, 648);
             tableLayoutPanel1.TabIndex = 14;
             // 
-            // cmbPaymentStatus
-            // 
-            cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
-            cmbPaymentStatus.FormattingEnabled = true;
-            cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
-            cmbPaymentStatus.Location = new Point(70, 279);
-            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
-            cmbPaymentStatus.Name = "cmbPaymentStatus";
-            cmbPaymentStatus.Size = new Size(241, 23);
-            cmbPaymentStatus.TabIndex = 20;
-            cmbPaymentStatus.Text = "Select Payment  Status";
-            // 
             // comboBox2
             // 
             comboBox2.ForeColor = SystemColors.WindowFrame;
@@ -187,18 +171,6 @@
             comboBox2.TabIndex = 15;
             comboBox2.Text = "Select Products";
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            // 
-            // cmbcustomers
-            // 
-            cmbcustomers.ForeColor = SystemColors.WindowFrame;
-            cmbcustomers.FormattingEnabled = true;
-            cmbcustomers.Items.AddRange(new object[] { "Yes", "No" });
-            cmbcustomers.Location = new Point(100, 112);
-            cmbcustomers.Margin = new Padding(100, 25, 26, 25);
-            cmbcustomers.Name = "cmbcustomers";
-            cmbcustomers.Size = new Size(343, 33);
-            cmbcustomers.TabIndex = 14;
-            cmbcustomers.Text = "Select Customers";
             // 
             // label1
             // 
@@ -220,25 +192,6 @@
             txtaddress.Size = new Size(343, 31);
             txtaddress.TabIndex = 11;
             // 
-            // txtpoints
-            // 
-            txtpoints.Location = new Point(100, 359);
-            txtpoints.Margin = new Padding(100, 25, 26, 25);
-            txtpoints.Name = "txtpoints";
-            txtpoints.PlaceholderText = "Unit price";
-            txtpoints.ReadOnly = true;
-            txtpoints.Size = new Size(241, 23);
-            txtpoints.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Location = new Point(94, 503);
-            dateTimePicker1.Margin = new Padding(4, 5, 4, 5);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(348, 31);
-            dateTimePicker1.TabIndex = 18;
-            // 
             // btnsave
             // 
             btnsave.Anchor = AnchorStyles.None;
@@ -246,13 +199,48 @@
             btnsave.Cursor = Cursors.Hand;
             btnsave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnsave.ForeColor = Color.White;
-            btnsave.Location = new Point(175, 562);
+            btnsave.Location = new Point(175, 531);
             btnsave.Name = "btnsave";
             btnsave.Size = new Size(186, 63);
             btnsave.TabIndex = 19;
             btnsave.Text = "Borrow";
             btnsave.UseVisualStyleBackColor = false;
             btnsave.Click += btnsave_Click;
+            // 
+            // cmbcustomers
+            // 
+            cmbcustomers.ForeColor = SystemColors.WindowFrame;
+            cmbcustomers.FormattingEnabled = true;
+            cmbcustomers.Items.AddRange(new object[] { "Yes", "No" });
+            cmbcustomers.Location = new Point(100, 112);
+            cmbcustomers.Margin = new Padding(100, 25, 26, 25);
+            cmbcustomers.Name = "cmbcustomers";
+            cmbcustomers.Size = new Size(343, 33);
+            cmbcustomers.TabIndex = 14;
+            cmbcustomers.Text = "Select Customers";
+            // 
+            // txtpoints
+            // 
+            txtpoints.Location = new Point(100, 359);
+            txtpoints.Margin = new Padding(100, 25, 26, 25);
+            txtpoints.Name = "txtpoints";
+            txtpoints.PlaceholderText = "Unit price";
+            txtpoints.ReadOnly = true;
+            txtpoints.Size = new Size(343, 31);
+            txtpoints.TabIndex = 12;
+            // 
+            // cmbPaymentStatus
+            // 
+            cmbPaymentStatus.Anchor = AnchorStyles.None;
+            cmbPaymentStatus.ForeColor = SystemColors.WindowFrame;
+            cmbPaymentStatus.FormattingEnabled = true;
+            cmbPaymentStatus.Items.AddRange(new object[] { "Yes", "No" });
+            cmbPaymentStatus.Location = new Point(152, 430);
+            cmbPaymentStatus.Margin = new Padding(70, 15, 18, 15);
+            cmbPaymentStatus.Name = "cmbPaymentStatus";
+            cmbPaymentStatus.Size = new Size(284, 33);
+            cmbPaymentStatus.TabIndex = 20;
+            cmbPaymentStatus.Text = "Select Payment  Status";
             // 
             // tableLayoutPanel3
             // 
@@ -262,13 +250,13 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Controls.Add(label3, 0, 0);
             tableLayoutPanel3.Controls.Add(dgvBorrowed, 0, 1);
-            tableLayoutPanel3.Location = new Point(651, 470);
+            tableLayoutPanel3.Location = new Point(665, 335);
             tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1049, 552);
+            tableLayoutPanel3.Size = new Size(1200, 552);
             tableLayoutPanel3.TabIndex = 15;
             // 
             // label3
@@ -290,23 +278,8 @@
             dgvBorrowed.Margin = new Padding(4, 5, 4, 5);
             dgvBorrowed.Name = "dgvBorrowed";
             dgvBorrowed.RowHeadersWidth = 62;
-            dgvBorrowed.Size = new Size(1040, 475);
+            dgvBorrowed.Size = new Size(1192, 475);
             dgvBorrowed.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 1;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel4.Controls.Add(button1, 0, 0);
-            tableLayoutPanel4.Location = new Point(1529, 1057);
-            tableLayoutPanel4.Margin = new Padding(4, 5, 4, 5);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel4.Size = new Size(171, 65);
-            tableLayoutPanel4.TabIndex = 17;
             // 
             // button1
             // 
@@ -315,9 +288,9 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(1696, 934);
             button1.Name = "button1";
-            button1.Size = new Size(165, 58);
+            button1.Size = new Size(165, 56);
             button1.TabIndex = 20;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = false;
@@ -328,8 +301,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1790, 1142);
-            Controls.Add(tableLayoutPanel4);
+            ClientSize = new Size(1878, 1144);
+            Controls.Add(button1);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(btnBack);
@@ -337,6 +310,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddBorrowedUI";
             Text = "AddSatff";
+            WindowState = FormWindowState.Maximized;
             Load += BorrowedUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
@@ -345,7 +319,6 @@
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBorrowed).EndInit();
-            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -368,10 +341,8 @@
         private TextBox txtpoints;
         private TextBox txtaddress;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label3;
-        private TableLayoutPanel tableLayoutPanel4;
         private Button btnsave;
         private Button button1;
         private ComboBox cmbPaymentStatus;

@@ -63,7 +63,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(2447, 208);
+            tableLayoutPanel2.Size = new Size(2955, 208);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox1
@@ -84,7 +84,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(339, 67);
+            label2.Location = new Point(408, 67);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(1247, 74);
@@ -99,7 +99,7 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(dgvborrowed, 0, 1);
-            tableLayoutPanel1.Location = new Point(393, 387);
+            tableLayoutPanel1.Location = new Point(470, 381);
             tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -123,7 +123,7 @@
             // cmbCustomer
             // 
             cmbCustomer.FormattingEnabled = true;
-            cmbCustomer.Location = new Point(669, 353);
+            cmbCustomer.Location = new Point(577, 340);
             cmbCustomer.Name = "cmbCustomer";
             cmbCustomer.Size = new Size(278, 33);
             cmbCustomer.TabIndex = 17;
@@ -195,7 +195,7 @@
             btnback.ForeColor = Color.White;
             btnback.LinkBehavior = LinkBehavior.NeverUnderline;
             btnback.LinkColor = Color.White;
-            btnback.Location = new Point(617, 972);
+            btnback.Location = new Point(1125, 1172);
             btnback.Name = "btnback";
             btnback.Size = new Size(189, 69);
             btnback.TabIndex = 16;
@@ -231,7 +231,7 @@
             tableLayoutPanel3.Controls.Add(btnedit, 0, 0);
             tableLayoutPanel3.Controls.Add(linkLabel1, 0, 2);
             tableLayoutPanel3.Controls.Add(btndelete, 0, 1);
-            tableLayoutPanel3.Location = new Point(121, 520);
+            tableLayoutPanel3.Location = new Point(213, 440);
             tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
@@ -245,7 +245,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(499, 357);
+            label3.Location = new Point(577, 315);
             label3.Name = "label3";
             label3.Size = new Size(170, 25);
             label3.TabIndex = 20;
@@ -256,7 +256,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1370, 748);
+            ClientSize = new Size(1878, 948);
             Controls.Add(label3);
             Controls.Add(cmbCustomer);
             Controls.Add(tableLayoutPanel3);
