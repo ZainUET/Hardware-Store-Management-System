@@ -17,7 +17,7 @@ namespace Bismillah
        
 
            
-            Application.Run(new Login());
+            Application.Run(new ViewPayments());
 
 
         }

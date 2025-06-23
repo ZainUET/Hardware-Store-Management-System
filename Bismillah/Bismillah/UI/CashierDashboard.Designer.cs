@@ -70,7 +70,7 @@
             tableLayoutPanel1.Controls.Add(label7, 2, 2);
             tableLayoutPanel1.Controls.Add(label8, 2, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
-            tableLayoutPanel1.Location = new Point(322, 456);
+            tableLayoutPanel1.Location = new Point(322, 296);
             tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
@@ -78,7 +78,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1257, 553);
+            tableLayoutPanel1.Size = new Size(1257, 631);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // button1

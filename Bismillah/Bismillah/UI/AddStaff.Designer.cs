@@ -62,7 +62,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(2914, 208);
+            tableLayoutPanel2.Size = new Size(3422, 208);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox1
@@ -82,7 +82,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(403, 67);
+            label2.Location = new Point(472, 67);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(1247, 74);
@@ -212,7 +212,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.LinkBehavior = LinkBehavior.NeverUnderline;
             btnBack.LinkColor = Color.White;
-            btnBack.Location = new Point(2599, 1872);
+            btnBack.Location = new Point(3107, 2064);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(135, 59);
             btnBack.TabIndex = 5;
@@ -227,7 +227,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(1434, 1012);
+            button1.Location = new Point(1467, 914);
             button1.Name = "button1";
             button1.Size = new Size(186, 63);
             button1.TabIndex = 14;
@@ -240,7 +240,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1370, 978);
+            ClientSize = new Size(1878, 1170);
             Controls.Add(button1);
             Controls.Add(btnBack);
             Controls.Add(tableLayoutPanel1);

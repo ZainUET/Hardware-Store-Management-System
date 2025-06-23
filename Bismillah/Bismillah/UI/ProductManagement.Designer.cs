@@ -175,6 +175,7 @@
             button4.TabIndex = 9;
             button4.Text = "View Products";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // tableLayoutPanel3
             // 
