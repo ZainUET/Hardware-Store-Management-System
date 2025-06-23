@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\bismillah\\ui\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\cashierdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\bismillah\\ui\\cashierdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\cashierdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\viewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|c:\\users\\hp\\desktop\\hardware-store-management-system\\bismillah\\bismillah\\ui\\viewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\bismillah\\ui\\viewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{45CBABE5-F1BB-47B5-AE74-B2B32F9352C4}|Bismillah\\Bismillah.csproj|solutionrelative:bismillah\\ui\\viewproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Bismillah\\UI\\Reports.cs",
               "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\Reports.cs",
               "RelativeToolTip": "Bismillah\\UI\\Reports.cs",
-              "ViewState": "AgIAAMQAAAAAAAAAAAASwNIAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAMsAAAAAAAAAAIA5wNIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T05:38:45.99Z",
               "EditorCaption": ""
@@ -66,8 +66,7 @@
               "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\Reports.cs [Design]",
               "RelativeToolTip": "Bismillah\\UI\\Reports.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T05:38:40.879Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-23T05:38:40.879Z"
             },
             {
               "$type": "Document",
@@ -78,8 +77,7 @@
               "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\CashierDashboard.cs [Design]",
               "RelativeToolTip": "Bismillah\\UI\\CashierDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T05:32:45.658Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-23T05:32:45.658Z"
             },
             {
               "$type": "Document",
@@ -103,8 +101,7 @@
               "ToolTip": "C:\\Users\\hp\\Desktop\\Hardware-Store-Management-System\\Bismillah\\Bismillah\\UI\\ViewProduct.cs [Design]",
               "RelativeToolTip": "Bismillah\\UI\\ViewProduct.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T05:27:06.055Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-23T05:27:06.055Z"
             },
             {
               "$type": "Document",
@@ -116,8 +113,7 @@
               "RelativeToolTip": "Bismillah\\DL\\LoginDL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T05:04:00.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T05:04:00.155Z"
             },
             {
               "$type": "Document",
@@ -129,8 +125,7 @@
               "RelativeToolTip": "Bismillah\\UI\\Login.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T05:03:41.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T05:03:41.696Z"
             },
             {
               "$type": "Document",
@@ -142,8 +137,7 @@
               "RelativeToolTip": "Bismillah\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T23:18:56.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T23:18:56.256Z"
             }
           ]
         }
