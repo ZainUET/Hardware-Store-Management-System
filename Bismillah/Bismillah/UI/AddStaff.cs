@@ -16,6 +16,9 @@ namespace Bismillah.UI
             staffBL = new AddStaffBL();
             LoadRoles();
 
+            // Set max length for CNIC and Contact fields
+            txtCNIC.MaxLength = 13;
+            txtContact.MaxLength = 11;
         }
         public class KeyValuePair<TKey, TValue>
         {
@@ -136,13 +139,15 @@ namespace Bismillah.UI
             {
                 MessageBox.Show("Please enter name.", "Validation",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtContact.Text))
+            if (string.IsNullOrWhiteSpace(txtContact.Text) || txtContact.Text.Length != 11)
             {
-                MessageBox.Show("Please enter contact.", "Validation",
+                MessageBox.Show("Contact number must be 11 digits.", "Validation",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContact.Focus();
                 return false;
             }
 
@@ -150,6 +155,7 @@ namespace Bismillah.UI
             {
                 MessageBox.Show("Please enter valid salary.", "Validation",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSalary.Focus();
                 return false;
             }
 
@@ -157,6 +163,7 @@ namespace Bismillah.UI
             {
                 MessageBox.Show("CNIC must be 13 digits.", "Validation",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCNIC.Focus();
                 return false;
             }
 
@@ -164,6 +171,7 @@ namespace Bismillah.UI
             {
                 MessageBox.Show("Password must be at least 6 characters.", "Validation",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
                 return false;
             }
 
@@ -189,6 +197,54 @@ namespace Bismillah.UI
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+                return;
+            }
+
+            // Prevent entering more than 13 digits
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Length >= 13 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        // New method for Contact number validation
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numbers and control characters
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Prevent entering more than 11 digits
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text.Length >= 11 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        // New method to validate CNIC when leaving the field
+        private void txtCNIC_Leave(object sender, EventArgs e)
+        {
+            if (txtCNIC.Text.Length != 13)
+            {
+                MessageBox.Show("CNIC must be exactly 13 digits.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCNIC.Focus();
+            }
+        }
+
+        // New method to validate Contact when leaving the field
+        private void txtContact_Leave(object sender, EventArgs e)
+        {
+            if (txtContact.Text.Length != 11)
+            {
+                MessageBox.Show("Contact number must be exactly 11 digits.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContact.Focus();
             }
         }
 
@@ -221,3 +277,6 @@ namespace Bismillah.UI
         }
     }
 }
+
+
+

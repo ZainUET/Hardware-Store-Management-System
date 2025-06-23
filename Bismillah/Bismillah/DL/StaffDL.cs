@@ -1,4 +1,5 @@
 ﻿using Bismillah.Entities;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,8 +19,12 @@ namespace Bismillah.DL
 
         public static Staff GetStaffById(int staffId)
         {
-            string query = $"SELECT * FROM staff WHERE staff_id = {staffId}";
-            DataTable dt = DatabaseHelper.Instance.GetDataTable(query);
+            string query = "SELECT * FROM staff WHERE staff_id = @staffId";
+            var parameters = new MySqlParameter[] {
+            new MySqlParameter("@staffId", staffId)
+        };
+
+            DataTable dt = DatabaseHelper.Instance.GetDataTable(query, parameters);
 
             if (dt.Rows.Count == 0) return null;
 
@@ -38,33 +43,107 @@ namespace Bismillah.DL
 
         public static bool UpdateStaff(Staff staff)
         {
-            string query = $@"
-                UPDATE staff SET 
-                    name = '{staff.Name}', 
-                    contact = '{staff.Contact}', 
-                    cnic = '{staff.CNIC}', 
-                    salary = {staff.Salary}, 
-                    password = '{staff.Password}'
-                WHERE staff_id = {staff.StaffId}";
-            return DatabaseHelper.Instance.Update(query) > 0;
-        }
+            string query = @"
+            UPDATE staff SET 
+                name = @name, 
+                contact = @contact, 
+                cnic = @cnic, 
+                salary = @salary, 
+                password = @password
+            WHERE staff_id = @staffId";
 
-        public static bool DeleteStaff(int staffId)
-        {
-            string query = $"DELETE FROM staff WHERE staff_id = {staffId}";
-            return DatabaseHelper.Instance.Update(query) > 0;
+            var parameters = new MySqlParameter[] {
+            new MySqlParameter("@name", staff.Name),
+            new MySqlParameter("@contact", staff.Contact),
+            new MySqlParameter("@cnic", staff.CNIC),
+            new MySqlParameter("@salary", staff.Salary),
+            new MySqlParameter("@password", staff.Password),
+            new MySqlParameter("@staffId", staff.StaffId)
+        };
+
+            return DatabaseHelper.Instance.Update(query, parameters) > 0;
         }
 
         public static bool ContactExists(string contact, int excludeId = 0)
         {
-            string query = $"SELECT COUNT(*) FROM staff WHERE contact = '{contact}' AND staff_id != {excludeId}";
-            return DatabaseHelper.Instance.Scaler(query) > 0;
+            string query = "SELECT COUNT(*) FROM staff WHERE contact = @contact AND staff_id != @excludeId";
+            var parameters = new MySqlParameter[] {
+            new MySqlParameter("@contact", contact),
+            new MySqlParameter("@excludeId", excludeId)
+        };
+            object result = DatabaseHelper.Instance.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result) > 0;
         }
 
         public static bool CNICExists(string cnic, int excludeId = 0)
         {
-            string query = $"SELECT COUNT(*) FROM staff WHERE cnic = '{cnic}' AND staff_id != {excludeId}";
-            return DatabaseHelper.Instance.Scaler(query) > 0;
+            string query = "SELECT COUNT(*) FROM staff WHERE cnic = @cnic AND staff_id != @excludeId";
+            var parameters = new MySqlParameter[] {
+            new MySqlParameter("@cnic", cnic),
+            new MySqlParameter("@excludeId", excludeId)
+        };
+            object result = DatabaseHelper.Instance.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result) > 0;
+        }
+
+        public static List<DependencyRecord> CheckStaffDependencies(int staffId)
+        {
+            var dependencies = new List<DependencyRecord>();
+
+            try
+            {
+                // Check bill_quotation table
+                string billQuery = "SELECT COUNT(*) FROM bill_quotation WHERE staff_id = @staffId";
+                var billParams = new MySqlParameter[] {
+                new MySqlParameter("@staffId", staffId)
+            };
+
+                var billCount = Convert.ToInt32(DatabaseHelper.Instance.ExecuteScalar(billQuery, billParams));
+
+                if (billCount > 0)
+                {
+                    dependencies.Add(new DependencyRecord
+                    {
+                        TableName = "Bills/Quotations",
+                        RecordCount = billCount
+                    });
+                }
+
+                // Add checks for other tables as needed
+            }
+            catch (Exception ex)
+            {
+                // Log error
+                throw;
+            }
+
+            return dependencies;
+        }
+
+        public static bool DeleteStaff(int staffId)
+        {
+            try
+            {
+                // First check if there are any dependencies
+                var dependencies = CheckStaffDependencies(staffId);
+                if (dependencies.Any())
+                {
+                    return false;
+                }
+
+                string query = "DELETE FROM staff WHERE staff_id = @staffId";
+                var parameters = new MySqlParameter[] {
+                new MySqlParameter("@staffId", staffId)
+            };
+
+                int rowsAffected = DatabaseHelper.Instance.Update(query, parameters);
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return false;
+            }
         }
     }
 }

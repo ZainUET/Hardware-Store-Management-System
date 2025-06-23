@@ -8,9 +8,10 @@ namespace Bismillah.UI
     public partial class ViewProduct : Form
     {
         private readonly ViewProductBL _productBL;
-        private readonly int _staffId; // Store staff ID
+        private readonly int? _staffId; // Nullable staff ID
 
-        public ViewProduct(int staffId) // Modified constructor to accept staffId
+        // Constructor with optional staffId parameter
+        public ViewProduct(int? staffId = null)
         {
             InitializeComponent();
             _productBL = new ViewProductBL();
@@ -108,13 +109,23 @@ namespace Bismillah.UI
 
         private void back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CashierDashboard c = new CashierDashboard(_staffId);
-            this.Hide();
-            c.ShowDialog();
+            if (_staffId.HasValue)
+            {
+                // Return to CashierDashboard if staff ID exists
+                CashierDashboard c = new CashierDashboard(_staffId.Value);
+                this.Hide();
+                c.ShowDialog();
+            }
+            else
+            {
+                // Return to AdminDashboard if no staff ID
+                ProductManagement a = new ProductManagement();
+                this.Hide();
+                a.ShowDialog();
+            }
             this.Close();
         }
 
 
-       
     }
 }

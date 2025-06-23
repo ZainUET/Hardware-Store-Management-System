@@ -225,10 +225,11 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Location = new Point(96, 582);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(196, 582);
             dateTimePicker1.Margin = new Padding(4, 5, 4, 5);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(343, 31);
+            dateTimePicker1.Size = new Size(143, 31);
             dateTimePicker1.TabIndex = 21;
             // 
             // btnsave
@@ -286,7 +287,6 @@
             Name = "AddProductsUI";
             Text = "Add Product";
             WindowState = FormWindowState.Maximized;
-            Load += AddProductsUI_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

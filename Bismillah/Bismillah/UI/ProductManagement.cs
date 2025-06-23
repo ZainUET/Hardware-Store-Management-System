@@ -45,7 +45,7 @@ namespace Bismillah.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ViewProduct addStaff = new ViewProduct(1);
+            ViewProduct addStaff = new ViewProduct();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();

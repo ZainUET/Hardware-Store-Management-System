@@ -63,41 +63,67 @@ namespace Bismillah.UI
             dgvsupplier.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvsupplier.Refresh();
         }
-
         private void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvsupplier.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a supplier to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a supplier to delete.", "Warning",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             int supplierId = Convert.ToInt32(dgvsupplier.SelectedRows[0].Cells["supplier_id"].Value);
-            Supplier supplier = SupplierDL.GetSupplierById(supplierId);
+            string supplierName = dgvsupplier.SelectedRows[0].Cells["name"].Value.ToString();
 
-            string validationMessage = SupplerBL.ValidateForDelete(supplier);
-            if (!string.IsNullOrEmpty(validationMessage))
+            // Check for dependent records first
+            var (productCount, orderCount) = SupplierDL.GetDependentRecordsCount(supplierId);
+
+            if (productCount > 0 || orderCount > 0)
             {
-                MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = $"Cannot delete supplier '{supplierName}' because:\n\n";
+                if (productCount > 0)
+                    message += $"- {productCount} product(s) are linked to this supplier\n";
+                if (orderCount > 0)
+                    message += $"- {orderCount} purchase order(s) reference this supplier\n\n";
+                message += "Please delete or reassign these items first before deleting the supplier.";
+
+                MessageBox.Show(message, "Cannot Delete Supplier",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult confirm = MessageBox.Show("Are you sure you want to delete this supplier?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Additional validation if needed
+            Supplier supplier = SupplierDL.GetSupplierById(supplierId);
+            string validationMessage = SupplerBL.ValidateForDelete(supplier);
+            if (!string.IsNullOrEmpty(validationMessage))
+            {
+                MessageBox.Show(validationMessage, "Validation Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Confirm deletion
+            DialogResult confirm = MessageBox.Show($"Are you sure you want to delete supplier: {supplierName}?",
+                                                 "Confirm Deletion",
+                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                                 MessageBoxDefaultButton.Button2);
+
             if (confirm == DialogResult.Yes)
             {
                 bool deleted = SupplierDL.DeleteSupplier(supplierId);
                 if (deleted)
                 {
-                    MessageBox.Show("Supplier deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Supplier '{supplierName}' deleted successfully.", "Success",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAllSuppliers();
                 }
                 else
                 {
-                    MessageBox.Show("Failed to delete supplier.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Failed to delete supplier '{supplierName}'.", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-
         private void edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvsupplier.SelectedRows.Count == 0)
