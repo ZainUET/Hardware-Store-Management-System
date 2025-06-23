@@ -39,17 +39,24 @@ namespace Bismillah
                 // Get role from lookup table (1=Manager, 2=Cashier, 3=Salesman per your schema)
                 if (staff.RoleId == 1) // Manager
                 {
+                    
+
                     AdminDashboard dashboard = new AdminDashboard();
-                    dashboard.Show();
+                    this.Hide();
+                    dashboard.ShowDialog();
                     this.Close();
                 }
                 else if (staff.RoleId == 2) // Cashier
                 {
+         
+
                     CashierDashboard dashboard = new CashierDashboard(staff.StaffId);
-                    dashboard.Show();
+                    this.Hide();
+                    dashboard.ShowDialog();
                     this.Close();
                 }
-                
+
+
                 else
                 {
                     MessageBox.Show("Role not recognized.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);

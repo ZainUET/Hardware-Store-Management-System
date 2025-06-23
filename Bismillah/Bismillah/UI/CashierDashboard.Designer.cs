@@ -254,10 +254,10 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Left;
             label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(477, 36);
+            label1.Location = new Point(245, 36);
             label1.Name = "label1";
             label1.Size = new Size(904, 53);
             label1.TabIndex = 1;
