@@ -14,7 +14,7 @@ namespace Bismillah.DL
         private string port = "3306";
         private string databaseName = "bismillah";
         private string databaseUser = "root";
-        private string databasePassword = "zain8773";
+        private string databasePassword = "Musfirahzainab123@";
 
         private DatabaseHelper() { }
 

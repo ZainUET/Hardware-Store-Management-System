@@ -36,7 +36,7 @@ namespace Bismillah.UI
             comboBox2.ValueMember = "product_id";
 
             // Load payment statuses from lookup table
-            cmbPaymentStatus.DataSource = DatabaseHelper.Instance.GetDataTable("SELECT lookup_id, value FROM lookup WHERE category = 'Payment Status'");
+            cmbPaymentStatus.DataSource = DatabaseHelper.Instance.GetDataTable("SELECT lookup_id, value FROM lookup WHERE lookup_id = 9 ");
             cmbPaymentStatus.DisplayMember = "value";
             cmbPaymentStatus.ValueMember = "lookup_id";
 
@@ -97,7 +97,7 @@ namespace Bismillah.UI
                     string method = paymentStatusText == "Completed" ? "Cash" : "Pending (Borrow)";
 
                     BorrowedDL.InsertPayment(customerId, total, method, custName);
-                    BorrowedDL.ReduceProductStock(productId, quantity);
+                    
 
 
                 }

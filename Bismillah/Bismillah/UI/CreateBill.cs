@@ -73,11 +73,15 @@ namespace Bismillah.UI
                 Border = PDF_Rectangle.NO_BORDER
             };
 
-            PdfPCell rightInfo = new PdfPCell(new Phrase($"Date: {DateTime.Now:dd-MM-yyyy HH:mm}", infoFont))
+            string paymentStatusText = ((DataRowView)cmbPaymentStatus.SelectedItem)["value"].ToString();
+            PdfPCell rightInfo = new PdfPCell(new Phrase(
+                $"Date: {DateTime.Now:dd-MM-yyyy HH:mm}\nPayment Status: {paymentStatusText}", infoFont))
             {
                 Border = PDF_Rectangle.NO_BORDER,
                 HorizontalAlignment = Element.ALIGN_RIGHT
             };
+
+           
 
             infoTable.AddCell(leftInfo);
             infoTable.AddCell(rightInfo);
@@ -213,10 +217,25 @@ namespace Bismillah.UI
 
         private void LoadPaymentStatuses()
         {
-            cmbPaymentStatus.DataSource = _billBL.LoadPaymentStatuses();
+            string query;
+            if (rdWalkin.Checked)
+            {
+                query = @"SELECT lookup_id, value 
+                  FROM lookup 
+                  WHERE category = 'Payment Status' AND value IN ('Completed', 'Failed')";
+            }
+            else
+            {
+                query = @"SELECT lookup_id, value 
+                  FROM lookup 
+                  WHERE category = 'Payment Status'";
+            }
+
+            cmbPaymentStatus.DataSource = DatabaseHelper.Instance.GetDataTable(query);
             cmbPaymentStatus.DisplayMember = "value";
             cmbPaymentStatus.ValueMember = "lookup_id";
         }
+
 
 
 
@@ -335,9 +354,28 @@ namespace Bismillah.UI
                     paymentStatusId,
                     out string formattedTotal
                 );
+                string paymentStatus = ((DataRowView)cmbPaymentStatus.SelectedItem)["value"].ToString();
 
                 // Insert into payments if payment is Completed
-                string paymentStatus = ((DataRowView)cmbPaymentStatus.SelectedItem)["value"].ToString();
+                if (paymentStatus.Equals("Pending", StringComparison.OrdinalIgnoreCase) && rdregular.Checked && customerId.HasValue)
+                {
+                    foreach (DataRow row in _billItems.Rows)
+                    {
+                        int productId = Convert.ToInt32(row["product_id"]);
+                        int quantity = Convert.ToInt32(row["quantity"]);
+                        decimal unitPrice = Convert.ToDecimal(row["unit_price"]);
+                        decimal totalAmount = quantity * unitPrice;
+
+                        string insertBorrowQuery = $@"
+INSERT INTO borrowed 
+(customer_id, product_id, quantity, unit_price, total_amount, payment_status_id, date_borrowed, stock_reduced)
+VALUES 
+({customerId.Value}, {productId}, {quantity}, {unitPrice}, {totalAmount}, {paymentStatusId}, NOW(), 1)";
+
+                        DatabaseHelper.Instance.Update(insertBorrowQuery);
+                    }
+                }
+
                 if (paymentStatus.Equals("Completed", StringComparison.OrdinalIgnoreCase))
                 {
                     string paymentQuery = $@"
@@ -386,6 +424,8 @@ namespace Bismillah.UI
         {
             grpRegularCustomer.Visible = rdregular.Checked;
             grpcustomers.Visible = !rdregular.Checked;
+
+            LoadPaymentStatuses(); // reload statuses
         }
 
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -445,6 +485,8 @@ namespace Bismillah.UI
 
             grpcustomers.Visible = rdWalkin.Checked;
             grpRegularCustomer.Visible = !rdWalkin.Checked;
+
+            LoadPaymentStatuses(); // Reload allowed statuses
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -454,6 +496,23 @@ namespace Bismillah.UI
             this.Hide();
             c.ShowDialog();
             this.Close();
+        }
+
+        private void contacttxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void contacttxt_Leave(object sender, EventArgs e)
+        {
+            if (contacttxt.Text.Length != 11)
+            {
+                MessageBox.Show("Contact number must be exactly 11 digits.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                contacttxt.Focus();
+            }
         }
     }
 }

@@ -43,21 +43,26 @@ namespace Bismillah.UI
             }
 
             DataRow row = dt.Rows[0];
+            int originalQty = Convert.ToInt32(row["quantity"]);
+            bool alreadyReduced = Convert.ToBoolean(row["stock_reduced"]);
+
             Borrowed b = new Borrowed
             {
                 BorrowedId = borrowedId,
                 CustomerId = Convert.ToInt32(row["customer_id"]),
                 ProductId = Convert.ToInt32(row["product_id"]),
-                Quantity = Convert.ToInt32(row["quantity"]),
+                Quantity = originalQty,
                 UnitPrice = Convert.ToDecimal(row["unit_price"]),
                 PaymentStatusId = Convert.ToInt32(row["payment_status_id"])
             };
 
             string oldStatus = BorrowedDL.GetLookupValueById(b.PaymentStatusId);
-            string newQtyStr = Prompt("Quantity:", b.Quantity.ToString());
-             b.UnitPrice = b.UnitPrice;
 
-            // Status prompt
+            // Prompt for new quantity
+            string newQtyStr = Prompt("Quantity:", b.Quantity.ToString());
+            int newQty = int.TryParse(newQtyStr, out int q) ? q : b.Quantity;
+
+            // Prompt for new status
             DataTable statusTable = DatabaseHelper.Instance.GetDataTable("SELECT lookup_id, value FROM lookup WHERE category = 'Payment Status'");
             string selectedStatus = Microsoft.VisualBasic.Interaction.InputBox("Enter payment status (Pending, Completed, Failed):", "Edit Status", oldStatus);
             DataRow selectedStatusRow = statusTable.AsEnumerable().FirstOrDefault(r => r["value"].ToString().Equals(selectedStatus, StringComparison.OrdinalIgnoreCase));
@@ -67,8 +72,7 @@ namespace Bismillah.UI
                 return;
             }
 
-            b.Quantity = int.TryParse(newQtyStr, out int q) ? q : b.Quantity;
-          
+            b.Quantity = newQty;
             b.PaymentStatusId = Convert.ToInt32(selectedStatusRow["lookup_id"]);
 
             string validation = BorrowedBL.ValidateBorrowed(b);
@@ -81,31 +85,75 @@ namespace Bismillah.UI
             string newStatus = selectedStatus;
             decimal total = b.Quantity * b.UnitPrice;
 
-            // Check stock if increasing
-            if (!BorrowedDL.IsStockAvailable(b.ProductId, b.Quantity))
+            // Stock Handling Logic
+            if ((newStatus == "Completed" || newStatus == "Pending"))
             {
-                MessageBox.Show("Insufficient stock.");
-                return;
-            }
-
-            // Update record
-            if (BorrowedDL.UpdateBorrowed(b))
-            {
-                if ((newStatus == "Completed" || newStatus == "Pending") && (oldStatus != newStatus))
+                if (alreadyReduced)
                 {
-                    BorrowedDL.InsertPayment(b.CustomerId, total, newStatus, "");
-                    BorrowedDL.ReduceProductStock(b.ProductId, b.Quantity);
+                    if (b.Quantity < originalQty)
+                    {
+                        int diff = originalQty - b.Quantity;
+                        BorrowedDL.IncreaseProductStock(b.ProductId, diff);
+                    }
+                    else if (b.Quantity > originalQty)
+                    {
+                        int diff = b.Quantity - originalQty;
+                        if (BorrowedDL.IsStockAvailable(b.ProductId, diff))
+                        {
+                            BorrowedDL.ReduceProductStock(b.ProductId, diff);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not enough stock to increase quantity.");
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    if (BorrowedDL.IsStockAvailable(b.ProductId, b.Quantity))
+                    {
+                        BorrowedDL.ReduceProductStock(b.ProductId, b.Quantity);
+                        DatabaseHelper.Instance.Update($"UPDATE borrowed SET stock_reduced = TRUE WHERE borrowed_id = {b.BorrowedId}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not enough stock available.");
+                        return;
+                    }
                 }
 
+                // ✅ Final Payment Logic
+                string method = newStatus == "Completed" ? "Completed" : "Pending (Borrow)";
+
+                if (oldStatus == newStatus)
+                {
+                    BorrowedDL.UpdatePayment(b.CustomerId, total, method);
+                }
+                else if (oldStatus == "Pending" && newStatus == "Completed")
+                {
+                    // Just upgrade the payment from Pending → Completed
+                    BorrowedDL.UpdatePayment(b.CustomerId, total, method);
+                }
+                else
+                {
+                    // All other transitions (like Failed → Completed)
+                    BorrowedDL.InsertPayment(b.CustomerId, total, method, "");
+                }
+            }
+
+            // Final update
+            if (BorrowedDL.UpdateBorrowed(b))
+            {
                 MessageBox.Show("Record updated successfully.");
                 cmbCustomer_SelectedIndexChanged(null, null);
             }
             else
             {
                 MessageBox.Show("Failed to update.");
-
             }
         }
+
 
         private void E_DBorrowUI_Load(object sender, EventArgs e)
         {

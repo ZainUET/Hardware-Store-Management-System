@@ -8,10 +8,10 @@ namespace Bismillah.DL
         public static bool AddBorrowed(Borrowed b)
         {
             string query = $@"
-                INSERT INTO borrowed
-                (customer_id, product_id, quantity, unit_price, total_amount, payment_status_id, date_borrowed)
-                VALUES
-                ({b.CustomerId}, {b.ProductId}, {b.Quantity}, {b.UnitPrice}, {b.TotalAmount}, {b.PaymentStatusId}, NOW())";
+        INSERT INTO borrowed
+        (customer_id, product_id, quantity, unit_price, total_amount, payment_status_id, date_borrowed, stock_reduced)
+        VALUES
+        ({b.CustomerId}, {b.ProductId}, {b.Quantity}, {b.UnitPrice}, {b.TotalAmount}, {b.PaymentStatusId}, NOW(), {((b.PaymentStatusId == GetStatusId("Pending") || b.PaymentStatusId == GetStatusId("Completed")) ? 1 : 0)})";
 
             bool inserted = DatabaseHelper.Instance.Update(query) > 0;
 
@@ -22,6 +22,7 @@ namespace Bismillah.DL
 
             return inserted;
         }
+
         public static bool IsStockAvailable(int productId, int requestedQty)
         {
             string query = $"SELECT quantity_in_stock FROM products WHERE product_id = {productId}";
@@ -123,6 +124,26 @@ namespace Bismillah.DL
 
             return DatabaseHelper.Instance.Update(query) > 0;
         }
+
+        public static void UpdatePayment(int customerId, decimal newAmount, string newMethod)
+        {
+            string query = $@"
+        UPDATE payments 
+        SET amount_paid = {newAmount}, 
+            payment_method = '{newMethod}' 
+        WHERE customer_id = {customerId} 
+        ORDER BY payment_id DESC 
+        LIMIT 1";
+
+            DatabaseHelper.Instance.Update(query);
+        }
+
+        public static void IncreaseProductStock(int productId, int quantity)
+        {
+            string query = $"UPDATE products SET quantity_in_stock = quantity_in_stock + {quantity} WHERE product_id = {productId}";
+            DatabaseHelper.Instance.Update(query);
+        }
+
         public static decimal GetUnitPrice(int productId)
         {
             string query = $"SELECT unit_price FROM products WHERE product_id = {productId}";
