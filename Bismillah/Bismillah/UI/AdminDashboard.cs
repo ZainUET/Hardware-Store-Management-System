@@ -78,7 +78,7 @@ namespace Bismillah.UI
 
         private void button7_Click(object sender, EventArgs e)
         {
-            PurchaseOrder addStaff = new PurchaseOrder();
+            ProductOrderManagement addStaff = new ProductOrderManagement();
             this.Hide();
             addStaff.ShowDialog();
             this.Close();

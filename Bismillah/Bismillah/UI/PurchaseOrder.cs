@@ -166,7 +166,7 @@ namespace Bismillah.UI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            AdminDashboard a = new AdminDashboard();
+            ProductOrderManagement a = new ProductOrderManagement();
             this.Hide();
             a.ShowDialog();
             this.Close();
