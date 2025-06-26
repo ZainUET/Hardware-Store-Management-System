@@ -82,27 +82,65 @@ namespace Bismillah.UI
             }
         }
 
-        private void delete_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void delete_LinkClicked(object sender, EventArgs e)
         {
             if (dgvProducts.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a product to delete.");
+                MessageBox.Show("Please select a product first.",
+                              "Selection Required",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return;
             }
 
-            int id = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["product_id"].Value);
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirm", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            int productId = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["product_id"].Value);
+            string productName = dgvProducts.SelectedRows[0].Cells["name"].Value.ToString();
+
+            try
             {
-                if (ProductDL.DeleteProduct(id))
+                // Show dependency warning first
+                var dependencies = ProductDL.CheckProductDependencies(productId);
+                if (dependencies.Count > 0)
                 {
-                    MessageBox.Show("Product deleted.");
-                    LoadProducts();
+                    MessageBox.Show(ProductDL.BuildDependencyErrorMessage(dependencies, "product"),
+                                  "Cannot Delete Product",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+
+                // Confirm deletion
+                var confirm = MessageBox.Show($"Are you sure you want to delete product: {productName}?",
+                                            "Confirm Deletion",
+                                            MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question,
+                                            MessageBoxDefaultButton.Button2);
+
+                if (confirm == DialogResult.Yes)
                 {
-                    MessageBox.Show("Failed to delete product.");
+                    if (ProductDL.DeleteProduct(productId))
+                    {
+                        MessageBox.Show("Product deleted successfully.",
+                                       "Success",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information);
+                        LoadProducts(); // Refresh the grid
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete product.",
+                                       "Error",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                               "Deletion Error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
             }
         }
 

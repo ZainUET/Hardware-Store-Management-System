@@ -86,25 +86,79 @@ namespace Bismillah.UI
         {
             if (dgvcustomer.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a customer to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a customer to delete.",
+                              "No Selection",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Warning);
                 return;
             }
 
             int customerId = Convert.ToInt32(dgvcustomer.SelectedRows[0].Cells["customer_id"].Value);
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this customer?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            string customerName = dgvcustomer.SelectedRows[0].Cells["name"].Value.ToString();
+
+            try
             {
-                bool deleted = CustomerDL.DeleteCustomer(customerId);
-                if (deleted)
+                // Check dependencies first (optional - we'll check again in DeleteCustomer)
+                var dependencies = CustomerDL.CheckCustomerDependencies(customerId);
+
+                if (dependencies.Any())
                 {
-                    MessageBox.Show("Customer deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadAllCustomers();
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine($"Cannot delete customer '{customerName}' because they have:");
+                    sb.AppendLine();
+
+                    foreach (var dep in dependencies)
+                    {
+                        sb.AppendLine($"• {dep.RecordCount} record(s) in {dep.TableName}");
+                    }
+
+                    sb.AppendLine();
+                    sb.AppendLine("Please resolve these dependencies first before deleting the customer.");
+
+                    MessageBox.Show(sb.ToString(),
+                                  "Cannot Delete Customer",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+
+                // Confirm deletion
+                var confirmResult = MessageBox.Show($"Are you sure you want to delete customer: {customerName}?",
+                                                  "Confirm Deletion",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Failed to delete customer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (CustomerDL.DeleteCustomer(customerId))
+                    {
+                        MessageBox.Show($"Customer '{customerName}' deleted successfully.",
+                                      "Success",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Information);
+                        LoadAllCustomers(); // Refresh your data grid
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Failed to delete customer '{customerName}'.",
+                                      "Error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                    }
                 }
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Cannot Delete Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the customer: {ex.Message}",
+                              "Error",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
+        
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -131,15 +131,7 @@ namespace Bismillah.DL
             return DatabaseHelper.Instance.Update(query, parameters) > 0;
         }
 
-        public static bool DeleteProduct(int id)
-        {
-            string query = "DELETE FROM products WHERE product_id = @id";
-            var parameters = new MySqlParameter[]
-            {
-                new MySqlParameter("@id", id)
-            };
-            return DatabaseHelper.Instance.Update(query, parameters) > 0;
-        }
+        
 
         public static DataTable SearchProducts(string searchTerm)
         {
@@ -151,6 +143,67 @@ namespace Bismillah.DL
             return DatabaseHelper.Instance.GetDataTable(query, parameters);
         }
 
+        public static List<DependencyRecord> CheckProductDependencies(int productId)
+        {
+            var dependencies = new List<DependencyRecord>();
+
+            var referenceTables = new Dictionary<string, string>
+            {
+                {"purchase_order_details", "Purchase Orders"},
+                {"bill_items", "Sales Records"},
+                {"customer_returns_products", "Return Records"},
+                {"borrowed", "Borrowed Items"}
+            };
+
+            foreach (var table in referenceTables)
+            {
+                string query = $"SELECT COUNT(*) FROM {table.Key} WHERE product_id = @productId";
+                var count = Convert.ToInt32(DatabaseHelper.Instance.ExecuteScalar(query,
+                    new MySqlParameter("@productId", productId)));
+
+                if (count > 0)
+                {
+                    dependencies.Add(new DependencyRecord
+                    {
+                        TableName = table.Value,
+                        RecordCount = count,
+                        Description = $"Referenced in {table.Value}"
+                    });
+                }
+            }
+
+            return dependencies;
+        }
+
+        public static bool DeleteProduct(int id)
+        {
+            var dependencies = CheckProductDependencies(id);
+            if (dependencies.Count > 0)
+            {
+                throw new InvalidOperationException(BuildDependencyErrorMessage(dependencies, "product"));
+            }
+
+            string query = "DELETE FROM products WHERE product_id = @id";
+            return DatabaseHelper.Instance.Update(query,
+                new MySqlParameter("@id", id)) > 0;
+        }
+
+        public static string BuildDependencyErrorMessage(List<DependencyRecord> dependencies, string entityType)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"This {entityType} cannot be deleted because it's referenced in:");
+            sb.AppendLine();
+
+            foreach (var dep in dependencies)
+            {
+                sb.AppendLine($"• {dep.RecordCount} {dep.TableName} record(s)");
+            }
+
+            sb.AppendLine();
+            sb.AppendLine("Please resolve these references first.");
+            return sb.ToString();
+        }
+    
         public static bool ReduceProductStock(int productId, int quantity)
         {
             string query = @"
