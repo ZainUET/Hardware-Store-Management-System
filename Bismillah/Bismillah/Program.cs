@@ -17,7 +17,7 @@ namespace Bismillah
        
 
            
-            Application.Run(new AddStaff());
+            Application.Run(new PurchaseOrder());
 
 
         }

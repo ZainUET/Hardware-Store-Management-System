@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrder));
             tableLayoutPanel3 = new TableLayoutPanel();
+            label1 = new Label();
             pictureBox2 = new PictureBox();
             label5 = new Label();
             cmbSuppliers = new ComboBox();
@@ -50,7 +51,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label2 = new Label();
             label3 = new Label();
-            label1 = new Label();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
@@ -72,8 +72,21 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1157, 125);
+            tableLayoutPanel3.Size = new Size(1744, 125);
             tableLayoutPanel3.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(264, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(845, 51);
+            label1.TabIndex = 2;
+            label1.Text = "Bismillah Sanitary Electric and Hardware Store";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -90,7 +103,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(10, 35, 66);
-            label5.Location = new Point(-42, 129);
+            label5.Location = new Point(252, 154);
             label5.Name = "label5";
             label5.Size = new Size(904, 53);
             label5.TabIndex = 5;
@@ -124,6 +137,7 @@
             cmbProducts.Name = "cmbProducts";
             cmbProducts.Size = new Size(238, 23);
             cmbProducts.TabIndex = 8;
+            cmbProducts.SelectedIndexChanged += cmbProducts_SelectedIndexChanged;
             // 
             // nudQuantity
             // 
@@ -224,6 +238,7 @@
             btnPrint.TabIndex = 21;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
             // btnClear
             // 
@@ -307,25 +322,12 @@
             label3.TabIndex = 29;
             label3.Text = "Quantity:";
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(176, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(845, 51);
-            label1.TabIndex = 2;
-            label1.Text = "Bismillah Sanitary Electric and Hardware Store";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // PurchaseOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(783, 579);
+            ClientSize = new Size(1370, 629);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(tableLayoutPanel1);
