@@ -141,13 +141,7 @@ namespace Bismillah.UI
         }
 
 
-        private void checkBoxproductfullyreceived_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxproductfullyreceived.Checked)
-            {
-                btnAllReceived_Click(sender, e);
-            }
-        }
+       
 
         private void btnBack_Click(object sender, EventArgs e)
         {

@@ -35,7 +35,6 @@
             dgvReceivePurchaseOrder = new DataGridView();
             label1 = new Label();
             back = new LinkLabel();
-            checkBoxproductfullyreceived = new CheckBox();
             numericUpDownReceivedQuantity = new NumericUpDown();
             btnAllReceived = new Button();
             btnSaveReceipt = new Button();
@@ -141,22 +140,10 @@
             back.Text = "Back";
             back.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // checkBoxproductfullyreceived
-            // 
-            checkBoxproductfullyreceived.AutoSize = true;
-            checkBoxproductfullyreceived.Location = new Point(672, 227);
-            checkBoxproductfullyreceived.Margin = new Padding(2, 2, 2, 2);
-            checkBoxproductfullyreceived.Name = "checkBoxproductfullyreceived";
-            checkBoxproductfullyreceived.Size = new Size(90, 19);
-            checkBoxproductfullyreceived.TabIndex = 18;
-            checkBoxproductfullyreceived.Text = "All Received";
-            checkBoxproductfullyreceived.UseVisualStyleBackColor = true;
-            checkBoxproductfullyreceived.CheckedChanged += checkBoxproductfullyreceived_CheckedChanged;
-            // 
             // numericUpDownReceivedQuantity
             // 
             numericUpDownReceivedQuantity.Location = new Point(467, 226);
-            numericUpDownReceivedQuantity.Margin = new Padding(2, 2, 2, 2);
+            numericUpDownReceivedQuantity.Margin = new Padding(2);
             numericUpDownReceivedQuantity.Name = "numericUpDownReceivedQuantity";
             numericUpDownReceivedQuantity.Size = new Size(126, 23);
             numericUpDownReceivedQuantity.TabIndex = 19;
@@ -167,8 +154,8 @@
             btnAllReceived.Cursor = Cursors.Hand;
             btnAllReceived.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnAllReceived.ForeColor = Color.White;
-            btnAllReceived.Location = new Point(467, 272);
-            btnAllReceived.Margin = new Padding(2, 2, 2, 2);
+            btnAllReceived.Location = new Point(467, 267);
+            btnAllReceived.Margin = new Padding(2);
             btnAllReceived.Name = "btnAllReceived";
             btnAllReceived.Size = new Size(90, 28);
             btnAllReceived.TabIndex = 23;
@@ -183,7 +170,7 @@
             btnSaveReceipt.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSaveReceipt.ForeColor = Color.White;
             btnSaveReceipt.Location = new Point(335, 267);
-            btnSaveReceipt.Margin = new Padding(2, 2, 2, 2);
+            btnSaveReceipt.Margin = new Padding(2);
             btnSaveReceipt.Name = "btnSaveReceipt";
             btnSaveReceipt.Size = new Size(90, 28);
             btnSaveReceipt.TabIndex = 24;
@@ -197,8 +184,8 @@
             btnBack.Cursor = Cursors.Hand;
             btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(599, 272);
-            btnBack.Margin = new Padding(2, 2, 2, 2);
+            btnBack.Location = new Point(604, 267);
+            btnBack.Margin = new Padding(2);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 28);
             btnBack.TabIndex = 25;
@@ -216,7 +203,6 @@
             Controls.Add(btnSaveReceipt);
             Controls.Add(btnAllReceived);
             Controls.Add(numericUpDownReceivedQuantity);
-            Controls.Add(checkBoxproductfullyreceived);
             Controls.Add(dgvReceivePurchaseOrder);
             Controls.Add(label1);
             Controls.Add(back);
@@ -230,7 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvReceivePurchaseOrder).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownReceivedQuantity).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -242,7 +227,6 @@
         private Label label1;
         private LinkLabel back;
         private PictureBox pictureBox2;
-        private CheckBox checkBoxproductfullyreceived;
         private NumericUpDown numericUpDownReceivedQuantity;
         private Button btnAllReceived;
         private Button btnSaveReceipt;

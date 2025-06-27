@@ -35,19 +35,12 @@ namespace Bismillah.UI
         {
             try
             {
-                // Clear existing data binding
                 dgvProductOrders.DataSource = null;
-
-                // Get updated data from business layer
                 var dt = _productOrderBL.GetAllProductOrders();
-
-                // Bind to DataGridView
                 dgvProductOrders.DataSource = dt;
 
-                // Configure column display if needed
                 if (dgvProductOrders.Columns.Count > 0)
                 {
-                    // Ensure columns exist before accessing them
                     if (dgvProductOrders.Columns.Contains("order_id"))
                     {
                         dgvProductOrders.Columns["order_id"].HeaderText = "Order ID";
@@ -70,18 +63,20 @@ namespace Bismillah.UI
                     if (dgvProductOrders.Columns.Contains("total_amount"))
                     {
                         dgvProductOrders.Columns["total_amount"].HeaderText = "Total Amount";
-                        dgvProductOrders.Columns["total_amount"].DefaultCellStyle.Format = "C2";
                         dgvProductOrders.Columns["total_amount"].Width = 100;
-                    }
 
-                    if (dgvProductOrders.Columns.Contains("status"))
-                    {
-                        dgvProductOrders.Columns["status"].HeaderText = "Status";
-                        dgvProductOrders.Columns["status"].Width = 120;
-
-                        // Apply status-specific formatting
+                        // 👇 Rs. format for Total Amount + status coloring
                         dgvProductOrders.CellFormatting += (sender, e) =>
                         {
+                            if (e.ColumnIndex == dgvProductOrders.Columns["total_amount"].Index && e.Value != null)
+                            {
+                                if (decimal.TryParse(e.Value.ToString(), out decimal amount))
+                                {
+                                    e.Value = $"Rs. {amount:N2}";
+                                    e.FormattingApplied = true;
+                                }
+                            }
+
                             if (e.ColumnIndex == dgvProductOrders.Columns["status"].Index && e.Value != null)
                             {
                                 var status = e.Value.ToString();
@@ -103,13 +98,9 @@ namespace Bismillah.UI
                     }
                 }
 
-                // Auto-resize columns to fill remaining space
                 dgvProductOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                // Refresh the grid view
                 dgvProductOrders.Refresh();
 
-                // Debug output to verify refresh
                 Console.WriteLine($"Refreshed data - {dt.Rows.Count} orders loaded");
             }
             catch (Exception ex)
