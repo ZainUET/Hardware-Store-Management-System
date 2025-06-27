@@ -117,12 +117,16 @@ namespace Bismillah.UI
         }
         private void btnAllReceived_Click(object sender, EventArgs e)
         {
+ 
             try
             {
                 bool success = _receivePurchaseOrderBL.ReceiveAllItems(_currentOrderId);
                 if (success)
                 {
-                    MessageBox.Show("All items marked as received successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // ✅ Mark order as complete
+                    _receivePurchaseOrderBL.MarkOrderAsComplete(_currentOrderId);
+
+                    MessageBox.Show("All items marked as received and order completed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadPurchaseOrderDetails();
                 }
                 else
@@ -135,6 +139,7 @@ namespace Bismillah.UI
                 MessageBox.Show($"Error marking all items as received: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void checkBoxproductfullyreceived_CheckedChanged(object sender, EventArgs e)
         {

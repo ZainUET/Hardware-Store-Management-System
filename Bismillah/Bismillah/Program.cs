@@ -14,11 +14,7 @@ namespace Bismillah
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-       
-
-           
-
-            Application.Run(new CashierDashboard(2));
+ 
 
             Application.Run(new ProductOrderManagement());
 

@@ -56,21 +56,19 @@
             tableLayoutPanel2.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel2.Controls.Add(label2, 1, 0);
             tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(2863, 160);
+            tableLayoutPanel2.Size = new Size(2410, 96);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox2
             // 
             pictureBox2.ErrorImage = null;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(4, 5);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(256, 150);
+            pictureBox2.Size = new Size(179, 90);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -81,9 +79,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(395, 43);
+            label2.Location = new Point(332, 22);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1247, 74);
+            label2.Size = new Size(845, 51);
             label2.TabIndex = 1;
             label2.Text = "Bismillah Sanitary Electric and Hardware Store";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -100,13 +99,12 @@
             dgvReceivePurchaseOrder.BorderStyle = BorderStyle.None;
             dgvReceivePurchaseOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReceivePurchaseOrder.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvReceivePurchaseOrder.Location = new Point(556, 520);
-            dgvReceivePurchaseOrder.Margin = new Padding(4, 5, 4, 5);
+            dgvReceivePurchaseOrder.Location = new Point(389, 312);
             dgvReceivePurchaseOrder.MultiSelect = false;
             dgvReceivePurchaseOrder.Name = "dgvReceivePurchaseOrder";
             dgvReceivePurchaseOrder.ReadOnly = true;
             dgvReceivePurchaseOrder.RowHeadersWidth = 62;
-            dgvReceivePurchaseOrder.Size = new Size(860, 545);
+            dgvReceivePurchaseOrder.Size = new Size(602, 327);
             dgvReceivePurchaseOrder.TabIndex = 0;
             dgvReceivePurchaseOrder.SelectionChanged += dgvReceivePurchaseOrder_SelectionChanged;
             // 
@@ -114,9 +112,10 @@
             // 
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(10, 35, 66);
-            label1.Location = new Point(574, 195);
+            label1.Location = new Point(402, 117);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(784, 98);
+            label1.Size = new Size(549, 59);
             label1.TabIndex = 1;
             label1.Text = "Receive Purchase Order";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -133,10 +132,10 @@
             back.ForeColor = Color.White;
             back.LinkBehavior = LinkBehavior.NeverUnderline;
             back.LinkColor = Color.White;
-            back.Location = new Point(1551, 950);
+            back.Location = new Point(1289, 686);
             back.Margin = new Padding(1, 0, 1, 0);
             back.Name = "back";
-            back.Size = new Size(216, 64);
+            back.Size = new Size(152, 39);
             back.TabIndex = 17;
             back.TabStop = true;
             back.Text = "Back";
@@ -145,9 +144,10 @@
             // checkBoxproductfullyreceived
             // 
             checkBoxproductfullyreceived.AutoSize = true;
-            checkBoxproductfullyreceived.Location = new Point(960, 379);
+            checkBoxproductfullyreceived.Location = new Point(672, 227);
+            checkBoxproductfullyreceived.Margin = new Padding(2, 2, 2, 2);
             checkBoxproductfullyreceived.Name = "checkBoxproductfullyreceived";
-            checkBoxproductfullyreceived.Size = new Size(132, 29);
+            checkBoxproductfullyreceived.Size = new Size(90, 19);
             checkBoxproductfullyreceived.TabIndex = 18;
             checkBoxproductfullyreceived.Text = "All Received";
             checkBoxproductfullyreceived.UseVisualStyleBackColor = true;
@@ -155,9 +155,10 @@
             // 
             // numericUpDownReceivedQuantity
             // 
-            numericUpDownReceivedQuantity.Location = new Point(667, 377);
+            numericUpDownReceivedQuantity.Location = new Point(467, 226);
+            numericUpDownReceivedQuantity.Margin = new Padding(2, 2, 2, 2);
             numericUpDownReceivedQuantity.Name = "numericUpDownReceivedQuantity";
-            numericUpDownReceivedQuantity.Size = new Size(180, 31);
+            numericUpDownReceivedQuantity.Size = new Size(126, 23);
             numericUpDownReceivedQuantity.TabIndex = 19;
             // 
             // btnAllReceived
@@ -166,9 +167,10 @@
             btnAllReceived.Cursor = Cursors.Hand;
             btnAllReceived.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnAllReceived.ForeColor = Color.White;
-            btnAllReceived.Location = new Point(667, 454);
+            btnAllReceived.Location = new Point(467, 272);
+            btnAllReceived.Margin = new Padding(2, 2, 2, 2);
             btnAllReceived.Name = "btnAllReceived";
-            btnAllReceived.Size = new Size(129, 47);
+            btnAllReceived.Size = new Size(90, 28);
             btnAllReceived.TabIndex = 23;
             btnAllReceived.Text = "All Received";
             btnAllReceived.UseVisualStyleBackColor = false;
@@ -180,9 +182,10 @@
             btnSaveReceipt.Cursor = Cursors.Hand;
             btnSaveReceipt.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSaveReceipt.ForeColor = Color.White;
-            btnSaveReceipt.Location = new Point(478, 445);
+            btnSaveReceipt.Location = new Point(335, 267);
+            btnSaveReceipt.Margin = new Padding(2, 2, 2, 2);
             btnSaveReceipt.Name = "btnSaveReceipt";
-            btnSaveReceipt.Size = new Size(129, 47);
+            btnSaveReceipt.Size = new Size(90, 28);
             btnSaveReceipt.TabIndex = 24;
             btnSaveReceipt.Text = "Save";
             btnSaveReceipt.UseVisualStyleBackColor = false;
@@ -194,9 +197,10 @@
             btnBack.Cursor = Cursors.Hand;
             btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(856, 454);
+            btnBack.Location = new Point(599, 272);
+            btnBack.Margin = new Padding(2, 2, 2, 2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(129, 47);
+            btnBack.Size = new Size(90, 28);
             btnBack.TabIndex = 25;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -204,10 +208,10 @@
             // 
             // ReceivePurchaseOrder
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1924, 1148);
+            ClientSize = new Size(1365, 680);
             Controls.Add(btnBack);
             Controls.Add(btnSaveReceipt);
             Controls.Add(btnAllReceived);
@@ -217,7 +221,6 @@
             Controls.Add(label1);
             Controls.Add(back);
             Controls.Add(tableLayoutPanel2);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "ReceivePurchaseOrder";
             Text = " Receive Purchase Order";
             WindowState = FormWindowState.Maximized;

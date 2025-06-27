@@ -5,57 +5,46 @@ namespace Bismillah.BL
 {
     public class ReceivePurchaseOrderBL
     {
-        private readonly ReceivePurchaseOrderDL _receivePurchaseOrderDL;
+        private readonly ReceivePurchaseOrderDL _dl;
 
         public ReceivePurchaseOrderBL()
         {
-            _receivePurchaseOrderDL = new ReceivePurchaseOrderDL();
+            _dl = new ReceivePurchaseOrderDL();
         }
 
         public DataTable LoadPurchaseOrderDetails(int orderId)
         {
-            return _receivePurchaseOrderDL.GetPurchaseOrderDetails(orderId);
+            return _dl.GetPurchaseOrderDetails(orderId);
         }
 
         public bool UpdateItemReceivedQuantity(int orderDetailId, int receivedQuantity)
         {
-            return _receivePurchaseOrderDL.UpdateReceivedQuantity(orderDetailId, receivedQuantity);
+            return _dl.UpdateReceivedQuantity(orderDetailId, receivedQuantity);
         }
 
-        
+        public bool CheckIfOrderFullyReceived(int orderId)
+        {
+            return _dl.CheckIfOrderFullyReceived(orderId);
+        }
 
         public bool ReceiveAllItems(int orderId)
         {
-            return _receivePurchaseOrderDL.MarkAllItemsAsReceived(orderId);
+            bool updated = _dl.MarkAllItemsAsReceived(orderId);
+            if (updated)
+            {
+                return _dl.MarkOrderAsComplete(orderId); // also update order status
+            }
+            return false;
+        }
+        public bool MarkOrderAsComplete(int orderId)
+        {
+            return _dl.MarkOrderAsComplete(orderId);
         }
 
 
-        // In ReceivePurchaseOrderBL.cs
         public bool CompletePurchaseOrder(int orderId)
         {
-            // 1. First verify all items are received
-            if (!_receivePurchaseOrderDL.CheckIfOrderFullyReceived(orderId))
-            {
-                Console.WriteLine("Not all items are received yet!");
-                return false;
-            }
-
-            // 2. Update the status
-            bool statusUpdated = _receivePurchaseOrderDL.CompletePurchaseOrder(orderId);
-
-            if (!statusUpdated)
-            {
-                Console.WriteLine("Status update failed!");
-            }
-
-            return statusUpdated;
+            return _dl.CompletePurchaseOrder(orderId); // ✅ this fixes the error
         }
-
-        // In ReceivePurchaseOrderBL.cs
-        public bool CheckIfOrderFullyReceived(int orderId)
-{
-    return _receivePurchaseOrderDL.CheckIfOrderFullyReceived(orderId);
-}
-
     }
 }

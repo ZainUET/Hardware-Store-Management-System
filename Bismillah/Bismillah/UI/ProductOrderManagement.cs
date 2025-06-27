@@ -28,7 +28,7 @@ namespace Bismillah.UI
             dgvProductOrders.MultiSelect = false;
 
             // Visual improvements
-            
+
         }
 
         private void RefreshProductOrderList()
@@ -163,6 +163,11 @@ namespace Bismillah.UI
             this.Hide();
             addStaff.ShowDialog();
             this.Close();
+        }
+
+        private void ProductOrderManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

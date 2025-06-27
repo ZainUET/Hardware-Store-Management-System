@@ -50,10 +50,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(4, 5);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(221, 198);
+            pictureBox2.Size = new Size(155, 119);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -64,10 +63,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(350, 67);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(276, 37);
             label1.Name = "label1";
-            label1.Size = new Size(1247, 74);
+            label1.Size = new Size(845, 51);
             label1.TabIndex = 2;
             label1.Text = "Bismillah Sanitary Electric and Hardware Store";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -82,11 +80,10 @@
             tableLayoutPanel3.Controls.Add(label1, 1, 0);
             tableLayoutPanel3.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel3.Location = new Point(1, 0);
-            tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(2312, 208);
+            tableLayoutPanel3.Size = new Size(1824, 125);
             tableLayoutPanel3.TabIndex = 4;
             // 
             // label5
@@ -94,10 +91,9 @@
             label5.Anchor = AnchorStyles.None;
             label5.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(10, 35, 66);
-            label5.Location = new Point(351, 233);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(218, 132);
             label5.Name = "label5";
-            label5.Size = new Size(1291, 88);
+            label5.Size = new Size(904, 53);
             label5.TabIndex = 5;
             label5.Text = "Purchase Order Management";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -115,22 +111,20 @@
             tableLayoutPanel1.Controls.Add(button3, 2, 1);
             tableLayoutPanel1.Controls.Add(label2, 1, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
-            tableLayoutPanel1.Location = new Point(258, 362);
-            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
+            tableLayoutPanel1.Location = new Point(145, 275);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1273, 315);
+            tableLayoutPanel1.Size = new Size(1097, 341);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // label4
             // 
             label4.Font = new Font("Segoe UI", 56F);
-            label4.Location = new Point(852, 0);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(733, 0);
             label4.Name = "label4";
-            label4.Size = new Size(376, 135);
+            label4.Size = new Size(263, 81);
             label4.TabIndex = 8;
             label4.Text = "⮜";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -141,10 +135,9 @@
             btnCreateOrder.Cursor = Cursors.Hand;
             btnCreateOrder.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateOrder.ForeColor = SystemColors.ButtonHighlight;
-            btnCreateOrder.Location = new Point(4, 140);
-            btnCreateOrder.Margin = new Padding(4, 5, 4, 5);
+            btnCreateOrder.Location = new Point(3, 84);
             btnCreateOrder.Name = "btnCreateOrder";
-            btnCreateOrder.Size = new Size(376, 88);
+            btnCreateOrder.Size = new Size(263, 53);
             btnCreateOrder.TabIndex = 0;
             btnCreateOrder.Text = "Create Purchase Order";
             btnCreateOrder.UseVisualStyleBackColor = false;
@@ -156,10 +149,9 @@
             btnReceiveOrder.Cursor = Cursors.Hand;
             btnReceiveOrder.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReceiveOrder.ForeColor = SystemColors.ButtonHighlight;
-            btnReceiveOrder.Location = new Point(428, 140);
-            btnReceiveOrder.Margin = new Padding(4, 5, 4, 5);
+            btnReceiveOrder.Location = new Point(368, 84);
             btnReceiveOrder.Name = "btnReceiveOrder";
-            btnReceiveOrder.Size = new Size(376, 88);
+            btnReceiveOrder.Size = new Size(263, 53);
             btnReceiveOrder.TabIndex = 1;
             btnReceiveOrder.Text = "Receive Purchase Order";
             btnReceiveOrder.UseVisualStyleBackColor = false;
@@ -171,10 +163,9 @@
             button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(852, 140);
-            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Location = new Point(733, 84);
             button3.Name = "button3";
-            button3.Size = new Size(376, 88);
+            button3.Size = new Size(263, 53);
             button3.TabIndex = 2;
             button3.Text = "Back";
             button3.UseVisualStyleBackColor = false;
@@ -183,10 +174,9 @@
             // label2
             // 
             label2.Font = new Font("Segoe UI", 45.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(428, 0);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(368, 0);
             label2.Name = "label2";
-            label2.Size = new Size(416, 135);
+            label2.Size = new Size(291, 81);
             label2.TabIndex = 6;
             label2.Text = "✏️";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -194,10 +184,9 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 56F);
-            label3.Location = new Point(4, 0);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(3, 0);
             label3.Name = "label3";
-            label3.Size = new Size(399, 135);
+            label3.Size = new Size(279, 81);
             label3.TabIndex = 7;
             label3.Text = "✚";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -209,27 +198,28 @@
             dgvProductOrders.BackgroundColor = Color.White;
             dgvProductOrders.BorderStyle = BorderStyle.None;
             dgvProductOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductOrders.Location = new Point(436, 685);
+            dgvProductOrders.Location = new Point(305, 450);
+            dgvProductOrders.Margin = new Padding(2);
             dgvProductOrders.Name = "dgvProductOrders";
             dgvProductOrders.RowHeadersWidth = 62;
-            dgvProductOrders.Size = new Size(929, 407);
+            dgvProductOrders.Size = new Size(650, 205);
             dgvProductOrders.TabIndex = 6;
             // 
             // ProductOrderManagement
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1878, 1148);
+            ClientSize = new Size(1165, 601);
             Controls.Add(dgvProductOrders);
             Controls.Add(label5);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
             Name = "ProductOrderManagement";
             Text = "Staff Management";
             WindowState = FormWindowState.Maximized;
+            Load += ProductOrderManagement_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();

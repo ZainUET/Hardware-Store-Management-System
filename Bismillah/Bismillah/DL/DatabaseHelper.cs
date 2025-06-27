@@ -17,7 +17,7 @@ namespace Bismillah.DL
 
         private string databasePassword = "Musfirahzainab123@";
 
-        private string databasePassword = "zain8773";
+     
 
 
         private DatabaseHelper() { }
