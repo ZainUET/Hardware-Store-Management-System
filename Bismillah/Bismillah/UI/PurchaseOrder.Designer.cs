@@ -69,10 +69,11 @@
             tableLayoutPanel3.Controls.Add(label1, 1, 0);
             tableLayoutPanel3.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel3.Location = new Point(1, 0);
+            tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1744, 125);
+            tableLayoutPanel3.Size = new Size(2491, 208);
             tableLayoutPanel3.TabIndex = 4;
             // 
             // label1
@@ -81,9 +82,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(264, 37);
+            label1.Location = new Point(377, 67);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(845, 51);
+            label1.Size = new Size(1247, 74);
             label1.TabIndex = 2;
             label1.Text = "Bismillah Sanitary Electric and Hardware Store";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -91,9 +93,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Location = new Point(4, 5);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(155, 119);
+            pictureBox2.Size = new Size(221, 198);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -103,9 +106,10 @@
             label5.Anchor = AnchorStyles.None;
             label5.Font = new Font("Microsoft New Tai Lue", 28F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(10, 35, 66);
-            label5.Location = new Point(252, 154);
+            label5.Location = new Point(360, 257);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(904, 53);
+            label5.Size = new Size(1291, 88);
             label5.TabIndex = 5;
             label5.Text = "Purchase Order";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -113,38 +117,34 @@
             // cmbSuppliers
             // 
             cmbSuppliers.FormattingEnabled = true;
-            cmbSuppliers.Location = new Point(27, 20);
-            cmbSuppliers.Margin = new Padding(2);
+            cmbSuppliers.Location = new Point(39, 33);
             cmbSuppliers.Name = "cmbSuppliers";
-            cmbSuppliers.Size = new Size(180, 25);
+            cmbSuppliers.Size = new Size(255, 36);
             cmbSuppliers.TabIndex = 6;
             cmbSuppliers.SelectedIndexChanged += cmbSuppliers_SelectedIndexChanged;
             // 
             // txtSupplierContact
             // 
-            txtSupplierContact.Location = new Point(27, 57);
-            txtSupplierContact.Margin = new Padding(2);
+            txtSupplierContact.Location = new Point(39, 95);
             txtSupplierContact.Name = "txtSupplierContact";
             txtSupplierContact.PlaceholderText = "CNIC";
-            txtSupplierContact.Size = new Size(180, 25);
+            txtSupplierContact.Size = new Size(255, 34);
             txtSupplierContact.TabIndex = 7;
             // 
             // cmbProducts
             // 
             cmbProducts.FormattingEnabled = true;
-            cmbProducts.Location = new Point(111, 256);
-            cmbProducts.Margin = new Padding(2);
+            cmbProducts.Location = new Point(159, 427);
             cmbProducts.Name = "cmbProducts";
-            cmbProducts.Size = new Size(238, 23);
+            cmbProducts.Size = new Size(338, 33);
             cmbProducts.TabIndex = 8;
             cmbProducts.SelectedIndexChanged += cmbProducts_SelectedIndexChanged;
             // 
             // nudQuantity
             // 
-            nudQuantity.Location = new Point(396, 254);
-            nudQuantity.Margin = new Padding(2);
+            nudQuantity.Location = new Point(566, 423);
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(82, 23);
+            nudQuantity.Size = new Size(117, 31);
             nudQuantity.TabIndex = 9;
             // 
             // btnAddItem
@@ -152,10 +152,9 @@
             btnAddItem.BackColor = Color.FromArgb(10, 35, 66);
             btnAddItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnAddItem.ForeColor = Color.White;
-            btnAddItem.Location = new Point(549, 250);
-            btnAddItem.Margin = new Padding(2);
+            btnAddItem.Location = new Point(784, 417);
             btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(109, 26);
+            btnAddItem.Size = new Size(156, 43);
             btnAddItem.TabIndex = 11;
             btnAddItem.Text = "Add";
             btnAddItem.UseVisualStyleBackColor = false;
@@ -166,11 +165,10 @@
             dgvOrderItems.BackgroundColor = Color.White;
             dgvOrderItems.BorderStyle = BorderStyle.None;
             dgvOrderItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrderItems.Location = new Point(98, 284);
-            dgvOrderItems.Margin = new Padding(2);
+            dgvOrderItems.Location = new Point(140, 473);
             dgvOrderItems.Name = "dgvOrderItems";
             dgvOrderItems.RowHeadersWidth = 62;
-            dgvOrderItems.Size = new Size(701, 361);
+            dgvOrderItems.Size = new Size(1001, 602);
             dgvOrderItems.TabIndex = 12;
             dgvOrderItems.CellContentClick += dgvOrderItems_CellContentClick;
             // 
@@ -178,10 +176,9 @@
             // 
             lblSubtotal.AutoSize = true;
             lblSubtotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblSubtotal.Location = new Point(985, 416);
-            lblSubtotal.Margin = new Padding(2, 0, 2, 0);
+            lblSubtotal.Location = new Point(1407, 693);
             lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(69, 19);
+            lblSubtotal.Size = new Size(97, 28);
             lblSubtotal.TabIndex = 13;
             lblSubtotal.Text = "Subtotal:";
             // 
@@ -189,27 +186,24 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblTotal.Location = new Point(985, 461);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(1407, 768);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(46, 19);
+            lblTotal.Size = new Size(64, 28);
             lblTotal.TabIndex = 15;
             lblTotal.Text = "Total:";
             // 
             // txtSubtotal
             // 
-            txtSubtotal.Location = new Point(1057, 416);
-            txtSubtotal.Margin = new Padding(2);
+            txtSubtotal.Location = new Point(1510, 693);
             txtSubtotal.Name = "txtSubtotal";
-            txtSubtotal.Size = new Size(131, 23);
+            txtSubtotal.Size = new Size(185, 31);
             txtSubtotal.TabIndex = 16;
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(1057, 461);
-            txtTotal.Margin = new Padding(2);
+            txtTotal.Location = new Point(1510, 768);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(131, 23);
+            txtTotal.Size = new Size(185, 31);
             txtTotal.TabIndex = 18;
             // 
             // btnSave
@@ -217,10 +211,9 @@
             btnSave.BackColor = Color.FromArgb(10, 35, 66);
             btnSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(2, 2);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(3, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(101, 32);
+            btnSave.Size = new Size(144, 53);
             btnSave.TabIndex = 19;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -231,10 +224,9 @@
             btnPrint.BackColor = Color.FromArgb(10, 35, 66);
             btnPrint.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnPrint.ForeColor = Color.White;
-            btnPrint.Location = new Point(131, 2);
-            btnPrint.Margin = new Padding(2);
+            btnPrint.Location = new Point(188, 3);
             btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(103, 32);
+            btnPrint.Size = new Size(147, 53);
             btnPrint.TabIndex = 21;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = false;
@@ -245,10 +237,9 @@
             btnClear.BackColor = Color.FromArgb(10, 35, 66);
             btnClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(2, 47);
-            btnClear.Margin = new Padding(2);
+            btnClear.Location = new Point(3, 78);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(103, 32);
+            btnClear.Size = new Size(147, 53);
             btnClear.TabIndex = 22;
             btnClear.Text = "Clear ";
             btnClear.UseVisualStyleBackColor = false;
@@ -259,12 +250,11 @@
             btnClose.BackColor = Color.FromArgb(10, 35, 66);
             btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(131, 47);
-            btnClose.Margin = new Padding(2);
+            btnClose.Location = new Point(188, 78);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(103, 32);
+            btnClose.Size = new Size(147, 53);
             btnClose.TabIndex = 23;
-            btnClose.Text = "Close";
+            btnClose.Text = "Back";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -273,11 +263,9 @@
             groupBox1.Controls.Add(cmbSuppliers);
             groupBox1.Controls.Add(txtSupplierContact);
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            groupBox1.Location = new Point(983, 197);
-            groupBox1.Margin = new Padding(2);
+            groupBox1.Location = new Point(1404, 328);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(228, 90);
+            groupBox1.Size = new Size(326, 150);
             groupBox1.TabIndex = 26;
             groupBox1.TabStop = false;
             groupBox1.Text = "Select Supplier:";
@@ -291,23 +279,21 @@
             tableLayoutPanel1.Controls.Add(btnSave, 0, 0);
             tableLayoutPanel1.Controls.Add(btnClose, 1, 1);
             tableLayoutPanel1.Controls.Add(btnClear, 0, 1);
-            tableLayoutPanel1.Location = new Point(983, 537);
-            tableLayoutPanel1.Margin = new Padding(2);
+            tableLayoutPanel1.Location = new Point(1404, 895);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(259, 90);
+            tableLayoutPanel1.Size = new Size(370, 150);
             tableLayoutPanel1.TabIndex = 27;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(111, 238);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(159, 397);
             label2.Name = "label2";
-            label2.Size = new Size(110, 19);
+            label2.Size = new Size(154, 28);
             label2.TabIndex = 28;
             label2.Text = "Select Product:";
             // 
@@ -315,19 +301,18 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label3.Location = new Point(396, 236);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(566, 393);
             label3.Name = "label3";
-            label3.Size = new Size(70, 19);
+            label3.Size = new Size(100, 28);
             label3.TabIndex = 29;
             label3.Text = "Quantity:";
             // 
             // PurchaseOrder
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1370, 629);
+            ClientSize = new Size(1924, 1048);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(tableLayoutPanel1);
@@ -343,6 +328,7 @@
             Controls.Add(label5);
             Controls.Add(tableLayoutPanel3);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "PurchaseOrder";
             Text = "Purchase Order";
             WindowState = FormWindowState.Maximized;
